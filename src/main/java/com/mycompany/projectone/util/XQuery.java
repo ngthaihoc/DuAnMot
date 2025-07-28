@@ -4,6 +4,8 @@ import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 
 /**
@@ -24,13 +26,13 @@ public class XQuery {
      * @return kết quả truy vấn
      * @throws RuntimeException lỗi truy vấn
      */
-//    public static <B> B getSingleBean(Class<B> beanClass, String sql, Object... values) {
-//        List<B> list = XQuery.getBeanList(beanClass, sql, values);
-//        if (!list.isEmpty()) {
-//            return list.get(0);
-//        }
-//        return null;
-//    }
+    public static <B> B getSingleBean(Class<B> beanClass, String sql, Object... values) {
+        List<B> list = XQuery.getBeanList(beanClass, sql, values);
+        if (!list.isEmpty()) {
+            return list.get(0);
+        }
+        return null;
+    }
 
     /**
      * Truy vấn nhiều đối tượng
@@ -42,18 +44,18 @@ public class XQuery {
      * @return kết quả truy vấn
      * @throws RuntimeException lỗi truy vấn
      */
-//    public static <B> List<B> getBeanList(Class<B> beanClass, String sql, Object... values) {
-//        List<B> list = new ArrayList<>();
-//        try {
-//            ResultSet resultSet = XJdbc.executeQuery(sql, values);
-//            while (resultSet.next()) {
-//                list.add(XQuery.readBean(resultSet, beanClass));
-//            }
-//        } catch (Exception ex) {
-//            throw new RuntimeException(ex);
-//        }
-//        return list;
-//    }
+    public static <B> List<B> getBeanList(Class<B> beanClass, String sql, Object... values) {
+        List<B> list = new ArrayList<>();
+        try {
+            ResultSet resultSet = XJdbc.executeQuery(sql, values);
+            while (resultSet.next()) {
+                list.add(XQuery.readBean(resultSet, beanClass));
+            }
+        } catch (Exception ex) {
+            throw new RuntimeException(ex);
+        }
+        return list;
+    }
 
     /**
      * Tạo bean với dữ liệu đọc từ bản ghi hiện tại

@@ -11,16 +11,13 @@ import lombok.NoArgsConstructor;
 
 @NoArgsConstructor
 @AllArgsConstructor
-@Builder
 @Data
-/**
- *
- * @author Administrator
- */
+@Builder
 public class Account {
     private int accountID;
     private String username;
     private String password;
     private Employee employee;
-    
+    private boolean role;
+    private boolean status;
 }

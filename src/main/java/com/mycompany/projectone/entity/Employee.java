@@ -21,7 +21,7 @@ import lombok.NoArgsConstructor;
 public class Employee {
     private int employeeID;
     private String name;
-    private String fristName;
+    private String firstName;
     private int age;
     private String email;
     private String phoneNum;

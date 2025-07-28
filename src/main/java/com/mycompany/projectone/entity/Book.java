@@ -20,13 +20,12 @@ import lombok.NoArgsConstructor;
  * @author Administrator
  */
 public class Book {
-        private int bookID;
+    private int bookID;
     private String title;
     private String author;
-    private int publisherYear;
+    private int publisherYear;  // năm xuất bản sách
     private double price;
     private Category category;
     private Supplier supplier;
     private int quantityInStock;
-    
 }
