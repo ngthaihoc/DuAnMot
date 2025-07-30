@@ -7,9 +7,9 @@
     <packaging>jar</packaging>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven.compiler.release>24</maven.compiler.release>
+        <maven.compiler.release>21</maven.compiler.release>
         <exec.mainClass>com.mycompany.projectone.ProjectOne</exec.mainClass>
-        <lombok.version>1.18.30</lombok.version> <!-- Thêm version cho Lombok -->
+        <lombok.version>1.18.34</lombok.version>
     </properties>
     <dependencies>
         <!-- Microsoft SQL Server JDBC Driver -->
@@ -17,12 +17,6 @@
             <groupId>com.microsoft.sqlserver</groupId>
             <artifactId>mssql-jdbc</artifactId>
             <version>12.10.0.jre11</version>
-        </dependency>
-        <!-- MySQL JDBC Driver -->
-        <dependency>
-            <groupId>mysql</groupId>
-            <artifactId>mysql-connector-java</artifactId>
-            <version>8.0.33</version>
         </dependency>
         <!-- Lombok -->
         <dependency>
@@ -58,3 +52,5 @@
         </plugins>
     </build>
 </project>
+
+

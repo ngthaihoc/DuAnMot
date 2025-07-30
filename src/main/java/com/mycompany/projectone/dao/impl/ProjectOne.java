@@ -4,7 +4,7 @@
 
 package com.mycompany.projectone.dao.impl;
 
-import com.mycompany.projectone.*;
+
 
 /**
  *

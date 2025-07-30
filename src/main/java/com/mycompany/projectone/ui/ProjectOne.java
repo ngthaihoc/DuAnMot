@@ -4,7 +4,7 @@
 
 package com.mycompany.projectone.ui;
 
-import com.mycompany.projectone.*;
+
 
 /**
  *
