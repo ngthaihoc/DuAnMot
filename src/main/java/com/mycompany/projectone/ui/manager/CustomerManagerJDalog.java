@@ -4,7 +4,7 @@
  */
 package com.mycompany.projectone.ui.manager;
 
-import com.mycompany.projectone.entity.Customer;
+
 
 
 
@@ -12,7 +12,7 @@ import com.mycompany.projectone.entity.Customer;
  *
  * @author Acer
  */
-public class CustomerManagerJDalog extends javax.swing.JDialog implements CustomerController{
+public class CustomerManagerJDalog extends javax.swing.JDialog {
 
     /**
      * Creates new form Customers
@@ -299,7 +299,7 @@ public class CustomerManagerJDalog extends javax.swing.JDialog implements Custom
 
     private void btnThemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThemActionPerformed
         // TODO add your handling code here:
-        open();
+  
     }//GEN-LAST:event_btnThemActionPerformed
 
     private void btnXoaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnXoaActionPerformed
@@ -316,8 +316,7 @@ public class CustomerManagerJDalog extends javax.swing.JDialog implements Custom
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
         // TODO add your handling code here:
-        open();
-        fillToTable();
+      
     }//GEN-LAST:event_formWindowOpened
 
     /**
@@ -392,24 +391,4 @@ public class CustomerManagerJDalog extends javax.swing.JDialog implements Custom
     private javax.swing.JTextField txtSearch;
     // End of variables declaration//GEN-END:variables
 
-@Override public void open() { }
-@Override public void setForm(Customer entity) { }
-@Override public Customer getForm() { return null; }
-@Override public void fillToTable() { }
-@Override public void edit() { }
-@Override public void create() { }
-@Override public void update() { }
-@Override public void delete() { }
-@Override public void clear() { }
-@Override public void setEditable(boolean editable) { }
-@Override public void checkAll() { }
-@Override public void uncheckAll() { }
-@Override public void deleteCheckedItems() { }
-public void moveTo(int index) {
-    if (index >= 0 && index < tblCustomers.getRowCount()) {
-        tblCustomers.setRowSelectionInterval(index, index);
-        edit();
-    }
-
-}
 }
