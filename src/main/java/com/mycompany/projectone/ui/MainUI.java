@@ -41,6 +41,7 @@ public class MainUI extends javax.swing.JFrame {
         jButton10 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(174, 217, 224));
         setMaximumSize(new java.awt.Dimension(1200, 1400));
         setPreferredSize(new java.awt.Dimension(1200, 1400));
 
@@ -48,18 +49,21 @@ public class MainUI extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(153, 153, 0));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Label ảnh ở mainUI");
+        jLabel1.setText("Label ảnh ở mainUI sẽ được thêm vào sau");
         jLabel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jLabel1.setVerifyInputWhenFocusTarget(false);
 
         jButton1.setBackground(new java.awt.Color(178, 176, 232));
-        jButton1.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
+        jButton1.setFont(new java.awt.Font("Segoe UI", 3, 20)); // NOI18N
         jButton1.setForeground(new java.awt.Color(26, 42, 128));
         jButton1.setText("THÔNG TIN SÁCH");
         jButton1.setToolTipText("Nhấn để thao tác chức năng");
-        jButton1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.lightGray, java.awt.Color.white, java.awt.Color.yellow, java.awt.Color.orange));
-        jButton1.setDebugGraphicsOptions(javax.swing.DebugGraphics.FLASH_OPTION);
+        jButton1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.LIGHT_GRAY, java.awt.Color.WHITE, java.awt.Color.YELLOW, java.awt.Color.ORANGE));
+        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton1.setDebugGraphicsOptions(javax.swing.DebugGraphics.NONE_OPTION);
         jButton1.setFocusPainted(false);
+        jButton1.setMargin(new java.awt.Insets(10, 20, 10, 20));
+        jButton1.setPreferredSize(null);
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -67,40 +71,49 @@ public class MainUI extends javax.swing.JFrame {
         });
 
         jButton2.setBackground(new java.awt.Color(178, 176, 232));
-        jButton2.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
+        jButton2.setFont(new java.awt.Font("Segoe UI", 3, 20)); // NOI18N
         jButton2.setForeground(new java.awt.Color(26, 42, 128));
         jButton2.setText("THỂ LOẠI SÁCH");
         jButton2.setToolTipText("Nhấn để thao tác chức năng");
-        jButton2.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.lightGray, java.awt.Color.white, java.awt.Color.yellow, java.awt.Color.orange));
-        jButton2.setDebugGraphicsOptions(javax.swing.DebugGraphics.FLASH_OPTION);
+        jButton2.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.LIGHT_GRAY, java.awt.Color.WHITE, java.awt.Color.YELLOW, java.awt.Color.ORANGE));
+        jButton2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton2.setDebugGraphicsOptions(javax.swing.DebugGraphics.NONE_OPTION);
         jButton2.setFocusPainted(false);
+        jButton2.setMargin(new java.awt.Insets(10, 20, 10, 20));
+        jButton2.setPreferredSize(null);
 
         jButton3.setBackground(new java.awt.Color(178, 176, 232));
-        jButton3.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
+        jButton3.setFont(new java.awt.Font("Segoe UI", 3, 20)); // NOI18N
         jButton3.setForeground(new java.awt.Color(26, 42, 128));
         jButton3.setText("THÔNG TIN NHÂN VIÊN");
         jButton3.setToolTipText("Nhấn để thao tác chức năng");
-        jButton3.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.lightGray, java.awt.Color.white, java.awt.Color.yellow, java.awt.Color.orange));
-        jButton3.setDebugGraphicsOptions(javax.swing.DebugGraphics.FLASH_OPTION);
+        jButton3.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.LIGHT_GRAY, java.awt.Color.WHITE, java.awt.Color.YELLOW, java.awt.Color.ORANGE));
+        jButton3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton3.setDebugGraphicsOptions(javax.swing.DebugGraphics.NONE_OPTION);
         jButton3.setFocusPainted(false);
+        jButton3.setMargin(new java.awt.Insets(10, 20, 10, 20));
 
         jButton4.setBackground(new java.awt.Color(178, 176, 232));
-        jButton4.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
+        jButton4.setFont(new java.awt.Font("Segoe UI", 3, 20)); // NOI18N
         jButton4.setForeground(new java.awt.Color(26, 42, 128));
         jButton4.setText("THÔNG TIN KHÁCH HÀNG");
         jButton4.setToolTipText("Nhấn để thao tác chức năng");
-        jButton4.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.lightGray, java.awt.Color.white, java.awt.Color.yellow, java.awt.Color.orange));
-        jButton4.setDebugGraphicsOptions(javax.swing.DebugGraphics.FLASH_OPTION);
+        jButton4.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.LIGHT_GRAY, java.awt.Color.WHITE, java.awt.Color.YELLOW, java.awt.Color.ORANGE));
+        jButton4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton4.setDebugGraphicsOptions(javax.swing.DebugGraphics.NONE_OPTION);
         jButton4.setFocusPainted(false);
+        jButton4.setMargin(new java.awt.Insets(10, 20, 10, 20));
 
         jButton5.setBackground(new java.awt.Color(178, 176, 232));
-        jButton5.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
+        jButton5.setFont(new java.awt.Font("Segoe UI", 3, 20)); // NOI18N
         jButton5.setForeground(new java.awt.Color(26, 42, 128));
         jButton5.setText("BÁO CÁO DOANH THU");
         jButton5.setToolTipText("Nhấn để thao tác chức năng");
-        jButton5.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.lightGray, java.awt.Color.white, java.awt.Color.yellow, java.awt.Color.orange));
-        jButton5.setDebugGraphicsOptions(javax.swing.DebugGraphics.FLASH_OPTION);
+        jButton5.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.LIGHT_GRAY, java.awt.Color.WHITE, java.awt.Color.YELLOW, java.awt.Color.ORANGE));
+        jButton5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton5.setDebugGraphicsOptions(javax.swing.DebugGraphics.NONE_OPTION);
         jButton5.setFocusPainted(false);
+        jButton5.setMargin(new java.awt.Insets(10, 20, 10, 20));
         jButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton5ActionPerformed(evt);
@@ -108,13 +121,15 @@ public class MainUI extends javax.swing.JFrame {
         });
 
         jButton6.setBackground(new java.awt.Color(178, 176, 232));
-        jButton6.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
+        jButton6.setFont(new java.awt.Font("Segoe UI", 3, 20)); // NOI18N
         jButton6.setForeground(new java.awt.Color(26, 42, 128));
         jButton6.setText("CHƯƠNG TRÌNH KHUYẾN MÃI");
         jButton6.setToolTipText("Nhấn để thao tác chức năng");
-        jButton6.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.lightGray, java.awt.Color.white, java.awt.Color.yellow, java.awt.Color.orange));
-        jButton6.setDebugGraphicsOptions(javax.swing.DebugGraphics.FLASH_OPTION);
+        jButton6.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.LIGHT_GRAY, java.awt.Color.WHITE, java.awt.Color.YELLOW, java.awt.Color.ORANGE));
+        jButton6.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton6.setDebugGraphicsOptions(javax.swing.DebugGraphics.NONE_OPTION);
         jButton6.setFocusPainted(false);
+        jButton6.setMargin(new java.awt.Insets(10, 20, 10, 20));
         jButton6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton6ActionPerformed(evt);
@@ -122,40 +137,49 @@ public class MainUI extends javax.swing.JFrame {
         });
 
         jButton7.setBackground(new java.awt.Color(178, 176, 232));
-        jButton7.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
+        jButton7.setFont(new java.awt.Font("Segoe UI", 3, 20)); // NOI18N
         jButton7.setForeground(new java.awt.Color(26, 42, 128));
         jButton7.setText("PHIẾU NHẬP HÀNG");
         jButton7.setToolTipText("Nhấn để thao tác chức năng");
-        jButton7.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.lightGray, java.awt.Color.white, java.awt.Color.yellow, java.awt.Color.orange));
-        jButton7.setDebugGraphicsOptions(javax.swing.DebugGraphics.FLASH_OPTION);
+        jButton7.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.LIGHT_GRAY, java.awt.Color.WHITE, java.awt.Color.YELLOW, java.awt.Color.ORANGE));
+        jButton7.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton7.setDebugGraphicsOptions(javax.swing.DebugGraphics.NONE_OPTION);
         jButton7.setFocusPainted(false);
+        jButton7.setMargin(new java.awt.Insets(10, 20, 10, 20));
 
         jButton8.setBackground(new java.awt.Color(178, 176, 232));
-        jButton8.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
+        jButton8.setFont(new java.awt.Font("Segoe UI", 3, 20)); // NOI18N
         jButton8.setForeground(new java.awt.Color(26, 42, 128));
         jButton8.setText("XUẤT HOÁ ĐƠN ");
         jButton8.setToolTipText("Nhấn để thao tác chức năng");
-        jButton8.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.lightGray, java.awt.Color.white, java.awt.Color.yellow, java.awt.Color.orange));
-        jButton8.setDebugGraphicsOptions(javax.swing.DebugGraphics.FLASH_OPTION);
+        jButton8.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.LIGHT_GRAY, java.awt.Color.WHITE, java.awt.Color.YELLOW, java.awt.Color.ORANGE));
+        jButton8.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton8.setDebugGraphicsOptions(javax.swing.DebugGraphics.NONE_OPTION);
         jButton8.setFocusPainted(false);
+        jButton8.setMargin(new java.awt.Insets(10, 20, 10, 20));
+        jButton8.setPreferredSize(null);
 
         jButton9.setBackground(new java.awt.Color(178, 176, 232));
-        jButton9.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
+        jButton9.setFont(new java.awt.Font("Segoe UI", 3, 20)); // NOI18N
         jButton9.setForeground(new java.awt.Color(26, 42, 128));
         jButton9.setText("TRA CỨU LỊCH SỬ");
         jButton9.setToolTipText("Nhấn để thao tác chức năng");
-        jButton9.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.lightGray, java.awt.Color.white, java.awt.Color.yellow, java.awt.Color.orange));
-        jButton9.setDebugGraphicsOptions(javax.swing.DebugGraphics.FLASH_OPTION);
+        jButton9.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.LIGHT_GRAY, java.awt.Color.WHITE, java.awt.Color.YELLOW, java.awt.Color.ORANGE));
+        jButton9.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton9.setDebugGraphicsOptions(javax.swing.DebugGraphics.NONE_OPTION);
         jButton9.setFocusPainted(false);
+        jButton9.setMargin(new java.awt.Insets(10, 20, 10, 20));
 
         jButton10.setBackground(new java.awt.Color(178, 176, 232));
-        jButton10.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
+        jButton10.setFont(new java.awt.Font("Segoe UI", 3, 20)); // NOI18N
         jButton10.setForeground(new java.awt.Color(26, 42, 128));
         jButton10.setText("THOÁT ỨNG DỤNG");
         jButton10.setToolTipText("Nhấn để thao tác chức năng");
-        jButton10.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.lightGray, java.awt.Color.white, java.awt.Color.yellow, java.awt.Color.orange));
-        jButton10.setDebugGraphicsOptions(javax.swing.DebugGraphics.FLASH_OPTION);
+        jButton10.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.LIGHT_GRAY, java.awt.Color.WHITE, java.awt.Color.YELLOW, java.awt.Color.ORANGE));
+        jButton10.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton10.setDebugGraphicsOptions(javax.swing.DebugGraphics.NONE_OPTION);
         jButton10.setFocusPainted(false);
+        jButton10.setMargin(new java.awt.Insets(10, 20, 10, 20));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -179,7 +203,7 @@ public class MainUI extends javax.swing.JFrame {
                     .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 439, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 439, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 544, Short.MAX_VALUE)
+                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 743, Short.MAX_VALUE)
                 .addContainerGap())
         );
         layout.setVerticalGroup(
