@@ -37,12 +37,10 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="103" groupAlignment="1" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="103" groupAlignment="1" attributes="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jButton10" min="-2" pref="439" max="-2" attributes="0"/>
-                                  <Component id="jButton1" alignment="0" min="-2" pref="439" max="-2" attributes="0"/>
-                              </Group>
-                              <Component id="jButton9" min="-2" pref="439" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                              <Component id="jButton10" alignment="0" max="32767" attributes="0"/>
+                              <Component id="jButton9" alignment="0" max="32767" attributes="0"/>
+                              <Component id="jButton1" alignment="0" min="-2" pref="439" max="-2" attributes="0"/>
                           </Group>
                           <Component id="jButton8" alignment="0" min="-2" pref="439" max="-2" attributes="0"/>
                           <Component id="jButton7" alignment="0" min="-2" pref="439" max="-2" attributes="0"/>
@@ -132,6 +130,7 @@
         </Property>
         <Property name="debugGraphicsOptions" type="int" value="-1"/>
         <Property name="focusPainted" type="boolean" value="false"/>
+        <Property name="horizontalTextPosition" type="int" value="10"/>
         <Property name="margin" type="java.awt.Insets" editor="org.netbeans.beaninfo.editors.InsetsEditor">
           <Insets value="[10, 20, 10, 20]"/>
         </Property>
