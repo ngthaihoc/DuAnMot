@@ -41,6 +41,12 @@ public class RevenueManageUI extends javax.swing.JFrame {
         pnlDoanhThuNhanVien = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         tblByUser = new javax.swing.JTable();
+        txtBegin1 = new javax.swing.JTextField();
+        lblBegin1 = new javax.swing.JLabel();
+        lblEnd1 = new javax.swing.JLabel();
+        btnFilter1 = new javax.swing.JButton();
+        jComboBox1 = new javax.swing.JComboBox<>();
+        btnFilter2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -141,7 +147,7 @@ public class RevenueManageUI extends javax.swing.JFrame {
                     .addComponent(btnFilter)
                     .addComponent(cboTimeRanges, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 568, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 574, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -155,7 +161,7 @@ public class RevenueManageUI extends javax.swing.JFrame {
                 {null, null, null, null, null}
             },
             new String [] {
-                "Nhân viên", "Doanh Thu", "Số bill", "Bill đầu tiên", "Bill cuối cùng"
+                "Mã sách", "Tên sách", "Thể Loại", "Số lượng", "Tổng doanh thu"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -168,17 +174,69 @@ public class RevenueManageUI extends javax.swing.JFrame {
         });
         jScrollPane2.setViewportView(tblByUser);
 
+        txtBegin1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtBegin1ActionPerformed(evt);
+            }
+        });
+
+        lblBegin1.setText("Mã sách");
+
+        lblEnd1.setText("Thể Loại Sách");
+
+        btnFilter1.setText("Lọc");
+        btnFilter1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnFilter1ActionPerformed(evt);
+            }
+        });
+
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
+        btnFilter2.setText("Làm mới");
+        btnFilter2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnFilter2ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout pnlDoanhThuNhanVienLayout = new javax.swing.GroupLayout(pnlDoanhThuNhanVien);
         pnlDoanhThuNhanVien.setLayout(pnlDoanhThuNhanVienLayout);
         pnlDoanhThuNhanVienLayout.setHorizontalGroup(
             pnlDoanhThuNhanVienLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 607, Short.MAX_VALUE)
+            .addGroup(pnlDoanhThuNhanVienLayout.createSequentialGroup()
+                .addGap(16, 16, 16)
+                .addComponent(lblBegin1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txtBegin1, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(lblEnd1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btnFilter1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btnFilter2)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlDoanhThuNhanVienLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 595, Short.MAX_VALUE)
+                .addContainerGap())
         );
         pnlDoanhThuNhanVienLayout.setVerticalGroup(
             pnlDoanhThuNhanVienLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlDoanhThuNhanVienLayout.createSequentialGroup()
-                .addGap(0, 80, Short.MAX_VALUE)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 537, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(pnlDoanhThuNhanVienLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblBegin1)
+                    .addComponent(txtBegin1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblEnd1)
+                    .addComponent(btnFilter1)
+                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnFilter2))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 566, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         tabsMain.addTab("Doanh Thu Theo Sách", pnlDoanhThuNhanVien);
@@ -226,6 +284,18 @@ public class RevenueManageUI extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtEndActionPerformed
 
+    private void txtBegin1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtBegin1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtBegin1ActionPerformed
+
+    private void btnFilter1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFilter1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnFilter1ActionPerformed
+
+    private void btnFilter2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFilter2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnFilter2ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -253,17 +323,23 @@ public class RevenueManageUI extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnFilter;
+    private javax.swing.JButton btnFilter1;
+    private javax.swing.JButton btnFilter2;
     private javax.swing.JComboBox<String> cboTimeRanges;
+    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JLabel lblBegin;
+    private javax.swing.JLabel lblBegin1;
     private javax.swing.JLabel lblEnd;
+    private javax.swing.JLabel lblEnd1;
     private javax.swing.JPanel pnlDoanhThuLoai;
     private javax.swing.JPanel pnlDoanhThuNhanVien;
     private javax.swing.JTabbedPane tabsMain;
     private javax.swing.JTable tblByCategory;
     private javax.swing.JTable tblByUser;
     private javax.swing.JTextField txtBegin;
+    private javax.swing.JTextField txtBegin1;
     private javax.swing.JTextField txtEnd;
     // End of variables declaration//GEN-END:variables
 }

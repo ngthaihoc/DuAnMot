@@ -28,4 +28,5 @@ public class Book {
     private Category category;
     private Supplier supplier;
     private int quantityInStock;
+    
 }
