@@ -52,11 +52,11 @@ public class AccountManagerJDialog extends javax.swing.JDialog {
         btnAdd = new javax.swing.JButton();
         btnUpdate = new javax.swing.JButton();
         btnRefresh = new javax.swing.JButton();
-        btnFirst = new javax.swing.JButton();
-        btnPrev = new javax.swing.JButton();
-        btnNext = new javax.swing.JButton();
         btnLast = new javax.swing.JButton();
         btnDelet = new javax.swing.JButton();
+        btnLast1 = new javax.swing.JButton();
+        btnLast2 = new javax.swing.JButton();
+        btnLast3 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -82,7 +82,8 @@ public class AccountManagerJDialog extends javax.swing.JDialog {
         });
         jScrollPane1.setViewportView(tblAccounts);
 
-        btnDelete.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
+        btnDelete.setFont(new java.awt.Font("Segoe UI", 3, 12)); // NOI18N
+        btnDelete.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/projectone/icons/delete.png"))); // NOI18N
         btnDelete.setText("Xóa");
         btnDelete.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -90,7 +91,8 @@ public class AccountManagerJDialog extends javax.swing.JDialog {
             }
         });
 
-        btnDelete1.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
+        btnDelete1.setFont(new java.awt.Font("Segoe UI", 3, 12)); // NOI18N
+        btnDelete1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/projectone/icons/refresh.png"))); // NOI18N
         btnDelete1.setText("Làm mới");
         btnDelete1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -105,7 +107,7 @@ public class AccountManagerJDialog extends javax.swing.JDialog {
         pnlAccountList.setLayout(pnlAccountListLayout);
         pnlAccountListLayout.setHorizontalGroup(
             pnlAccountListLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 554, Short.MAX_VALUE)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 590, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlAccountListLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btnDelete)
@@ -206,7 +208,8 @@ public class AccountManagerJDialog extends javax.swing.JDialog {
             }
         });
 
-        btnAdd.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
+        btnAdd.setFont(new java.awt.Font("Segoe UI", 3, 12)); // NOI18N
+        btnAdd.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/projectone/icons/add.png"))); // NOI18N
         btnAdd.setText("Thêm");
         btnAdd.setPreferredSize(new java.awt.Dimension(77, 23));
         btnAdd.addActionListener(new java.awt.event.ActionListener() {
@@ -215,7 +218,8 @@ public class AccountManagerJDialog extends javax.swing.JDialog {
             }
         });
 
-        btnUpdate.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
+        btnUpdate.setFont(new java.awt.Font("Segoe UI", 3, 12)); // NOI18N
+        btnUpdate.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/projectone/icons/up.png"))); // NOI18N
         btnUpdate.setText("Cập nhật");
         btnUpdate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -223,7 +227,8 @@ public class AccountManagerJDialog extends javax.swing.JDialog {
             }
         });
 
-        btnRefresh.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
+        btnRefresh.setFont(new java.awt.Font("Segoe UI", 3, 12)); // NOI18N
+        btnRefresh.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/projectone/icons/refresh.png"))); // NOI18N
         btnRefresh.setText("Làm mới");
         btnRefresh.setPreferredSize(new java.awt.Dimension(77, 23));
         btnRefresh.addActionListener(new java.awt.event.ActionListener() {
@@ -232,35 +237,8 @@ public class AccountManagerJDialog extends javax.swing.JDialog {
             }
         });
 
-        btnFirst.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
-        btnFirst.setText("<<");
-        btnFirst.setPreferredSize(new java.awt.Dimension(77, 23));
-        btnFirst.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnFirstActionPerformed(evt);
-            }
-        });
-
-        btnPrev.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
-        btnPrev.setText("<");
-        btnPrev.setPreferredSize(new java.awt.Dimension(77, 23));
-        btnPrev.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnPrevActionPerformed(evt);
-            }
-        });
-
-        btnNext.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
-        btnNext.setText(">");
-        btnNext.setPreferredSize(new java.awt.Dimension(77, 23));
-        btnNext.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnNextActionPerformed(evt);
-            }
-        });
-
         btnLast.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
-        btnLast.setText(">>");
+        btnLast.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/projectone/icons/MoveFirst.png"))); // NOI18N
         btnLast.setPreferredSize(new java.awt.Dimension(77, 23));
         btnLast.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -268,11 +246,39 @@ public class AccountManagerJDialog extends javax.swing.JDialog {
             }
         });
 
-        btnDelet.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
+        btnDelet.setFont(new java.awt.Font("Segoe UI", 3, 12)); // NOI18N
+        btnDelet.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/projectone/icons/delete.png"))); // NOI18N
         btnDelet.setText("Xóa");
         btnDelet.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnDeletActionPerformed(evt);
+            }
+        });
+
+        btnLast1.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
+        btnLast1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/projectone/icons/MoveLast.png"))); // NOI18N
+        btnLast1.setPreferredSize(new java.awt.Dimension(77, 23));
+        btnLast1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLast1ActionPerformed(evt);
+            }
+        });
+
+        btnLast2.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
+        btnLast2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/projectone/icons/MoveNex.png"))); // NOI18N
+        btnLast2.setPreferredSize(new java.awt.Dimension(77, 23));
+        btnLast2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLast2ActionPerformed(evt);
+            }
+        });
+
+        btnLast3.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
+        btnLast3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/projectone/icons/MovePrevious.png"))); // NOI18N
+        btnLast3.setPreferredSize(new java.awt.Dimension(77, 23));
+        btnLast3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLast3ActionPerformed(evt);
             }
         });
 
@@ -290,7 +296,7 @@ public class AccountManagerJDialog extends javax.swing.JDialog {
                                 .addComponent(rdoManager)
                                 .addGap(18, 18, 18)
                                 .addComponent(rdoEmployee)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 58, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 94, Short.MAX_VALUE)
                         .addGroup(pnlAccountCreationLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(pnlAccountCreationLayout.createSequentialGroup()
                                 .addComponent(lblStatus, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -312,24 +318,23 @@ public class AccountManagerJDialog extends javax.swing.JDialog {
                             .addComponent(txtPass, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(113, 113, 113))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlAccountCreationLayout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(btnAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnUpdate)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnDelet)
+                        .addComponent(btnAdd, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(btnUpdate, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(btnDelet, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(13, 13, 13)
-                        .addComponent(btnRefresh, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(43, 43, 43))))
+                        .addComponent(btnRefresh, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(17, 17, 17))))
             .addGroup(pnlAccountCreationLayout.createSequentialGroup()
-                .addGap(104, 104, 104)
-                .addComponent(btnFirst, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(99, 99, 99)
+                .addComponent(btnLast, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(btnPrev, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnLast3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(btnNext, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(13, 13, 13)
-                .addComponent(btnLast, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnLast2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(btnLast1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         pnlAccountCreationLayout.setVerticalGroup(
@@ -360,19 +365,19 @@ public class AccountManagerJDialog extends javax.swing.JDialog {
                             .addComponent(rdoInactive)
                             .addComponent(rdoInProgress)
                             .addComponent(btnActive))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 45, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
                 .addGroup(pnlAccountCreationLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnUpdate)
-                    .addComponent(btnRefresh, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnRefresh, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnDelet))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(pnlAccountCreationLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnFirst, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnPrev, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnNext, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnLast, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(23, 23, 23))
+                .addGroup(pnlAccountCreationLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnLast, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnLast2, javax.swing.GroupLayout.DEFAULT_SIZE, 61, Short.MAX_VALUE)
+                    .addComponent(btnLast3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnLast1, javax.swing.GroupLayout.DEFAULT_SIZE, 61, Short.MAX_VALUE))
+                .addGap(12, 12, 12))
         );
 
         tabs.addTab("Tạo tài khoản", pnlAccountCreation);
@@ -435,21 +440,9 @@ public class AccountManagerJDialog extends javax.swing.JDialog {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnRefreshActionPerformed
 
-    private void btnFirstActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFirstActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnFirstActionPerformed
-
-    private void btnPrevActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPrevActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnPrevActionPerformed
-
     private void btnActiveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnActiveActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnActiveActionPerformed
-
-    private void btnNextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNextActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnNextActionPerformed
 
     private void btnLastActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLastActionPerformed
         // TODO add your handling code here:
@@ -458,6 +451,18 @@ public class AccountManagerJDialog extends javax.swing.JDialog {
     private void btnDeletActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeletActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnDeletActionPerformed
+
+    private void btnLast1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLast1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnLast1ActionPerformed
+
+    private void btnLast2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLast2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnLast2ActionPerformed
+
+    private void btnLast3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLast3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnLast3ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -507,10 +512,10 @@ public class AccountManagerJDialog extends javax.swing.JDialog {
     private javax.swing.JButton btnDelet;
     private javax.swing.JButton btnDelete;
     private javax.swing.JButton btnDelete1;
-    private javax.swing.JButton btnFirst;
     private javax.swing.JButton btnLast;
-    private javax.swing.JButton btnNext;
-    private javax.swing.JButton btnPrev;
+    private javax.swing.JButton btnLast1;
+    private javax.swing.JButton btnLast2;
+    private javax.swing.JButton btnLast3;
     private javax.swing.JButton btnRefresh;
     private javax.swing.JButton btnUpdate;
     private javax.swing.ButtonGroup groRole;

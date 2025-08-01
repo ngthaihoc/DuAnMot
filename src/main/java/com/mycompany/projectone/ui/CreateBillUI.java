@@ -89,7 +89,7 @@ public class CreateBillUI extends javax.swing.JFrame {
         lblStatus.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
         lblStatus.setText("Chương trình giảm giá ( Nếu có )");
 
-        btnCreate.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
+        btnCreate.setFont(new java.awt.Font("Segoe UI", 3, 12)); // NOI18N
         btnCreate.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/projectone/icons/add.png"))); // NOI18N
         btnCreate.setText("Tạo mới");
         btnCreate.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -100,7 +100,7 @@ public class CreateBillUI extends javax.swing.JFrame {
             }
         });
 
-        btnUpdate.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
+        btnUpdate.setFont(new java.awt.Font("Segoe UI", 3, 12)); // NOI18N
         btnUpdate.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/projectone/icons/up.png"))); // NOI18N
         btnUpdate.setText("Cập Nhập");
         btnUpdate.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -111,7 +111,7 @@ public class CreateBillUI extends javax.swing.JFrame {
             }
         });
 
-        btnDelete.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
+        btnDelete.setFont(new java.awt.Font("Segoe UI", 3, 12)); // NOI18N
         btnDelete.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/projectone/icons/delete.png"))); // NOI18N
         btnDelete.setText("Xoá");
         btnDelete.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -122,7 +122,7 @@ public class CreateBillUI extends javax.swing.JFrame {
             }
         });
 
-        btnClear.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
+        btnClear.setFont(new java.awt.Font("Segoe UI", 3, 12)); // NOI18N
         btnClear.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/projectone/icons/save.png"))); // NOI18N
         btnClear.setText("Nhập mới");
         btnClear.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -134,7 +134,7 @@ public class CreateBillUI extends javax.swing.JFrame {
         });
 
         btnMoveFirst.setFont(new java.awt.Font("Segoe UI", 3, 12)); // NOI18N
-        btnMoveFirst.setText("|<");
+        btnMoveFirst.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/projectone/icons/MovePrevious.png"))); // NOI18N
         btnMoveFirst.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnMoveFirst.setFocusPainted(false);
         btnMoveFirst.addActionListener(new java.awt.event.ActionListener() {
@@ -144,7 +144,7 @@ public class CreateBillUI extends javax.swing.JFrame {
         });
 
         btnMovePrevious.setFont(new java.awt.Font("Segoe UI", 3, 12)); // NOI18N
-        btnMovePrevious.setText("<<");
+        btnMovePrevious.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/projectone/icons/MovePrevious.png"))); // NOI18N
         btnMovePrevious.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnMovePrevious.setFocusPainted(false);
         btnMovePrevious.addActionListener(new java.awt.event.ActionListener() {
@@ -154,7 +154,7 @@ public class CreateBillUI extends javax.swing.JFrame {
         });
 
         btnMoveNext.setFont(new java.awt.Font("Segoe UI", 3, 12)); // NOI18N
-        btnMoveNext.setText(">>");
+        btnMoveNext.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/projectone/icons/MoveNex.png"))); // NOI18N
         btnMoveNext.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnMoveNext.setFocusPainted(false);
         btnMoveNext.addActionListener(new java.awt.event.ActionListener() {
@@ -164,7 +164,7 @@ public class CreateBillUI extends javax.swing.JFrame {
         });
 
         btnMoveLast.setFont(new java.awt.Font("Segoe UI", 3, 12)); // NOI18N
-        btnMoveLast.setText(">|");
+        btnMoveLast.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/projectone/icons/MoveLast.png"))); // NOI18N
         btnMoveLast.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnMoveLast.setFocusPainted(false);
         btnMoveLast.addActionListener(new java.awt.event.ActionListener() {
@@ -218,7 +218,7 @@ public class CreateBillUI extends javax.swing.JFrame {
                         .addComponent(btnDelete)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btnClear)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
                         .addComponent(btnMoveFirst, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(btnMovePrevious, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
