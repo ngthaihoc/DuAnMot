@@ -42,8 +42,8 @@ public class RevenueManageUI extends javax.swing.JFrame {
         jScrollPane2 = new javax.swing.JScrollPane();
         tblByUser = new javax.swing.JTable();
         txtBegin1 = new javax.swing.JTextField();
-        lblBegin1 = new javax.swing.JLabel();
-        lblEnd1 = new javax.swing.JLabel();
+        lblBookID = new javax.swing.JLabel();
+        lblCategory = new javax.swing.JLabel();
         btnFilter1 = new javax.swing.JButton();
         jComboBox1 = new javax.swing.JComboBox<>();
         btnFilter2 = new javax.swing.JButton();
@@ -184,11 +184,11 @@ public class RevenueManageUI extends javax.swing.JFrame {
             }
         });
 
-        lblBegin1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        lblBegin1.setText("Mã sách");
+        lblBookID.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        lblBookID.setText("Mã sách");
 
-        lblEnd1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        lblEnd1.setText("Thể Loại Sách");
+        lblCategory.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        lblCategory.setText("Thể Loại Sách");
 
         btnFilter1.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
         btnFilter1.setText("Lọc");
@@ -214,11 +214,11 @@ public class RevenueManageUI extends javax.swing.JFrame {
             pnlDoanhThuNhanVienLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlDoanhThuNhanVienLayout.createSequentialGroup()
                 .addGap(16, 16, 16)
-                .addComponent(lblBegin1)
+                .addComponent(lblBookID)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtBegin1, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(lblEnd1)
+                .addComponent(lblCategory)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -234,16 +234,19 @@ public class RevenueManageUI extends javax.swing.JFrame {
         pnlDoanhThuNhanVienLayout.setVerticalGroup(
             pnlDoanhThuNhanVienLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlDoanhThuNhanVienLayout.createSequentialGroup()
-                .addGap(18, 18, 18)
-                .addGroup(pnlDoanhThuNhanVienLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblBegin1)
-                    .addComponent(txtBegin1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblEnd1)
-                    .addComponent(btnFilter1)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnFilter2))
+                .addGroup(pnlDoanhThuNhanVienLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnlDoanhThuNhanVienLayout.createSequentialGroup()
+                        .addGap(25, 25, 25)
+                        .addGroup(pnlDoanhThuNhanVienLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lblBookID)
+                            .addComponent(txtBegin1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblCategory)
+                            .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(pnlDoanhThuNhanVienLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(btnFilter2)
+                        .addComponent(btnFilter1)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 575, Short.MAX_VALUE)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 578, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -338,9 +341,9 @@ public class RevenueManageUI extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JLabel lblBegin;
-    private javax.swing.JLabel lblBegin1;
+    private javax.swing.JLabel lblBookID;
+    private javax.swing.JLabel lblCategory;
     private javax.swing.JLabel lblEnd;
-    private javax.swing.JLabel lblEnd1;
     private javax.swing.JPanel pnlDoanhThuLoai;
     private javax.swing.JPanel pnlDoanhThuNhanVien;
     private javax.swing.JTabbedPane tabsMain;

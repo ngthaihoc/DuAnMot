@@ -68,11 +68,11 @@
                       </Group>
                   </Group>
                   <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace max="32767" attributes="0"/>
-                      <Component id="lblBegin1" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace pref="49" max="32767" attributes="0"/>
+                      <Component id="lblID" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="txtBegin1" min="-2" pref="105" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
+                      <Component id="txtID" min="-2" pref="105" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="lblBegin" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="txtBegin" min="-2" pref="105" max="-2" attributes="0"/>
@@ -92,18 +92,16 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="103" alignment="0" groupAlignment="3" attributes="0">
-                              <Component id="lblBegin1" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="txtBegin1" alignment="3" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="103" alignment="0" groupAlignment="3" attributes="0">
-                              <Component id="lblBegin" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="txtBegin" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="lblEnd" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="txtEnd" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="btnFilter" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="cboTimeRanges" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="lblBegin" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtBegin" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblEnd" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtEnd" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnFilter" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="cboTimeRanges" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Group type="103" alignment="3" groupAlignment="3" attributes="0">
+                              <Component id="lblID" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="txtID" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
@@ -127,7 +125,7 @@
 
               <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
               <SubComponents>
-                <Component class="javax.swing.JTable" name="tblBills">
+                <Component class="javax.swing.JTable" name="tblDetails">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Segoe UI" size="14" style="0"/>
@@ -147,7 +145,7 @@
                     <Property name="rowHeight" type="int" value="25"/>
                   </Properties>
                   <Events>
-                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="tblBillsMouseClicked"/>
+                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="tblDetailsMouseClicked"/>
                   </Events>
                 </Component>
               </SubComponents>
@@ -242,7 +240,7 @@
                 <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
               </AuxValues>
             </Component>
-            <Component class="javax.swing.JLabel" name="lblBegin1">
+            <Component class="javax.swing.JLabel" name="lblID">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Segoe UI" size="14" style="1"/>
@@ -250,9 +248,9 @@
                 <Property name="text" type="java.lang.String" value="M&#xe3;"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="txtBegin1">
+            <Component class="javax.swing.JTextField" name="txtID">
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtBegin1ActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtIDActionPerformed"/>
               </Events>
             </Component>
           </SubComponents>
@@ -271,47 +269,43 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
-                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="lblStatus2" alignment="0" min="-2" pref="132" max="-2" attributes="0"/>
-                                  <Component id="txtThoiDiemTao" alignment="0" pref="315" max="32767" attributes="0"/>
-                                  <Component id="txtMaPHieu" alignment="0" pref="315" max="32767" attributes="0"/>
-                                  <Component id="lblThoiDiemTao" alignment="0" min="-2" pref="114" max="-2" attributes="0"/>
-                                  <Component id="lblStatus" alignment="0" min="-2" pref="132" max="-2" attributes="0"/>
-                                  <Component id="lblMaPhieu" alignment="0" min="-2" pref="110" max="-2" attributes="0"/>
-                                  <Component id="txtThoiDiemTao1" alignment="0" pref="315" max="32767" attributes="0"/>
-                                  <Component id="jComboBox1" alignment="0" max="32767" attributes="0"/>
-                              </Group>
-                              <EmptySpace max="32767" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="txtThoiDiemThanhToan" alignment="0" min="-2" pref="315" max="-2" attributes="0"/>
-                                  <Component id="lblThoiDiemThanhToan" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="txtNguoiTao" alignment="0" min="-2" pref="315" max="-2" attributes="0"/>
-                                  <Component id="txtTheSo" alignment="0" min="-2" pref="315" max="-2" attributes="0"/>
-                                  <Component id="lblTheSo" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="lblNguoiTao" alignment="0" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <Component id="btnCreate" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="btnUpdate" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="btnDelete" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="btnClear" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace pref="81" max="32767" attributes="0"/>
-                              <Component id="btnMoveFirst" min="-2" pref="55" max="-2" attributes="0"/>
-                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Component id="btnMovePrevious" min="-2" pref="59" max="-2" attributes="0"/>
-                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Component id="btnMoveNext" min="-2" pref="52" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
-                              <Component id="btnMoveLast" min="-2" pref="49" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
-                          </Group>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="lblNameNCC" alignment="0" min="-2" pref="132" max="-2" attributes="0"/>
+                          <Component id="txtPrice" alignment="0" pref="315" max="32767" attributes="0"/>
+                          <Component id="txtMaPHieu" alignment="0" pref="315" max="32767" attributes="0"/>
+                          <Component id="lblPrice" alignment="0" min="-2" pref="114" max="-2" attributes="0"/>
+                          <Component id="lblAmont" alignment="0" min="-2" pref="132" max="-2" attributes="0"/>
+                          <Component id="lblMaPhieu" alignment="0" min="-2" pref="110" max="-2" attributes="0"/>
+                          <Component id="txtAmont" alignment="0" pref="315" max="32767" attributes="0"/>
+                          <Component id="cmbNCC" alignment="0" max="32767" attributes="0"/>
                       </Group>
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="txtStartDate" alignment="0" min="-2" pref="315" max="-2" attributes="0"/>
+                          <Component id="lblStartDate" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtEndDate" alignment="0" min="-2" pref="315" max="-2" attributes="0"/>
+                          <Component id="txtNameBook" alignment="0" min="-2" pref="315" max="-2" attributes="0"/>
+                          <Component id="lblNameBook" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblEndDate" alignment="0" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <Group type="102" attributes="0">
+                      <Component id="btnCreate" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="btnUpdate" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="btnDelete" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="btnClear" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Component id="btnMoveFirst" min="-2" pref="55" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Component id="btnMovePrevious" min="-2" pref="59" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Component id="btnMoveNext" min="-2" pref="52" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+                      <Component id="btnMoveLast" min="-2" pref="49" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -321,41 +315,41 @@
                       <EmptySpace max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="1" attributes="0">
-                              <Component id="lblTheSo" min="-2" max="-2" attributes="0"/>
+                              <Component id="lblNameBook" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="txtTheSo" min="-2" max="-2" attributes="0"/>
+                              <Component id="txtNameBook" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="lblThoiDiemThanhToan" min="-2" max="-2" attributes="0"/>
+                              <Component id="lblStartDate" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="txtThoiDiemThanhToan" min="-2" max="-2" attributes="0"/>
+                              <Component id="txtStartDate" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="1" attributes="0">
                               <Component id="lblMaPhieu" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="txtMaPHieu" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="lblThoiDiemTao" min="-2" max="-2" attributes="0"/>
+                              <Component id="lblPrice" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="txtThoiDiemTao" min="-2" max="-2" attributes="0"/>
+                              <Component id="txtPrice" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="lblNguoiTao" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="lblStatus" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblEndDate" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblAmont" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="txtNguoiTao" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="txtThoiDiemTao1" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtEndDate" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtAmont" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
-                              <Component id="lblStatus2" min="-2" max="-2" attributes="0"/>
+                              <Component id="lblNameNCC" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jComboBox1" min="-2" pref="26" max="-2" attributes="0"/>
-                              <EmptySpace pref="178" max="32767" attributes="0"/>
+                              <Component id="cmbNCC" min="-2" pref="26" max="-2" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="btnCreate" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="btnUpdate" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -364,7 +358,7 @@
                               </Group>
                           </Group>
                           <Group type="102" attributes="0">
-                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                              <EmptySpace min="0" pref="221" max="32767" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="btnMoveLast" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="btnMoveNext" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -392,12 +386,12 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtMaPHieuActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JTextField" name="txtThoiDiemTao">
+            <Component class="javax.swing.JTextField" name="txtPrice">
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtThoiDiemTaoActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtPriceActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JLabel" name="lblThoiDiemTao">
+            <Component class="javax.swing.JLabel" name="lblPrice">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Segoe UI" size="14" style="1"/>
@@ -405,7 +399,7 @@
                 <Property name="text" type="java.lang.String" value="&#x110;&#x1a1;n gi&#xe1;"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="lblNguoiTao">
+            <Component class="javax.swing.JLabel" name="lblEndDate">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Segoe UI" size="14" style="1"/>
@@ -413,9 +407,9 @@
                 <Property name="text" type="java.lang.String" value="Ng&#xe0;y k&#x1ebf;t th&#xfa;c"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="txtNguoiTao">
+            <Component class="javax.swing.JTextField" name="txtEndDate">
             </Component>
-            <Component class="javax.swing.JLabel" name="lblThoiDiemThanhToan">
+            <Component class="javax.swing.JLabel" name="lblStartDate">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Segoe UI" size="14" style="1"/>
@@ -423,14 +417,14 @@
                 <Property name="text" type="java.lang.String" value="Ng&#xe0;y b&#x1eaf;t &#x111;&#x1ea7;u "/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="txtThoiDiemThanhToan">
+            <Component class="javax.swing.JTextField" name="txtStartDate">
             </Component>
-            <Component class="javax.swing.JTextField" name="txtTheSo">
+            <Component class="javax.swing.JTextField" name="txtNameBook">
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtTheSoActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtNameBookActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JLabel" name="lblTheSo">
+            <Component class="javax.swing.JLabel" name="lblNameBook">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Segoe UI" size="14" style="1"/>
@@ -438,7 +432,7 @@
                 <Property name="text" type="java.lang.String" value="T&#xea;n s&#xe1;ch"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="lblStatus">
+            <Component class="javax.swing.JLabel" name="lblAmont">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Segoe UI" size="14" style="1"/>
@@ -446,56 +440,12 @@
                 <Property name="text" type="java.lang.String" value="S&#x1ed1; l&#x1b0;&#x1ee3;ng nh&#x1ead;p"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JButton" name="btnCreate">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Segoe UI" size="18" style="3"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="T&#x1ea1;o m&#x1edb;i"/>
-              </Properties>
+            <Component class="javax.swing.JTextField" name="txtAmont">
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCreateActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtAmontActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JButton" name="btnUpdate">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Segoe UI" size="18" style="3"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="C&#x1ead;p Nh&#x1ead;p"/>
-              </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnUpdateActionPerformed"/>
-              </Events>
-            </Component>
-            <Component class="javax.swing.JButton" name="btnDelete">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Segoe UI" size="18" style="3"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="Xo&#xe1;"/>
-              </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnDeleteActionPerformed"/>
-              </Events>
-            </Component>
-            <Component class="javax.swing.JButton" name="btnClear">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Segoe UI" size="18" style="3"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="Nh&#x1ead;p m&#x1edb;i"/>
-              </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnClearActionPerformed"/>
-              </Events>
-            </Component>
-            <Component class="javax.swing.JTextField" name="txtThoiDiemTao1">
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtThoiDiemTao1ActionPerformed"/>
-              </Events>
-            </Component>
-            <Component class="javax.swing.JLabel" name="lblStatus2">
+            <Component class="javax.swing.JLabel" name="lblNameNCC">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Segoe UI" size="14" style="1"/>
@@ -503,7 +453,7 @@
                 <Property name="text" type="java.lang.String" value="Nh&#xe0; cung c&#x1ea5;p"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JComboBox" name="jComboBox1">
+            <Component class="javax.swing.JComboBox" name="cmbNCC">
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                   <StringArray count="4">
@@ -584,6 +534,62 @@
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnMoveLastActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JButton" name="btnCreate">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Segoe UI" size="12" style="3"/>
+                </Property>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/com/mycompany/projectone/icons/add.png"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="T&#x1ea1;o m&#x1edb;i"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCreateActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JButton" name="btnUpdate">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Segoe UI" size="12" style="3"/>
+                </Property>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/com/mycompany/projectone/icons/up.png"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="C&#x1ead;p Nh&#x1ead;p"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnUpdateActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JButton" name="btnDelete">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Segoe UI" size="12" style="3"/>
+                </Property>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/com/mycompany/projectone/icons/delete.png"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Xo&#xe1;"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnDeleteActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JButton" name="btnClear">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Segoe UI" size="12" style="3"/>
+                </Property>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/com/mycompany/projectone/icons/refresh.png"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Nh&#x1ead;p m&#x1edb;i"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnClearActionPerformed"/>
               </Events>
             </Component>
           </SubComponents>
