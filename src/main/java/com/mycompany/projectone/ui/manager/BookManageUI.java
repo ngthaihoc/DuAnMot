@@ -29,31 +29,31 @@ public class BookManageUI extends javax.swing.JFrame {
     private void initComponents() {
 
         pnlBieuMau = new javax.swing.JPanel();
-        lblMaPhieu = new javax.swing.JLabel();
-        txtMaPHieu = new javax.swing.JTextField();
+        lblNameBook = new javax.swing.JLabel();
+        txtNameBook = new javax.swing.JTextField();
         txtThoiDiemTao = new javax.swing.JTextField();
         lblThoiDiemTao = new javax.swing.JLabel();
-        lblNguoiTao = new javax.swing.JLabel();
-        txtNguoiTao = new javax.swing.JTextField();
-        lblThoiDiemThanhToan = new javax.swing.JLabel();
-        txtTheSo = new javax.swing.JTextField();
-        lblTheSo = new javax.swing.JLabel();
+        lblSupplier = new javax.swing.JLabel();
+        txtSupplier = new javax.swing.JTextField();
+        lblCategory = new javax.swing.JLabel();
+        txtAuth = new javax.swing.JTextField();
+        lblAuth = new javax.swing.JLabel();
         btnCreate = new javax.swing.JButton();
         btnUpdate = new javax.swing.JButton();
         btnDelete = new javax.swing.JButton();
         btnClear = new javax.swing.JButton();
-        jComboBox1 = new javax.swing.JComboBox<>();
-        txtThoiDiemTao1 = new javax.swing.JTextField();
-        lblThoiDiemTao1 = new javax.swing.JLabel();
+        cmbCategory = new javax.swing.JComboBox<>();
+        txtPrice = new javax.swing.JTextField();
+        lblPrice = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        lblMaPhieu.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
-        lblMaPhieu.setText("Tên sách");
+        lblNameBook.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
+        lblNameBook.setText("Tên sách");
 
-        txtMaPHieu.addActionListener(new java.awt.event.ActionListener() {
+        txtNameBook.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtMaPHieuActionPerformed(evt);
+                txtNameBookActionPerformed(evt);
             }
         });
 
@@ -66,20 +66,20 @@ public class BookManageUI extends javax.swing.JFrame {
         lblThoiDiemTao.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
         lblThoiDiemTao.setText("Thời điểm xuất bản");
 
-        lblNguoiTao.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
-        lblNguoiTao.setText("Nhà xuất bản");
+        lblSupplier.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
+        lblSupplier.setText("Nhà xuất bản");
 
-        lblThoiDiemThanhToan.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
-        lblThoiDiemThanhToan.setText("Thể loại");
+        lblCategory.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
+        lblCategory.setText("Thể loại");
 
-        txtTheSo.addActionListener(new java.awt.event.ActionListener() {
+        txtAuth.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtTheSoActionPerformed(evt);
+                txtAuthActionPerformed(evt);
             }
         });
 
-        lblTheSo.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
-        lblTheSo.setText("Tác giả");
+        lblAuth.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
+        lblAuth.setText("Tác giả");
 
         btnCreate.setFont(new java.awt.Font("Segoe UI", 3, 12)); // NOI18N
         btnCreate.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/projectone/icons/add.png"))); // NOI18N
@@ -117,17 +117,17 @@ public class BookManageUI extends javax.swing.JFrame {
             }
         });
 
-        jComboBox1.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cmbCategory.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
+        cmbCategory.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
-        txtThoiDiemTao1.addActionListener(new java.awt.event.ActionListener() {
+        txtPrice.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtThoiDiemTao1ActionPerformed(evt);
+                txtPriceActionPerformed(evt);
             }
         });
 
-        lblThoiDiemTao1.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
-        lblThoiDiemTao1.setText("Giá Bán");
+        lblPrice.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
+        lblPrice.setText("Giá Bán");
 
         javax.swing.GroupLayout pnlBieuMauLayout = new javax.swing.GroupLayout(pnlBieuMau);
         pnlBieuMau.setLayout(pnlBieuMauLayout);
@@ -137,21 +137,21 @@ public class BookManageUI extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(pnlBieuMauLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(txtThoiDiemTao, javax.swing.GroupLayout.PREFERRED_SIZE, 315, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblMaPhieu, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtMaPHieu, javax.swing.GroupLayout.PREFERRED_SIZE, 315, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtThoiDiemTao1, javax.swing.GroupLayout.PREFERRED_SIZE, 315, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblThoiDiemTao1, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblNameBook, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtNameBook, javax.swing.GroupLayout.PREFERRED_SIZE, 315, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtPrice, javax.swing.GroupLayout.PREFERRED_SIZE, 315, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblPrice, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblThoiDiemTao, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 51, Short.MAX_VALUE)
                 .addGroup(pnlBieuMauLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(lblThoiDiemThanhToan)
-                    .addComponent(txtNguoiTao, javax.swing.GroupLayout.PREFERRED_SIZE, 315, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtTheSo, javax.swing.GroupLayout.PREFERRED_SIZE, 315, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblTheSo, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblCategory)
+                    .addComponent(txtSupplier, javax.swing.GroupLayout.PREFERRED_SIZE, 315, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtAuth, javax.swing.GroupLayout.PREFERRED_SIZE, 315, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblAuth, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(pnlBieuMauLayout.createSequentialGroup()
-                        .addComponent(jComboBox1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(cmbCategory, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addContainerGap())
-                    .addComponent(lblNguoiTao, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(lblSupplier, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)))
             .addGroup(pnlBieuMauLayout.createSequentialGroup()
                 .addGap(27, 27, 27)
                 .addComponent(btnCreate)
@@ -169,17 +169,17 @@ public class BookManageUI extends javax.swing.JFrame {
                 .addContainerGap(10, Short.MAX_VALUE)
                 .addGroup(pnlBieuMauLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlBieuMauLayout.createSequentialGroup()
-                        .addComponent(lblTheSo)
+                        .addComponent(lblAuth)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtTheSo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtAuth, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(lblThoiDiemThanhToan)
+                        .addComponent(lblCategory)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(cmbCategory, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlBieuMauLayout.createSequentialGroup()
-                        .addComponent(lblMaPhieu)
+                        .addComponent(lblNameBook)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtMaPHieu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtNameBook, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(lblThoiDiemTao)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -187,14 +187,14 @@ public class BookManageUI extends javax.swing.JFrame {
                 .addGroup(pnlBieuMauLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(pnlBieuMauLayout.createSequentialGroup()
                         .addGap(18, 18, 18)
-                        .addComponent(lblNguoiTao)
+                        .addComponent(lblSupplier)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtNguoiTao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(txtSupplier, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(pnlBieuMauLayout.createSequentialGroup()
                         .addGap(10, 10, 10)
-                        .addComponent(lblThoiDiemTao1)
+                        .addComponent(lblPrice)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtThoiDiemTao1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(txtPrice, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 11, Short.MAX_VALUE)
                 .addGroup(pnlBieuMauLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnCreate)
@@ -228,17 +228,17 @@ public class BookManageUI extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txtMaPHieuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtMaPHieuActionPerformed
+    private void txtNameBookActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNameBookActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtMaPHieuActionPerformed
+    }//GEN-LAST:event_txtNameBookActionPerformed
 
     private void txtThoiDiemTaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtThoiDiemTaoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtThoiDiemTaoActionPerformed
 
-    private void txtTheSoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTheSoActionPerformed
+    private void txtAuthActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtAuthActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtTheSoActionPerformed
+    }//GEN-LAST:event_txtAuthActionPerformed
 
     private void btnCreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateActionPerformed
         // TODO add your handling code here:
@@ -260,9 +260,9 @@ public class BookManageUI extends javax.swing.JFrame {
         
     }//GEN-LAST:event_btnClearActionPerformed
 
-    private void txtThoiDiemTao1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtThoiDiemTao1ActionPerformed
+    private void txtPriceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPriceActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtThoiDiemTao1ActionPerformed
+    }//GEN-LAST:event_txtPriceActionPerformed
 
     /**
      * @param args the command line arguments
@@ -294,18 +294,18 @@ public class BookManageUI extends javax.swing.JFrame {
     private javax.swing.JButton btnCreate;
     private javax.swing.JButton btnDelete;
     private javax.swing.JButton btnUpdate;
-    private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JLabel lblMaPhieu;
-    private javax.swing.JLabel lblNguoiTao;
-    private javax.swing.JLabel lblTheSo;
+    private javax.swing.JComboBox<String> cmbCategory;
+    private javax.swing.JLabel lblAuth;
+    private javax.swing.JLabel lblCategory;
+    private javax.swing.JLabel lblNameBook;
+    private javax.swing.JLabel lblPrice;
+    private javax.swing.JLabel lblSupplier;
     private javax.swing.JLabel lblThoiDiemTao;
-    private javax.swing.JLabel lblThoiDiemTao1;
-    private javax.swing.JLabel lblThoiDiemThanhToan;
     private javax.swing.JPanel pnlBieuMau;
-    private javax.swing.JTextField txtMaPHieu;
-    private javax.swing.JTextField txtNguoiTao;
-    private javax.swing.JTextField txtTheSo;
+    private javax.swing.JTextField txtAuth;
+    private javax.swing.JTextField txtNameBook;
+    private javax.swing.JTextField txtPrice;
+    private javax.swing.JTextField txtSupplier;
     private javax.swing.JTextField txtThoiDiemTao;
-    private javax.swing.JTextField txtThoiDiemTao1;
     // End of variables declaration//GEN-END:variables
 }

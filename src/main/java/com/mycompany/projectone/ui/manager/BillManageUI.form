@@ -109,7 +109,7 @@
 
               <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
               <SubComponents>
-                <Component class="javax.swing.JTable" name="tblBills">
+                <Component class="javax.swing.JTable" name="tblDate">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Segoe UI" size="14" style="0"/>
@@ -129,7 +129,7 @@
                     <Property name="rowHeight" type="int" value="25"/>
                   </Properties>
                   <Events>
-                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="tblBillsMouseClicked"/>
+                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="tblDateMouseClicked"/>
                   </Events>
                 </Component>
               </SubComponents>
@@ -242,11 +242,11 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
-                              <Component id="lblMaPhieu" min="-2" pref="110" max="-2" attributes="0"/>
+                              <Component id="lblMaHoaDon" min="-2" pref="110" max="-2" attributes="0"/>
                               <EmptySpace min="242" max="32767" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
-                              <Component id="txtMaPHieu" min="-2" pref="315" max="-2" attributes="0"/>
+                              <Component id="txtMaHoaDon" min="-2" pref="315" max="-2" attributes="0"/>
                               <EmptySpace max="32767" attributes="0"/>
                               <Component id="btnFilter1" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
@@ -295,10 +295,10 @@
                               </Group>
                           </Group>
                           <Group type="102" attributes="0">
-                              <Component id="lblMaPhieu" min="-2" pref="16" max="-2" attributes="0"/>
+                              <Component id="lblMaHoaDon" min="-2" pref="16" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="txtMaPHieu" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="txtMaHoaDon" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="btnFilter1" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="btnFilter2" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
@@ -319,7 +319,7 @@
             </DimensionLayout>
           </Layout>
           <SubComponents>
-            <Component class="javax.swing.JLabel" name="lblMaPhieu">
+            <Component class="javax.swing.JLabel" name="lblMaHoaDon">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Segoe UI" size="14" style="3"/>
@@ -327,9 +327,9 @@
                 <Property name="text" type="java.lang.String" value="M&#xe3; ho&#xe1; &#x111;&#x1a1;n"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="txtMaPHieu">
+            <Component class="javax.swing.JTextField" name="txtMaHoaDon">
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtMaPHieuActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtMaHoaDonActionPerformed"/>
               </Events>
             </Component>
             <Component class="javax.swing.JButton" name="btnCreate">
@@ -395,7 +395,7 @@
 
               <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
               <SubComponents>
-                <Component class="javax.swing.JTable" name="tblByUser">
+                <Component class="javax.swing.JTable" name="tblDetails">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Segoe UI" size="14" style="3"/>

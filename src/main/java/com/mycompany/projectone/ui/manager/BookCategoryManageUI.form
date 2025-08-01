@@ -59,10 +59,10 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="txtThoiDiemTao" alignment="0" min="-2" pref="315" max="-2" attributes="0"/>
-                      <Component id="lblMaPhieu" alignment="0" min="-2" pref="62" max="-2" attributes="0"/>
-                      <Component id="txtMaPHieu" alignment="0" min="-2" pref="315" max="-2" attributes="0"/>
-                      <Component id="lblThoiDiemTao" alignment="0" min="-2" pref="114" max="-2" attributes="0"/>
+                      <Component id="txtNameCategory" alignment="0" min="-2" pref="315" max="-2" attributes="0"/>
+                      <Component id="txtMaCategory" alignment="0" min="-2" pref="315" max="-2" attributes="0"/>
+                      <Component id="lblNameCategory" alignment="0" min="-2" pref="114" max="-2" attributes="0"/>
+                      <Component id="lblMaCategory" alignment="0" min="-2" pref="124" max="-2" attributes="0"/>
                   </Group>
               </Group>
           </Group>
@@ -71,13 +71,13 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="32767" attributes="0"/>
-                  <Component id="lblMaPhieu" min="-2" max="-2" attributes="0"/>
+                  <Component id="lblMaCategory" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="txtMaPHieu" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtMaCategory" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="lblThoiDiemTao" min="-2" max="-2" attributes="0"/>
+                  <Component id="lblNameCategory" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="txtThoiDiemTao" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtNameCategory" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="separate" pref="54" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="btnCreate" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -91,7 +91,7 @@
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JLabel" name="lblMaPhieu">
+        <Component class="javax.swing.JLabel" name="lblMaCategory">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI" size="14" style="3"/>
@@ -99,17 +99,17 @@
             <Property name="text" type="java.lang.String" value="M&#xe3; th&#x1ec3; lo&#x1ea1;i"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="txtMaPHieu">
+        <Component class="javax.swing.JTextField" name="txtMaCategory">
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtMaPHieuActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtMaCategoryActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JTextField" name="txtThoiDiemTao">
+        <Component class="javax.swing.JTextField" name="txtNameCategory">
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtThoiDiemTaoActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtNameCategoryActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JLabel" name="lblThoiDiemTao">
+        <Component class="javax.swing.JLabel" name="lblNameCategory">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI" size="14" style="3"/>

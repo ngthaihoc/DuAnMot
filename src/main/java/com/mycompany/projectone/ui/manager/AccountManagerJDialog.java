@@ -34,7 +34,7 @@ public class AccountManagerJDialog extends javax.swing.JDialog {
         jScrollPane1 = new javax.swing.JScrollPane();
         tblAccounts = new javax.swing.JTable();
         btnDelete = new javax.swing.JButton();
-        btnDelete1 = new javax.swing.JButton();
+        btnClear = new javax.swing.JButton();
         lblAccountID = new javax.swing.JLabel();
         txtAccountID = new javax.swing.JTextField();
         pnlAccountCreation = new javax.swing.JPanel();
@@ -46,9 +46,9 @@ public class AccountManagerJDialog extends javax.swing.JDialog {
         rdoManager = new javax.swing.JRadioButton();
         rdoEmployee = new javax.swing.JRadioButton();
         lblStatus = new javax.swing.JLabel();
-        rdoInactive = new javax.swing.JRadioButton();
+        rdoUnActive = new javax.swing.JRadioButton();
         rdoInProgress = new javax.swing.JRadioButton();
-        btnActive = new javax.swing.JRadioButton();
+        rdoActive = new javax.swing.JRadioButton();
         btnAdd = new javax.swing.JButton();
         btnUpdate = new javax.swing.JButton();
         btnRefresh = new javax.swing.JButton();
@@ -91,12 +91,12 @@ public class AccountManagerJDialog extends javax.swing.JDialog {
             }
         });
 
-        btnDelete1.setFont(new java.awt.Font("Segoe UI", 3, 12)); // NOI18N
-        btnDelete1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/projectone/icons/refresh.png"))); // NOI18N
-        btnDelete1.setText("Làm mới");
-        btnDelete1.addActionListener(new java.awt.event.ActionListener() {
+        btnClear.setFont(new java.awt.Font("Segoe UI", 3, 12)); // NOI18N
+        btnClear.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/projectone/icons/refresh.png"))); // NOI18N
+        btnClear.setText("Làm mới");
+        btnClear.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnDelete1ActionPerformed(evt);
+                btnClearActionPerformed(evt);
             }
         });
 
@@ -112,7 +112,7 @@ public class AccountManagerJDialog extends javax.swing.JDialog {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btnDelete)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnDelete1)
+                .addComponent(btnClear)
                 .addContainerGap())
             .addGroup(pnlAccountListLayout.createSequentialGroup()
                 .addContainerGap()
@@ -133,7 +133,7 @@ public class AccountManagerJDialog extends javax.swing.JDialog {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(pnlAccountListLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnDelete)
-                    .addComponent(btnDelete1))
+                    .addComponent(btnClear))
                 .addGap(14, 14, 14))
         );
 
@@ -181,12 +181,12 @@ public class AccountManagerJDialog extends javax.swing.JDialog {
         lblStatus.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
         lblStatus.setText("Trạng thái");
 
-        groStatus.add(rdoInactive);
-        rdoInactive.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
-        rdoInactive.setText("Hủy");
-        rdoInactive.addActionListener(new java.awt.event.ActionListener() {
+        groStatus.add(rdoUnActive);
+        rdoUnActive.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
+        rdoUnActive.setText("Hủy");
+        rdoUnActive.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                rdoInactiveActionPerformed(evt);
+                rdoUnActiveActionPerformed(evt);
             }
         });
 
@@ -199,12 +199,12 @@ public class AccountManagerJDialog extends javax.swing.JDialog {
             }
         });
 
-        groStatus.add(btnActive);
-        btnActive.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
-        btnActive.setText("Hoạt động");
-        btnActive.addActionListener(new java.awt.event.ActionListener() {
+        groStatus.add(rdoActive);
+        rdoActive.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
+        rdoActive.setText("Hoạt động");
+        rdoActive.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnActiveActionPerformed(evt);
+                rdoActiveActionPerformed(evt);
             }
         });
 
@@ -306,9 +306,9 @@ public class AccountManagerJDialog extends javax.swing.JDialog {
                                 .addComponent(lblStatus, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(113, 113, 113))
                             .addGroup(pnlAccountCreationLayout.createSequentialGroup()
-                                .addComponent(rdoInactive)
+                                .addComponent(rdoUnActive)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(btnActive)
+                                .addComponent(rdoActive)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(rdoInProgress)))
                         .addContainerGap())
@@ -366,9 +366,9 @@ public class AccountManagerJDialog extends javax.swing.JDialog {
                         .addComponent(lblStatus)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(pnlAccountCreationLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(rdoInactive)
+                            .addComponent(rdoUnActive)
                             .addComponent(rdoInProgress)
-                            .addComponent(btnActive))))
+                            .addComponent(rdoActive))))
                 .addGap(18, 18, 18)
                 .addGroup(pnlAccountCreationLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -404,9 +404,9 @@ public class AccountManagerJDialog extends javax.swing.JDialog {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnDeleteActionPerformed
 
-    private void btnDelete1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDelete1ActionPerformed
+    private void btnClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClearActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnDelete1ActionPerformed
+    }//GEN-LAST:event_btnClearActionPerformed
 
     private void txtAccountNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtAccountNameActionPerformed
         // TODO add your handling code here:
@@ -424,17 +424,17 @@ public class AccountManagerJDialog extends javax.swing.JDialog {
         // TODO add your handling code here:
     }//GEN-LAST:event_rdoEmployeeActionPerformed
 
-    private void rdoInactiveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rdoInactiveActionPerformed
+    private void rdoUnActiveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rdoUnActiveActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_rdoInactiveActionPerformed
+    }//GEN-LAST:event_rdoUnActiveActionPerformed
 
     private void rdoInProgressActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rdoInProgressActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_rdoInProgressActionPerformed
 
-    private void btnActiveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnActiveActionPerformed
+    private void rdoActiveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rdoActiveActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnActiveActionPerformed
+    }//GEN-LAST:event_rdoActiveActionPerformed
 
     private void btnMoveLastActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMoveLastActionPerformed
         // TODO add your handling code here:
@@ -511,11 +511,10 @@ public class AccountManagerJDialog extends javax.swing.JDialog {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JRadioButton btnActive;
     private javax.swing.JButton btnAdd;
+    private javax.swing.JButton btnClear;
     private javax.swing.JButton btnDelet;
     private javax.swing.JButton btnDelete;
-    private javax.swing.JButton btnDelete1;
     private javax.swing.JButton btnMoveFirst;
     private javax.swing.JButton btnMoveLast;
     private javax.swing.JButton btnMoveNext;
@@ -532,10 +531,11 @@ public class AccountManagerJDialog extends javax.swing.JDialog {
     private javax.swing.JLabel lblStatus;
     private javax.swing.JPanel pnlAccountCreation;
     private javax.swing.JPanel pnlAccountList;
+    private javax.swing.JRadioButton rdoActive;
     private javax.swing.JRadioButton rdoEmployee;
     private javax.swing.JRadioButton rdoInProgress;
-    private javax.swing.JRadioButton rdoInactive;
     private javax.swing.JRadioButton rdoManager;
+    private javax.swing.JRadioButton rdoUnActive;
     private javax.swing.JTabbedPane tabs;
     private javax.swing.JTable tblAccounts;
     private javax.swing.JTextField txtAccountID;

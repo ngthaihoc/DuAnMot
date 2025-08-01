@@ -29,10 +29,10 @@ public class BookCategoryManageUI extends javax.swing.JFrame {
     private void initComponents() {
 
         pnlBieuMau = new javax.swing.JPanel();
-        lblMaPhieu = new javax.swing.JLabel();
-        txtMaPHieu = new javax.swing.JTextField();
-        txtThoiDiemTao = new javax.swing.JTextField();
-        lblThoiDiemTao = new javax.swing.JLabel();
+        lblMaCategory = new javax.swing.JLabel();
+        txtMaCategory = new javax.swing.JTextField();
+        txtNameCategory = new javax.swing.JTextField();
+        lblNameCategory = new javax.swing.JLabel();
         btnCreate = new javax.swing.JButton();
         btnUpdate = new javax.swing.JButton();
         btnDelete = new javax.swing.JButton();
@@ -40,23 +40,23 @@ public class BookCategoryManageUI extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        lblMaPhieu.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
-        lblMaPhieu.setText("Mã thể loại");
+        lblMaCategory.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
+        lblMaCategory.setText("Mã thể loại");
 
-        txtMaPHieu.addActionListener(new java.awt.event.ActionListener() {
+        txtMaCategory.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtMaPHieuActionPerformed(evt);
+                txtMaCategoryActionPerformed(evt);
             }
         });
 
-        txtThoiDiemTao.addActionListener(new java.awt.event.ActionListener() {
+        txtNameCategory.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtThoiDiemTaoActionPerformed(evt);
+                txtNameCategoryActionPerformed(evt);
             }
         });
 
-        lblThoiDiemTao.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
-        lblThoiDiemTao.setText("Tên thể loại");
+        lblNameCategory.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
+        lblNameCategory.setText("Tên thể loại");
 
         btnCreate.setFont(new java.awt.Font("Segoe UI", 3, 12)); // NOI18N
         btnCreate.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/projectone/icons/add.png"))); // NOI18N
@@ -110,22 +110,22 @@ public class BookCategoryManageUI extends javax.swing.JFrame {
             .addGroup(pnlBieuMauLayout.createSequentialGroup()
                 .addGap(35, 35, 35)
                 .addGroup(pnlBieuMauLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtThoiDiemTao, javax.swing.GroupLayout.PREFERRED_SIZE, 315, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblMaPhieu, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtMaPHieu, javax.swing.GroupLayout.PREFERRED_SIZE, 315, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblThoiDiemTao, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(txtNameCategory, javax.swing.GroupLayout.PREFERRED_SIZE, 315, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtMaCategory, javax.swing.GroupLayout.PREFERRED_SIZE, 315, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblNameCategory, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblMaCategory, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
         pnlBieuMauLayout.setVerticalGroup(
             pnlBieuMauLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlBieuMauLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(lblMaPhieu)
+                .addComponent(lblMaCategory)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtMaPHieu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtMaCategory, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(lblThoiDiemTao)
+                .addComponent(lblNameCategory)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtThoiDiemTao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtNameCategory, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 54, Short.MAX_VALUE)
                 .addGroup(pnlBieuMauLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnCreate)
@@ -173,13 +173,13 @@ public class BookCategoryManageUI extends javax.swing.JFrame {
 
     }//GEN-LAST:event_btnCreateActionPerformed
 
-    private void txtThoiDiemTaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtThoiDiemTaoActionPerformed
+    private void txtNameCategoryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNameCategoryActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtThoiDiemTaoActionPerformed
+    }//GEN-LAST:event_txtNameCategoryActionPerformed
 
-    private void txtMaPHieuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtMaPHieuActionPerformed
+    private void txtMaCategoryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtMaCategoryActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtMaPHieuActionPerformed
+    }//GEN-LAST:event_txtMaCategoryActionPerformed
 
     /**
      * @param args the command line arguments
@@ -211,10 +211,10 @@ public class BookCategoryManageUI extends javax.swing.JFrame {
     private javax.swing.JButton btnCreate;
     private javax.swing.JButton btnDelete;
     private javax.swing.JButton btnUpdate;
-    private javax.swing.JLabel lblMaPhieu;
-    private javax.swing.JLabel lblThoiDiemTao;
+    private javax.swing.JLabel lblMaCategory;
+    private javax.swing.JLabel lblNameCategory;
     private javax.swing.JPanel pnlBieuMau;
-    private javax.swing.JTextField txtMaPHieu;
-    private javax.swing.JTextField txtThoiDiemTao;
+    private javax.swing.JTextField txtMaCategory;
+    private javax.swing.JTextField txtNameCategory;
     // End of variables declaration//GEN-END:variables
 }

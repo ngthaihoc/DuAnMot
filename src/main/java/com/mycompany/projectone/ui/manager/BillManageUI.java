@@ -31,7 +31,7 @@ public class BillManageUI extends javax.swing.JFrame {
         tabsBills = new javax.swing.JTabbedPane();
         pblDanhSach = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        tblBills = new javax.swing.JTable();
+        tblDate = new javax.swing.JTable();
         btnCheckAll = new javax.swing.JButton();
         btnUncheckAll = new javax.swing.JButton();
         btnDeleteCheckedItems = new javax.swing.JButton();
@@ -42,14 +42,14 @@ public class BillManageUI extends javax.swing.JFrame {
         btnFilter = new javax.swing.JButton();
         cboTimeRanges = new javax.swing.JComboBox<>();
         pnlBieuMau = new javax.swing.JPanel();
-        lblMaPhieu = new javax.swing.JLabel();
-        txtMaPHieu = new javax.swing.JTextField();
+        lblMaHoaDon = new javax.swing.JLabel();
+        txtMaHoaDon = new javax.swing.JTextField();
         btnCreate = new javax.swing.JButton();
         btnUpdate = new javax.swing.JButton();
         btnDelete = new javax.swing.JButton();
         btnClear = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
-        tblByUser = new javax.swing.JTable();
+        tblDetails = new javax.swing.JTable();
         btnFilter1 = new javax.swing.JButton();
         btnFilter2 = new javax.swing.JButton();
         btnMoveFirst = new javax.swing.JButton();
@@ -59,8 +59,8 @@ public class BillManageUI extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        tblBills.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        tblBills.setModel(new javax.swing.table.DefaultTableModel(
+        tblDate.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        tblDate.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -83,13 +83,13 @@ public class BillManageUI extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        tblBills.setRowHeight(25);
-        tblBills.addMouseListener(new java.awt.event.MouseAdapter() {
+        tblDate.setRowHeight(25);
+        tblDate.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                tblBillsMouseClicked(evt);
+                tblDateMouseClicked(evt);
             }
         });
-        jScrollPane1.setViewportView(tblBills);
+        jScrollPane1.setViewportView(tblDate);
 
         btnCheckAll.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
         btnCheckAll.setText("Chọn tất cả");
@@ -194,12 +194,12 @@ public class BillManageUI extends javax.swing.JFrame {
 
         tabsBills.addTab("Tra cứu lịch sử hoá đơn", pblDanhSach);
 
-        lblMaPhieu.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
-        lblMaPhieu.setText("Mã hoá đơn");
+        lblMaHoaDon.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
+        lblMaHoaDon.setText("Mã hoá đơn");
 
-        txtMaPHieu.addActionListener(new java.awt.event.ActionListener() {
+        txtMaHoaDon.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtMaPHieuActionPerformed(evt);
+                txtMaHoaDonActionPerformed(evt);
             }
         });
 
@@ -239,8 +239,8 @@ public class BillManageUI extends javax.swing.JFrame {
             }
         });
 
-        tblByUser.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
-        tblByUser.setModel(new javax.swing.table.DefaultTableModel(
+        tblDetails.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
+        tblDetails.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -259,7 +259,7 @@ public class BillManageUI extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane2.setViewportView(tblByUser);
+        jScrollPane2.setViewportView(tblDetails);
 
         btnFilter1.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
         btnFilter1.setText("Lọc");
@@ -325,10 +325,10 @@ public class BillManageUI extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(pnlBieuMauLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(pnlBieuMauLayout.createSequentialGroup()
-                        .addComponent(lblMaPhieu, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(lblMaHoaDon, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(pnlBieuMauLayout.createSequentialGroup()
-                        .addComponent(txtMaPHieu, javax.swing.GroupLayout.PREFERRED_SIZE, 315, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtMaHoaDon, javax.swing.GroupLayout.PREFERRED_SIZE, 315, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(btnFilter1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -369,10 +369,10 @@ public class BillManageUI extends javax.swing.JFrame {
                             .addComponent(btnMovePrevious)
                             .addComponent(btnMoveFirst)))
                     .addGroup(pnlBieuMauLayout.createSequentialGroup()
-                        .addComponent(lblMaPhieu, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(lblMaHoaDon, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(pnlBieuMauLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txtMaPHieu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtMaHoaDon, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(btnFilter1)
                             .addComponent(btnFilter2))
                         .addGap(3, 3, 3)
@@ -426,9 +426,9 @@ public class BillManageUI extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_cboTimeRangesItemStateChanged
 
-    private void tblBillsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblBillsMouseClicked
+    private void tblDateMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblDateMouseClicked
         // TODO add your handling code here:
-    }//GEN-LAST:event_tblBillsMouseClicked
+    }//GEN-LAST:event_tblDateMouseClicked
 
     private void btnClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClearActionPerformed
         // TODO add your handling code here:
@@ -446,9 +446,9 @@ public class BillManageUI extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnCreateActionPerformed
 
-    private void txtMaPHieuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtMaPHieuActionPerformed
+    private void txtMaHoaDonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtMaHoaDonActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtMaPHieuActionPerformed
+    }//GEN-LAST:event_txtMaHoaDonActionPerformed
 
     private void btnFilter1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFilter1ActionPerformed
         // TODO add your handling code here:
@@ -519,14 +519,14 @@ public class BillManageUI extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JLabel lblBegin;
     private javax.swing.JLabel lblEnd;
-    private javax.swing.JLabel lblMaPhieu;
+    private javax.swing.JLabel lblMaHoaDon;
     private javax.swing.JPanel pblDanhSach;
     private javax.swing.JPanel pnlBieuMau;
     private javax.swing.JTabbedPane tabsBills;
-    private javax.swing.JTable tblBills;
-    private javax.swing.JTable tblByUser;
+    private javax.swing.JTable tblDate;
+    private javax.swing.JTable tblDetails;
     private javax.swing.JTextField txtBegin;
     private javax.swing.JTextField txtEnd;
-    private javax.swing.JTextField txtMaPHieu;
+    private javax.swing.JTextField txtMaHoaDon;
     // End of variables declaration//GEN-END:variables
 }

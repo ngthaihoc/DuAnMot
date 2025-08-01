@@ -28,14 +28,14 @@ public class CreateBillUI extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        lblMaPhieu = new javax.swing.JLabel();
-        txtMaPHieu = new javax.swing.JTextField();
-        txtThoiDiemTao = new javax.swing.JTextField();
-        lblThoiDiemTao = new javax.swing.JLabel();
-        lblThoiDiemThanhToan = new javax.swing.JLabel();
-        txtThoiDiemThanhToan = new javax.swing.JTextField();
-        txtTheSo = new javax.swing.JTextField();
-        lblTheSo = new javax.swing.JLabel();
+        lblMaHoaDon = new javax.swing.JLabel();
+        txtMaHoaDon = new javax.swing.JTextField();
+        txtTenKhachHang = new javax.swing.JTextField();
+        lblTenKH = new javax.swing.JLabel();
+        lblDataCreate = new javax.swing.JLabel();
+        txtDateCreate = new javax.swing.JTextField();
+        txtTenNV = new javax.swing.JTextField();
+        lblTenNhanVien = new javax.swing.JLabel();
         lblStatus = new javax.swing.JLabel();
         btnCreate = new javax.swing.JButton();
         btnUpdate = new javax.swing.JButton();
@@ -45,46 +45,46 @@ public class CreateBillUI extends javax.swing.JFrame {
         btnMovePrevious = new javax.swing.JButton();
         btnMoveNext = new javax.swing.JButton();
         btnMoveLast = new javax.swing.JButton();
-        lblStatus2 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        lblPTTToán = new javax.swing.JLabel();
+        cmbPTTToán = new javax.swing.JComboBox<>();
         jComboBox2 = new javax.swing.JComboBox<>();
-        lblThoiDiemThanhToan1 = new javax.swing.JLabel();
+        lblNote = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextPane1 = new javax.swing.JTextPane();
+        pnlNote = new javax.swing.JTextPane();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(227, 242, 253));
         setForeground(new java.awt.Color(13, 71, 161));
 
-        lblMaPhieu.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
-        lblMaPhieu.setText("Mã hoá đơn ");
+        lblMaHoaDon.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
+        lblMaHoaDon.setText("Mã hoá đơn ");
 
-        txtMaPHieu.addActionListener(new java.awt.event.ActionListener() {
+        txtMaHoaDon.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtMaPHieuActionPerformed(evt);
+                txtMaHoaDonActionPerformed(evt);
             }
         });
 
-        txtThoiDiemTao.addActionListener(new java.awt.event.ActionListener() {
+        txtTenKhachHang.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtThoiDiemTaoActionPerformed(evt);
+                txtTenKhachHangActionPerformed(evt);
             }
         });
 
-        lblThoiDiemTao.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
-        lblThoiDiemTao.setText("Tên khách hàng");
+        lblTenKH.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
+        lblTenKH.setText("Tên khách hàng");
 
-        lblThoiDiemThanhToan.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
-        lblThoiDiemThanhToan.setText("Ngày tạo hoá đơn");
+        lblDataCreate.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
+        lblDataCreate.setText("Ngày tạo hoá đơn");
 
-        txtTheSo.addActionListener(new java.awt.event.ActionListener() {
+        txtTenNV.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtTheSoActionPerformed(evt);
+                txtTenNVActionPerformed(evt);
             }
         });
 
-        lblTheSo.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
-        lblTheSo.setText("Tên nhân viên");
+        lblTenNhanVien.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
+        lblTenNhanVien.setText("Tên nhân viên");
 
         lblStatus.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
         lblStatus.setText("Chương trình giảm giá ( Nếu có )");
@@ -123,7 +123,7 @@ public class CreateBillUI extends javax.swing.JFrame {
         });
 
         btnClear.setFont(new java.awt.Font("Segoe UI", 3, 12)); // NOI18N
-        btnClear.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/projectone/icons/save.png"))); // NOI18N
+        btnClear.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/projectone/icons/refresh.png"))); // NOI18N
         btnClear.setText("Nhập mới");
         btnClear.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnClear.setFocusPainted(false);
@@ -173,17 +173,17 @@ public class CreateBillUI extends javax.swing.JFrame {
             }
         });
 
-        lblStatus2.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
-        lblStatus2.setText("Phương thúc thanh toán");
+        lblPTTToán.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
+        lblPTTToán.setText("Phương thúc thanh toán");
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cmbPTTToán.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
-        lblThoiDiemThanhToan1.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
-        lblThoiDiemThanhToan1.setText("Ghi chú");
+        lblNote.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
+        lblNote.setText("Ghi chú");
 
-        jScrollPane1.setViewportView(jTextPane1);
+        jScrollPane1.setViewportView(pnlNote);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -195,20 +195,20 @@ public class CreateBillUI extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(txtThoiDiemTao, javax.swing.GroupLayout.DEFAULT_SIZE, 315, Short.MAX_VALUE)
-                                .addComponent(txtMaPHieu, javax.swing.GroupLayout.DEFAULT_SIZE, 315, Short.MAX_VALUE)
-                                .addComponent(lblThoiDiemTao, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(lblMaPhieu, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(txtTenKhachHang, javax.swing.GroupLayout.DEFAULT_SIZE, 315, Short.MAX_VALUE)
+                                .addComponent(txtMaHoaDon, javax.swing.GroupLayout.DEFAULT_SIZE, 315, Short.MAX_VALUE)
+                                .addComponent(lblTenKH, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(lblMaHoaDon, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(lblStatus, javax.swing.GroupLayout.PREFERRED_SIZE, 238, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jComboBox2, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lblStatus2)
-                            .addComponent(txtThoiDiemThanhToan, javax.swing.GroupLayout.PREFERRED_SIZE, 315, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lblThoiDiemThanhToan)
-                            .addComponent(txtTheSo, javax.swing.GroupLayout.PREFERRED_SIZE, 315, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lblTheSo)))
+                            .addComponent(cmbPTTToán, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblPTTToán)
+                            .addComponent(txtDateCreate, javax.swing.GroupLayout.PREFERRED_SIZE, 315, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblDataCreate)
+                            .addComponent(txtTenNV, javax.swing.GroupLayout.PREFERRED_SIZE, 315, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblTenNhanVien)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(6, 6, 6)
                         .addComponent(btnCreate, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -230,7 +230,7 @@ public class CreateBillUI extends javax.swing.JFrame {
                         .addComponent(jScrollPane1)
                         .addContainerGap())
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(lblThoiDiemThanhToan1)
+                        .addComponent(lblNote)
                         .addGap(0, 0, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
@@ -239,21 +239,21 @@ public class CreateBillUI extends javax.swing.JFrame {
                 .addGap(13, 13, 13)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(lblTheSo)
+                        .addComponent(lblTenNhanVien)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtTheSo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtTenNV, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(lblThoiDiemThanhToan)
+                        .addComponent(lblDataCreate)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtThoiDiemThanhToan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(txtDateCreate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(lblMaPhieu)
+                        .addComponent(lblMaHoaDon)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtMaPHieu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtMaHoaDon, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(lblThoiDiemTao)
+                        .addComponent(lblTenKH)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtThoiDiemTao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(txtTenKhachHang, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
@@ -261,40 +261,41 @@ public class CreateBillUI extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(lblStatus2)
+                        .addComponent(lblPTTToán)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(cmbPTTToán, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(lblThoiDiemThanhToan1)
+                .addComponent(lblNote)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(19, 19, 19)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnDelete, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnMoveLast)
-                    .addComponent(btnMoveNext)
-                    .addComponent(btnMovePrevious)
-                    .addComponent(btnMoveFirst)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnCreate, javax.swing.GroupLayout.PREFERRED_SIZE, 48, Short.MAX_VALUE)
                     .addComponent(btnUpdate, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                    .addComponent(btnClear, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                    .addComponent(btnClear, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(btnDelete, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnMoveLast)
+                        .addComponent(btnMoveNext)
+                        .addComponent(btnMovePrevious)
+                        .addComponent(btnMoveFirst)))
                 .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txtMaPHieuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtMaPHieuActionPerformed
+    private void txtMaHoaDonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtMaHoaDonActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtMaPHieuActionPerformed
+    }//GEN-LAST:event_txtMaHoaDonActionPerformed
 
-    private void txtThoiDiemTaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtThoiDiemTaoActionPerformed
+    private void txtTenKhachHangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTenKhachHangActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtThoiDiemTaoActionPerformed
+    }//GEN-LAST:event_txtTenKhachHangActionPerformed
 
-    private void txtTheSoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTheSoActionPerformed
+    private void txtTenNVActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTenNVActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtTheSoActionPerformed
+    }//GEN-LAST:event_txtTenNVActionPerformed
 
     private void btnCreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateActionPerformed
         // TODO add your handling code here:
@@ -362,20 +363,20 @@ public class CreateBillUI extends javax.swing.JFrame {
     private javax.swing.JButton btnMoveNext;
     private javax.swing.JButton btnMovePrevious;
     private javax.swing.JButton btnUpdate;
-    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JComboBox<String> cmbPTTToán;
     private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextPane jTextPane1;
-    private javax.swing.JLabel lblMaPhieu;
+    private javax.swing.JLabel lblDataCreate;
+    private javax.swing.JLabel lblMaHoaDon;
+    private javax.swing.JLabel lblNote;
+    private javax.swing.JLabel lblPTTToán;
     private javax.swing.JLabel lblStatus;
-    private javax.swing.JLabel lblStatus2;
-    private javax.swing.JLabel lblTheSo;
-    private javax.swing.JLabel lblThoiDiemTao;
-    private javax.swing.JLabel lblThoiDiemThanhToan;
-    private javax.swing.JLabel lblThoiDiemThanhToan1;
-    private javax.swing.JTextField txtMaPHieu;
-    private javax.swing.JTextField txtTheSo;
-    private javax.swing.JTextField txtThoiDiemTao;
-    private javax.swing.JTextField txtThoiDiemThanhToan;
+    private javax.swing.JLabel lblTenKH;
+    private javax.swing.JLabel lblTenNhanVien;
+    private javax.swing.JTextPane pnlNote;
+    private javax.swing.JTextField txtDateCreate;
+    private javax.swing.JTextField txtMaHoaDon;
+    private javax.swing.JTextField txtTenKhachHang;
+    private javax.swing.JTextField txtTenNV;
     // End of variables declaration//GEN-END:variables
 }
