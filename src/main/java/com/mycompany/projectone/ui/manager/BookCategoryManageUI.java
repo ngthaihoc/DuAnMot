@@ -152,73 +152,21 @@ public class BookCategoryManageUI extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClearActionPerformed
-        // TODO add your handling code here:
-        this.clear();
+
     }//GEN-LAST:event_btnClearActionPerformed
 
     private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
         // TODO add your handling code here:
-        this.delete();
+      
     }//GEN-LAST:event_btnDeleteActionPerformed
 
     private void btnUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateActionPerformed
         // TODO add your handling code here:
-        String cardID = txtMaPHieu.getText();
-        String cardNum = txtTheSo.getText();
-        String username = txtNguoiTao.getText();
-        String checkin = txtThoiDiemTao.getText();
-        String checkout = txtThoiDiemThanhToan.getText();
-        if (!XVali.usernamedangnhap(username)) {
-            JOptionPane.showMessageDialog(null, "Vui long nhap dung ten nguoi tao phieu");
-            return;
-        }
-        if (!XVali.checkInteger(cardNum)) {
-            JOptionPane.showMessageDialog(null, "Vui lòng nhập đúng số của thẻ");
-            return;
-        }
-        if (!XVali.checkidThe(cardID)) {
-            JOptionPane.showMessageDialog(null, "Vui lòng nhập đúng ID của thẻ theo định dạng 100 + 1 số nguyên\n ví dụ : 1001");
-            return;
-        }
-        if (!XVali.checktime(checkin)) {
-            JOptionPane.showMessageDialog(null, "Vui lòng nhập thời gian theo định dạng yyyy-MM-dd HH:mm:ss \n ví dụ : 2025/09/26 16:45:01");
-            return;
-        }
-        if (!XVali.checktime(checkout)) {
-            JOptionPane.showMessageDialog(null, "Vui lòng nhập thời gian theo định dạng yyyy-MM-dd HH:mm:ss \n ví dụ : 2025/09/26 16:45:01");
-            return;
-        }
-        this.update();
+
     }//GEN-LAST:event_btnUpdateActionPerformed
 
     private void btnCreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateActionPerformed
-        // TODO add your handling code here:
-        String cardID = txtMaPHieu.getText();
-        String cardNum = txtTheSo.getText();
-        String username = txtNguoiTao.getText();
-        String checkin = txtThoiDiemTao.getText();
-        String checkout = txtThoiDiemThanhToan.getText();
-        if (!XVali.usernamedangnhap(username)) {
-            JOptionPane.showMessageDialog(null, "Vui long nhap dung ten nguoi tao phieu");
-            return;
-        }
-        if (!XVali.checkInteger(cardNum)) {
-            JOptionPane.showMessageDialog(null, "Vui lòng nhập đúng số của thẻ");
-            return;
-        }
-        if (!XVali.checkidThe(cardID)) {
-            JOptionPane.showMessageDialog(null, "Vui lòng nhập đúng ID của thẻ theo định dạng 100 + 1 số nguyên\n ví dụ : 1001");
-            return;
-        }
-        if (!XVali.checktime(checkin)) {
-            JOptionPane.showMessageDialog(null, "Vui lòng nhập thời gian checkin theo định dạng yyyy-MM-dd HH:mm:ss \n ví dụ : 2025/09/26 16:45:01");
-            return;
-        }
-        if (!XVali.checktime(checkout)) {
-            JOptionPane.showMessageDialog(null, "Vui lòng nhập thời gian checkout theo định dạng yyyy-MM-dd HH:mm:ss \n ví dụ : 2025/09/26 16:45:01");
-            return;
-        }
-        this.create();
+
     }//GEN-LAST:event_btnCreateActionPerformed
 
     private void txtThoiDiemTaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtThoiDiemTaoActionPerformed

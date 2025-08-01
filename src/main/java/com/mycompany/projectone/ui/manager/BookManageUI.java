@@ -28,21 +28,276 @@ public class BookManageUI extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        pnlBieuMau = new javax.swing.JPanel();
+        lblMaPhieu = new javax.swing.JLabel();
+        txtMaPHieu = new javax.swing.JTextField();
+        txtThoiDiemTao = new javax.swing.JTextField();
+        lblThoiDiemTao = new javax.swing.JLabel();
+        lblNguoiTao = new javax.swing.JLabel();
+        txtNguoiTao = new javax.swing.JTextField();
+        lblThoiDiemThanhToan = new javax.swing.JLabel();
+        txtTheSo = new javax.swing.JTextField();
+        lblTheSo = new javax.swing.JLabel();
+        btnCreate = new javax.swing.JButton();
+        btnUpdate = new javax.swing.JButton();
+        btnDelete = new javax.swing.JButton();
+        btnClear = new javax.swing.JButton();
+        jComboBox1 = new javax.swing.JComboBox<>();
+        txtThoiDiemTao1 = new javax.swing.JTextField();
+        lblThoiDiemTao1 = new javax.swing.JLabel();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        lblMaPhieu.setText("Tên sách");
+
+        txtMaPHieu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtMaPHieuActionPerformed(evt);
+            }
+        });
+
+        txtThoiDiemTao.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtThoiDiemTaoActionPerformed(evt);
+            }
+        });
+
+        lblThoiDiemTao.setText("Thời điểm xuất bản");
+
+        lblNguoiTao.setText("Nhà xuất bản");
+
+        lblThoiDiemThanhToan.setText("Thể loại");
+
+        txtTheSo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtTheSoActionPerformed(evt);
+            }
+        });
+
+        lblTheSo.setText("Tác giả");
+
+        btnCreate.setText("Tạo mới");
+        btnCreate.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCreateActionPerformed(evt);
+            }
+        });
+
+        btnUpdate.setText("Cập Nhập");
+        btnUpdate.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnUpdateActionPerformed(evt);
+            }
+        });
+
+        btnDelete.setText("Xoá");
+        btnDelete.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDeleteActionPerformed(evt);
+            }
+        });
+
+        btnClear.setText("Nhập mới");
+        btnClear.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnClearActionPerformed(evt);
+            }
+        });
+
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
+        txtThoiDiemTao1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtThoiDiemTao1ActionPerformed(evt);
+            }
+        });
+
+        lblThoiDiemTao1.setText("Giá Bán");
+
+        javax.swing.GroupLayout pnlBieuMauLayout = new javax.swing.GroupLayout(pnlBieuMau);
+        pnlBieuMau.setLayout(pnlBieuMauLayout);
+        pnlBieuMauLayout.setHorizontalGroup(
+            pnlBieuMauLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlBieuMauLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(pnlBieuMauLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(txtThoiDiemTao, javax.swing.GroupLayout.PREFERRED_SIZE, 315, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblMaPhieu, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtMaPHieu, javax.swing.GroupLayout.PREFERRED_SIZE, 315, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblThoiDiemTao, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtThoiDiemTao1, javax.swing.GroupLayout.PREFERRED_SIZE, 315, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblThoiDiemTao1, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 51, Short.MAX_VALUE)
+                .addGroup(pnlBieuMauLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(lblThoiDiemThanhToan)
+                    .addComponent(lblNguoiTao, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtNguoiTao, javax.swing.GroupLayout.PREFERRED_SIZE, 315, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtTheSo, javax.swing.GroupLayout.PREFERRED_SIZE, 315, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblTheSo, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(pnlBieuMauLayout.createSequentialGroup()
+                        .addComponent(jComboBox1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addContainerGap())))
+            .addGroup(pnlBieuMauLayout.createSequentialGroup()
+                .addGap(27, 27, 27)
+                .addComponent(btnCreate)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnUpdate)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnDelete)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnClear)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+        pnlBieuMauLayout.setVerticalGroup(
+            pnlBieuMauLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlBieuMauLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(pnlBieuMauLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlBieuMauLayout.createSequentialGroup()
+                        .addComponent(lblTheSo)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtTheSo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(lblThoiDiemThanhToan)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlBieuMauLayout.createSequentialGroup()
+                        .addComponent(lblMaPhieu)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtMaPHieu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(lblThoiDiemTao)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtThoiDiemTao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGroup(pnlBieuMauLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnlBieuMauLayout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(lblNguoiTao)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtNguoiTao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(pnlBieuMauLayout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addComponent(lblThoiDiemTao1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtThoiDiemTao1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
+                .addGroup(pnlBieuMauLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnCreate)
+                    .addComponent(btnUpdate)
+                    .addComponent(btnDelete)
+                    .addComponent(btnClear))
+                .addContainerGap())
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGap(0, 687, Short.MAX_VALUE)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(pnlBieuMau, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGap(0, 458, Short.MAX_VALUE)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(pnlBieuMau, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void txtMaPHieuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtMaPHieuActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtMaPHieuActionPerformed
+
+    private void txtThoiDiemTaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtThoiDiemTaoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtThoiDiemTaoActionPerformed
+
+    private void txtTheSoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTheSoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtTheSoActionPerformed
+
+    private void btnCreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateActionPerformed
+        // TODO add your handling code here:
+        String cardID = txtMaPHieu.getText();
+        String cardNum = txtTheSo.getText();
+        String username = txtNguoiTao.getText();
+        String checkin = txtThoiDiemTao.getText();
+        String checkout = txtThoiDiemThanhToan.getText();
+        if (!XVali.usernamedangnhap(username)) {
+            JOptionPane.showMessageDialog(null, "Vui long nhap dung ten nguoi tao phieu");
+            return;
+        }
+        if (!XVali.checkInteger(cardNum)) {
+            JOptionPane.showMessageDialog(null, "Vui lòng nhập đúng số của thẻ");
+            return;
+        }
+        if (!XVali.checkidThe(cardID)) {
+            JOptionPane.showMessageDialog(null, "Vui lòng nhập đúng ID của thẻ theo định dạng 100 + 1 số nguyên\n ví dụ : 1001");
+            return;
+        }
+        if (!XVali.checktime(checkin)) {
+            JOptionPane.showMessageDialog(null, "Vui lòng nhập thời gian checkin theo định dạng yyyy-MM-dd HH:mm:ss \n ví dụ : 2025/09/26 16:45:01");
+            return;
+        }
+        if (!XVali.checktime(checkout)) {
+            JOptionPane.showMessageDialog(null, "Vui lòng nhập thời gian checkout theo định dạng yyyy-MM-dd HH:mm:ss \n ví dụ : 2025/09/26 16:45:01");
+            return;
+        }
+        this.create();
+    }//GEN-LAST:event_btnCreateActionPerformed
+
+    private void btnUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateActionPerformed
+        // TODO add your handling code here:
+        String cardID = txtMaPHieu.getText();
+        String cardNum = txtTheSo.getText();
+        String username = txtNguoiTao.getText();
+        String checkin = txtThoiDiemTao.getText();
+        String checkout = txtThoiDiemThanhToan.getText();
+        if (!XVali.usernamedangnhap(username)) {
+            JOptionPane.showMessageDialog(null, "Vui long nhap dung ten nguoi tao phieu");
+            return;
+        }
+        if (!XVali.checkInteger(cardNum)) {
+            JOptionPane.showMessageDialog(null, "Vui lòng nhập đúng số của thẻ");
+            return;
+        }
+        if (!XVali.checkidThe(cardID)) {
+            JOptionPane.showMessageDialog(null, "Vui lòng nhập đúng ID của thẻ theo định dạng 100 + 1 số nguyên\n ví dụ : 1001");
+            return;
+        }
+        if (!XVali.checktime(checkin)) {
+            JOptionPane.showMessageDialog(null, "Vui lòng nhập thời gian theo định dạng yyyy-MM-dd HH:mm:ss \n ví dụ : 2025/09/26 16:45:01");
+            return;
+        }
+        if (!XVali.checktime(checkout)) {
+            JOptionPane.showMessageDialog(null, "Vui lòng nhập thời gian theo định dạng yyyy-MM-dd HH:mm:ss \n ví dụ : 2025/09/26 16:45:01");
+            return;
+        }
+        this.update();
+    }//GEN-LAST:event_btnUpdateActionPerformed
+
+    private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
+        // TODO add your handling code here:
+        this.delete();
+    }//GEN-LAST:event_btnDeleteActionPerformed
+
+    private void btnClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClearActionPerformed
+        // TODO add your handling code here:
+        this.clear();
+    }//GEN-LAST:event_btnClearActionPerformed
+
+    private void txtThoiDiemTao1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtThoiDiemTao1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtThoiDiemTao1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -70,5 +325,22 @@ public class BookManageUI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnClear;
+    private javax.swing.JButton btnCreate;
+    private javax.swing.JButton btnDelete;
+    private javax.swing.JButton btnUpdate;
+    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JLabel lblMaPhieu;
+    private javax.swing.JLabel lblNguoiTao;
+    private javax.swing.JLabel lblTheSo;
+    private javax.swing.JLabel lblThoiDiemTao;
+    private javax.swing.JLabel lblThoiDiemTao1;
+    private javax.swing.JLabel lblThoiDiemThanhToan;
+    private javax.swing.JPanel pnlBieuMau;
+    private javax.swing.JTextField txtMaPHieu;
+    private javax.swing.JTextField txtNguoiTao;
+    private javax.swing.JTextField txtTheSo;
+    private javax.swing.JTextField txtThoiDiemTao;
+    private javax.swing.JTextField txtThoiDiemTao1;
     // End of variables declaration//GEN-END:variables
 }

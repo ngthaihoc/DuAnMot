@@ -91,20 +91,20 @@ public class EmployeeMangeUI extends javax.swing.JFrame {
 
         jLabel7.setText("Ghi chú");
 
-        jButton1.setText("jButton1");
+        jButton1.setText("Xoá");
 
-        jButton2.setText("jButton1");
+        jButton2.setText("Tìm Kiếm");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
             }
         });
 
-        jButton3.setText("jButton1");
+        jButton3.setText("Sửa");
 
-        jButton4.setText("jButton1");
+        jButton4.setText("Thêm");
 
-        jButton5.setText("jButton1");
+        jButton5.setText("Làm mới");
 
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
@@ -153,7 +153,7 @@ public class EmployeeMangeUI extends javax.swing.JFrame {
                         .addComponent(jRadioButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(jRadioButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 64, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 63, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jButton1, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jButton3, javax.swing.GroupLayout.Alignment.TRAILING)
@@ -162,7 +162,7 @@ public class EmployeeMangeUI extends javax.swing.JFrame {
                 .addGap(31, 31, 31))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                    .addContainerGap(533, Short.MAX_VALUE)
+                    .addContainerGap(528, Short.MAX_VALUE)
                     .addComponent(jButton2)
                     .addGap(30, 30, 30)))
         );
