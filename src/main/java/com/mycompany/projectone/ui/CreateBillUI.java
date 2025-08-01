@@ -54,6 +54,7 @@ public class CreateBillUI extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        lblMaPhieu.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
         lblMaPhieu.setText("Mã hoá đơn ");
 
         txtMaPHieu.addActionListener(new java.awt.event.ActionListener() {
@@ -68,8 +69,10 @@ public class CreateBillUI extends javax.swing.JFrame {
             }
         });
 
+        lblThoiDiemTao.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
         lblThoiDiemTao.setText("Tên khách hàng");
 
+        lblThoiDiemThanhToan.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
         lblThoiDiemThanhToan.setText("Ngày tạo hoá đơn");
 
         txtTheSo.addActionListener(new java.awt.event.ActionListener() {
@@ -78,72 +81,100 @@ public class CreateBillUI extends javax.swing.JFrame {
             }
         });
 
+        lblTheSo.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
         lblTheSo.setText("Tên nhân viên");
 
+        lblStatus.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
         lblStatus.setText("Chương trình giảm giá ( Nếu có )");
 
+        btnCreate.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
         btnCreate.setText("Tạo mới");
+        btnCreate.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnCreate.setFocusPainted(false);
         btnCreate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCreateActionPerformed(evt);
             }
         });
 
+        btnUpdate.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
         btnUpdate.setText("Cập Nhập");
+        btnUpdate.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnUpdate.setFocusPainted(false);
         btnUpdate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnUpdateActionPerformed(evt);
             }
         });
 
+        btnDelete.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
         btnDelete.setText("Xoá");
+        btnDelete.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnDelete.setFocusPainted(false);
         btnDelete.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnDeleteActionPerformed(evt);
             }
         });
 
+        btnClear.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
         btnClear.setText("Nhập mới");
+        btnClear.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnClear.setFocusPainted(false);
         btnClear.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnClearActionPerformed(evt);
             }
         });
 
+        btnMoveFirst.setFont(new java.awt.Font("Segoe UI", 3, 12)); // NOI18N
         btnMoveFirst.setText("|<");
+        btnMoveFirst.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnMoveFirst.setFocusPainted(false);
         btnMoveFirst.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnMoveFirstActionPerformed(evt);
             }
         });
 
+        btnMovePrevious.setFont(new java.awt.Font("Segoe UI", 3, 12)); // NOI18N
         btnMovePrevious.setText("<<");
+        btnMovePrevious.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnMovePrevious.setFocusPainted(false);
         btnMovePrevious.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnMovePreviousActionPerformed(evt);
             }
         });
 
+        btnMoveNext.setFont(new java.awt.Font("Segoe UI", 3, 12)); // NOI18N
         btnMoveNext.setText(">>");
+        btnMoveNext.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnMoveNext.setFocusPainted(false);
         btnMoveNext.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnMoveNextActionPerformed(evt);
             }
         });
 
+        btnMoveLast.setFont(new java.awt.Font("Segoe UI", 3, 12)); // NOI18N
         btnMoveLast.setText(">|");
+        btnMoveLast.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnMoveLast.setFocusPainted(false);
         btnMoveLast.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnMoveLastActionPerformed(evt);
             }
         });
 
+        lblStatus2.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
         lblStatus2.setText("Phương thúc thanh toán");
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
+        lblThoiDiemThanhToan1.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
         lblThoiDiemThanhToan1.setText("Ghi chú");
 
         jScrollPane1.setViewportView(jTextPane1);
@@ -153,49 +184,42 @@ public class CreateBillUI extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(27, 27, 27)
-                .addComponent(btnCreate)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnUpdate)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnDelete)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnClear)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
-                .addComponent(btnMoveFirst, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnMovePrevious, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnMoveNext, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnMoveLast, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(txtThoiDiemTao, javax.swing.GroupLayout.DEFAULT_SIZE, 315, Short.MAX_VALUE)
-                        .addComponent(txtMaPHieu, javax.swing.GroupLayout.DEFAULT_SIZE, 315, Short.MAX_VALUE)
-                        .addComponent(lblThoiDiemTao, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(lblMaPhieu, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(lblStatus, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jComboBox2, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(txtThoiDiemTao, javax.swing.GroupLayout.DEFAULT_SIZE, 315, Short.MAX_VALUE)
+                                .addComponent(txtMaPHieu, javax.swing.GroupLayout.DEFAULT_SIZE, 315, Short.MAX_VALUE)
+                                .addComponent(lblThoiDiemTao, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(lblMaPhieu, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(lblStatus, javax.swing.GroupLayout.PREFERRED_SIZE, 238, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jComboBox2, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 62, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblStatus2)
                             .addComponent(txtThoiDiemThanhToan, javax.swing.GroupLayout.PREFERRED_SIZE, 315, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(lblThoiDiemThanhToan)
                             .addComponent(txtTheSo, javax.swing.GroupLayout.PREFERRED_SIZE, 315, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(lblTheSo)))
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(lblStatus2, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jComboBox1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(0, 0, Short.MAX_VALUE))))
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGap(6, 6, 6)
+                        .addComponent(btnCreate)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnUpdate)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnDelete)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnClear)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 7, Short.MAX_VALUE)
+                        .addComponent(btnMoveFirst, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(btnMovePrevious, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(btnMoveNext, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnMoveLast, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jScrollPane1)
                         .addContainerGap())

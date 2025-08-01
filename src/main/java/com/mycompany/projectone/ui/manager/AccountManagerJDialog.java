@@ -60,6 +60,7 @@ public class AccountManagerJDialog extends javax.swing.JDialog {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
+        tblAccounts.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
         tblAccounts.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -81,6 +82,7 @@ public class AccountManagerJDialog extends javax.swing.JDialog {
         });
         jScrollPane1.setViewportView(tblAccounts);
 
+        btnDelete.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
         btnDelete.setText("Xóa");
         btnDelete.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -88,6 +90,7 @@ public class AccountManagerJDialog extends javax.swing.JDialog {
             }
         });
 
+        btnDelete1.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
         btnDelete1.setText("Làm mới");
         btnDelete1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -95,13 +98,14 @@ public class AccountManagerJDialog extends javax.swing.JDialog {
             }
         });
 
+        lblAccountID.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
         lblAccountID.setText("Nhập mã tài khoản");
 
         javax.swing.GroupLayout pnlAccountListLayout = new javax.swing.GroupLayout(pnlAccountList);
         pnlAccountList.setLayout(pnlAccountListLayout);
         pnlAccountListLayout.setHorizontalGroup(
             pnlAccountListLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 474, Short.MAX_VALUE)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 554, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlAccountListLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btnDelete)
@@ -110,7 +114,7 @@ public class AccountManagerJDialog extends javax.swing.JDialog {
                 .addContainerGap())
             .addGroup(pnlAccountListLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(lblAccountID, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(lblAccountID, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtAccountID, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -118,7 +122,7 @@ public class AccountManagerJDialog extends javax.swing.JDialog {
         pnlAccountListLayout.setVerticalGroup(
             pnlAccountListLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlAccountListLayout.createSequentialGroup()
-                .addContainerGap(15, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(pnlAccountListLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblAccountID)
                     .addComponent(txtAccountID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -133,6 +137,7 @@ public class AccountManagerJDialog extends javax.swing.JDialog {
 
         tabs.addTab("Danh sách tài khoản", pnlAccountList);
 
+        lblAccountName.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
         lblAccountName.setText("Nhập tên tài khoản");
 
         txtAccountName.addActionListener(new java.awt.event.ActionListener() {
@@ -141,6 +146,7 @@ public class AccountManagerJDialog extends javax.swing.JDialog {
             }
         });
 
+        lblPass.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
         lblPass.setText("Password");
 
         txtPass.addActionListener(new java.awt.event.ActionListener() {
@@ -149,9 +155,11 @@ public class AccountManagerJDialog extends javax.swing.JDialog {
             }
         });
 
+        lblRole.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
         lblRole.setText("Vai trò");
 
         groRole.add(rdoManager);
+        rdoManager.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
         rdoManager.setText("Quản lý");
         rdoManager.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -160,6 +168,7 @@ public class AccountManagerJDialog extends javax.swing.JDialog {
         });
 
         groRole.add(rdoEmployee);
+        rdoEmployee.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
         rdoEmployee.setText("Nhân viên");
         rdoEmployee.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -167,9 +176,11 @@ public class AccountManagerJDialog extends javax.swing.JDialog {
             }
         });
 
+        lblStatus.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
         lblStatus.setText("Trạng thái");
 
         groStatus.add(rdoInactive);
+        rdoInactive.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
         rdoInactive.setText("Hủy");
         rdoInactive.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -178,6 +189,7 @@ public class AccountManagerJDialog extends javax.swing.JDialog {
         });
 
         groStatus.add(rdoInProgress);
+        rdoInProgress.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
         rdoInProgress.setText("Đang kích hoạt");
         rdoInProgress.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -186,6 +198,7 @@ public class AccountManagerJDialog extends javax.swing.JDialog {
         });
 
         groStatus.add(btnActive);
+        btnActive.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
         btnActive.setText("Hoạt động");
         btnActive.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -193,6 +206,7 @@ public class AccountManagerJDialog extends javax.swing.JDialog {
             }
         });
 
+        btnAdd.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
         btnAdd.setText("Thêm");
         btnAdd.setPreferredSize(new java.awt.Dimension(77, 23));
         btnAdd.addActionListener(new java.awt.event.ActionListener() {
@@ -201,6 +215,7 @@ public class AccountManagerJDialog extends javax.swing.JDialog {
             }
         });
 
+        btnUpdate.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
         btnUpdate.setText("Cập nhật");
         btnUpdate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -208,6 +223,7 @@ public class AccountManagerJDialog extends javax.swing.JDialog {
             }
         });
 
+        btnRefresh.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
         btnRefresh.setText("Làm mới");
         btnRefresh.setPreferredSize(new java.awt.Dimension(77, 23));
         btnRefresh.addActionListener(new java.awt.event.ActionListener() {
@@ -216,6 +232,7 @@ public class AccountManagerJDialog extends javax.swing.JDialog {
             }
         });
 
+        btnFirst.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
         btnFirst.setText("<<");
         btnFirst.setPreferredSize(new java.awt.Dimension(77, 23));
         btnFirst.addActionListener(new java.awt.event.ActionListener() {
@@ -224,6 +241,7 @@ public class AccountManagerJDialog extends javax.swing.JDialog {
             }
         });
 
+        btnPrev.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
         btnPrev.setText("<");
         btnPrev.setPreferredSize(new java.awt.Dimension(77, 23));
         btnPrev.addActionListener(new java.awt.event.ActionListener() {
@@ -232,6 +250,7 @@ public class AccountManagerJDialog extends javax.swing.JDialog {
             }
         });
 
+        btnNext.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
         btnNext.setText(">");
         btnNext.setPreferredSize(new java.awt.Dimension(77, 23));
         btnNext.addActionListener(new java.awt.event.ActionListener() {
@@ -240,6 +259,7 @@ public class AccountManagerJDialog extends javax.swing.JDialog {
             }
         });
 
+        btnLast.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
         btnLast.setText(">>");
         btnLast.setPreferredSize(new java.awt.Dimension(77, 23));
         btnLast.addActionListener(new java.awt.event.ActionListener() {
@@ -248,6 +268,7 @@ public class AccountManagerJDialog extends javax.swing.JDialog {
             }
         });
 
+        btnDelet.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
         btnDelet.setText("Xóa");
         btnDelet.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -264,21 +285,12 @@ public class AccountManagerJDialog extends javax.swing.JDialog {
                 .addGroup(pnlAccountCreationLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(pnlAccountCreationLayout.createSequentialGroup()
                         .addGroup(pnlAccountCreationLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblAccountName, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtAccountName, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 49, Short.MAX_VALUE)
-                        .addGroup(pnlAccountCreationLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblPass, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtPass, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(49, 49, 49))
-                    .addGroup(pnlAccountCreationLayout.createSequentialGroup()
-                        .addGroup(pnlAccountCreationLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lblRole, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(pnlAccountCreationLayout.createSequentialGroup()
                                 .addComponent(rdoManager)
                                 .addGap(18, 18, 18)
                                 .addComponent(rdoEmployee)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 58, Short.MAX_VALUE)
                         .addGroup(pnlAccountCreationLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(pnlAccountCreationLayout.createSequentialGroup()
                                 .addComponent(lblStatus, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -291,25 +303,34 @@ public class AccountManagerJDialog extends javax.swing.JDialog {
                                 .addComponent(rdoInProgress)))
                         .addContainerGap())
                     .addGroup(pnlAccountCreationLayout.createSequentialGroup()
-                        .addGap(49, 49, 49)
-                        .addGroup(pnlAccountCreationLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(pnlAccountCreationLayout.createSequentialGroup()
-                                .addComponent(btnAdd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(btnUpdate))
-                            .addGroup(pnlAccountCreationLayout.createSequentialGroup()
-                                .addComponent(btnFirst, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(btnPrev, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(18, 18, 18)
                         .addGroup(pnlAccountCreationLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnNext, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnDelet))
+                            .addComponent(txtAccountName, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblAccountName, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(pnlAccountCreationLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblPass, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtPass, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(113, 113, 113))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlAccountCreationLayout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(btnAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnUpdate)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnDelet)
                         .addGap(13, 13, 13)
-                        .addGroup(pnlAccountCreationLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(btnRefresh, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btnLast, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addComponent(btnRefresh, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(43, 43, 43))))
+            .addGroup(pnlAccountCreationLayout.createSequentialGroup()
+                .addGap(104, 104, 104)
+                .addComponent(btnFirst, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(btnPrev, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(btnNext, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(13, 13, 13)
+                .addComponent(btnLast, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         pnlAccountCreationLayout.setVerticalGroup(
             pnlAccountCreationLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -339,19 +360,19 @@ public class AccountManagerJDialog extends javax.swing.JDialog {
                             .addComponent(rdoInactive)
                             .addComponent(rdoInProgress)
                             .addComponent(btnActive))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 66, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 45, Short.MAX_VALUE)
                 .addGroup(pnlAccountCreationLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnAdd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnUpdate)
-                    .addComponent(btnRefresh, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnRefresh, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnDelet))
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(pnlAccountCreationLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnFirst, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnPrev, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnNext, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnLast, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(11, 11, 11))
+                .addGap(23, 23, 23))
         );
 
         tabs.addTab("Tạo tài khoản", pnlAccountCreation);

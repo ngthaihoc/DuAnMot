@@ -53,7 +53,7 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
-                              <Component id="jScrollPane1" pref="706" max="32767" attributes="0"/>
+                              <Component id="jScrollPane1" pref="762" max="32767" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="1" attributes="0">
@@ -144,6 +144,9 @@
             </Container>
             <Component class="javax.swing.JButton" name="btnCheckAll">
               <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Segoe UI" size="18" style="3"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Ch&#x1ecd;n t&#x1ea5;t c&#x1ea3;"/>
               </Properties>
               <Events>
@@ -152,6 +155,9 @@
             </Component>
             <Component class="javax.swing.JButton" name="btnUncheckAll">
               <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Segoe UI" size="18" style="3"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="B&#x1ecf; ch&#x1ecd;n t&#x1ea5;t c&#x1ea3;"/>
               </Properties>
               <Events>
@@ -160,6 +166,9 @@
             </Component>
             <Component class="javax.swing.JButton" name="btnDeleteCheckedItems">
               <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Segoe UI" size="18" style="3"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="X&#xf3;a c&#xe1;c m&#x1ee5;c ch&#x1ecd;n"/>
               </Properties>
               <Events>
@@ -230,7 +239,7 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
                               <Component id="lblMaPhieu" min="-2" pref="110" max="-2" attributes="0"/>
-                              <EmptySpace min="242" pref="602" max="32767" attributes="0"/>
+                              <EmptySpace min="242" pref="658" max="32767" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <Component id="txtMaPHieu" min="-2" pref="315" max="-2" attributes="0"/>
@@ -251,14 +260,14 @@
                       <Component id="btnDelete" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="btnClear" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="102" max="32767" attributes="0"/>
-                      <Component id="btnMoveFirst" min="-2" pref="55" max="-2" attributes="0"/>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="btnMovePrevious" min="-2" pref="51" max="-2" attributes="0"/>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="btnMoveNext" min="-2" pref="52" max="-2" attributes="0"/>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="btnMoveLast" min="-2" pref="49" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
+                      <Component id="btnMoveFirst" min="-2" pref="61" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="btnMovePrevious" min="-2" pref="63" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="btnMoveNext" pref="0" max="32767" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="btnMoveLast" min="-2" pref="55" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
@@ -309,6 +318,9 @@
             </Component>
             <Component class="javax.swing.JButton" name="btnCreate">
               <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Segoe UI" size="18" style="3"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="T&#x1ea1;o m&#x1edb;i"/>
               </Properties>
               <Events>
@@ -317,6 +329,9 @@
             </Component>
             <Component class="javax.swing.JButton" name="btnUpdate">
               <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Segoe UI" size="18" style="3"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="C&#x1ead;p Nh&#x1ead;p"/>
               </Properties>
               <Events>
@@ -325,6 +340,9 @@
             </Component>
             <Component class="javax.swing.JButton" name="btnDelete">
               <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Segoe UI" size="18" style="3"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Xo&#xe1;"/>
               </Properties>
               <Events>
@@ -333,6 +351,9 @@
             </Component>
             <Component class="javax.swing.JButton" name="btnClear">
               <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Segoe UI" size="18" style="3"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Nh&#x1ead;p m&#x1edb;i"/>
               </Properties>
               <Events>
@@ -341,6 +362,9 @@
             </Component>
             <Component class="javax.swing.JButton" name="btnMoveFirst">
               <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Segoe UI" size="18" style="3"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="|&lt;"/>
               </Properties>
               <Events>
@@ -349,6 +373,9 @@
             </Component>
             <Component class="javax.swing.JButton" name="btnMovePrevious">
               <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Segoe UI" size="18" style="3"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="&lt;&lt;"/>
               </Properties>
               <Events>
@@ -357,6 +384,9 @@
             </Component>
             <Component class="javax.swing.JButton" name="btnMoveNext">
               <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Segoe UI" size="18" style="3"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="&gt;&gt;"/>
               </Properties>
               <Events>
@@ -365,6 +395,9 @@
             </Component>
             <Component class="javax.swing.JButton" name="btnMoveLast">
               <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Segoe UI" size="18" style="3"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="&gt;|"/>
               </Properties>
               <Events>
