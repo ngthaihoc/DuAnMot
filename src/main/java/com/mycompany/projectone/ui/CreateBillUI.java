@@ -134,7 +134,7 @@ public class CreateBillUI extends javax.swing.JFrame {
         });
 
         btnMoveFirst.setFont(new java.awt.Font("Segoe UI", 3, 12)); // NOI18N
-        btnMoveFirst.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/projectone/icons/MovePrevious.png"))); // NOI18N
+        btnMoveFirst.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/projectone/icons/MoveFirst.png"))); // NOI18N
         btnMoveFirst.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnMoveFirst.setFocusPainted(false);
         btnMoveFirst.addActionListener(new java.awt.event.ActionListener() {
@@ -154,7 +154,7 @@ public class CreateBillUI extends javax.swing.JFrame {
         });
 
         btnMoveNext.setFont(new java.awt.Font("Segoe UI", 3, 12)); // NOI18N
-        btnMoveNext.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/projectone/icons/MoveNex.png"))); // NOI18N
+        btnMoveNext.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/projectone/icons/MoveNext.png"))); // NOI18N
         btnMoveNext.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnMoveNext.setFocusPainted(false);
         btnMoveNext.addActionListener(new java.awt.event.ActionListener() {
@@ -211,11 +211,11 @@ public class CreateBillUI extends javax.swing.JFrame {
                             .addComponent(lblTheSo)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(6, 6, 6)
-                        .addComponent(btnCreate)
+                        .addComponent(btnCreate, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnUpdate)
+                        .addComponent(btnUpdate, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnDelete)
+                        .addComponent(btnDelete, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btnClear)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
@@ -236,7 +236,7 @@ public class CreateBillUI extends javax.swing.JFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(13, 13, 13)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(lblTheSo)
@@ -268,16 +268,16 @@ public class CreateBillUI extends javax.swing.JFrame {
                 .addComponent(lblThoiDiemThanhToan1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(19, 19, 19)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnCreate)
-                    .addComponent(btnUpdate)
-                    .addComponent(btnDelete)
-                    .addComponent(btnClear)
+                    .addComponent(btnDelete, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnMoveLast)
                     .addComponent(btnMoveNext)
                     .addComponent(btnMovePrevious)
-                    .addComponent(btnMoveFirst))
+                    .addComponent(btnMoveFirst)
+                    .addComponent(btnCreate, javax.swing.GroupLayout.PREFERRED_SIZE, 48, Short.MAX_VALUE)
+                    .addComponent(btnUpdate, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                    .addComponent(btnClear, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
                 .addContainerGap())
         );
 

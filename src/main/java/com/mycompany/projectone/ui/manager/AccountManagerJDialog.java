@@ -52,11 +52,11 @@ public class AccountManagerJDialog extends javax.swing.JDialog {
         btnAdd = new javax.swing.JButton();
         btnUpdate = new javax.swing.JButton();
         btnRefresh = new javax.swing.JButton();
-        btnLast = new javax.swing.JButton();
         btnDelet = new javax.swing.JButton();
-        btnLast1 = new javax.swing.JButton();
-        btnLast2 = new javax.swing.JButton();
-        btnLast3 = new javax.swing.JButton();
+        btnMoveLast = new javax.swing.JButton();
+        btnMoveNext = new javax.swing.JButton();
+        btnMovePrevious = new javax.swing.JButton();
+        btnMoveFirst = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -237,15 +237,6 @@ public class AccountManagerJDialog extends javax.swing.JDialog {
             }
         });
 
-        btnLast.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
-        btnLast.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/projectone/icons/MoveFirst.png"))); // NOI18N
-        btnLast.setPreferredSize(new java.awt.Dimension(77, 23));
-        btnLast.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnLastActionPerformed(evt);
-            }
-        });
-
         btnDelet.setFont(new java.awt.Font("Segoe UI", 3, 12)); // NOI18N
         btnDelet.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/projectone/icons/delete.png"))); // NOI18N
         btnDelet.setText("Xóa");
@@ -255,30 +246,43 @@ public class AccountManagerJDialog extends javax.swing.JDialog {
             }
         });
 
-        btnLast1.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
-        btnLast1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/projectone/icons/MoveLast.png"))); // NOI18N
-        btnLast1.setPreferredSize(new java.awt.Dimension(77, 23));
-        btnLast1.addActionListener(new java.awt.event.ActionListener() {
+        btnMoveLast.setFont(new java.awt.Font("Segoe UI", 3, 12)); // NOI18N
+        btnMoveLast.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/projectone/icons/MoveLast.png"))); // NOI18N
+        btnMoveLast.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnMoveLast.setFocusPainted(false);
+        btnMoveLast.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnLast1ActionPerformed(evt);
+                btnMoveLastActionPerformed(evt);
             }
         });
 
-        btnLast2.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
-        btnLast2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/projectone/icons/MoveNex.png"))); // NOI18N
-        btnLast2.setPreferredSize(new java.awt.Dimension(77, 23));
-        btnLast2.addActionListener(new java.awt.event.ActionListener() {
+        btnMoveNext.setFont(new java.awt.Font("Segoe UI", 3, 12)); // NOI18N
+        btnMoveNext.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/projectone/icons/MoveNext.png"))); // NOI18N
+        btnMoveNext.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnMoveNext.setFocusPainted(false);
+        btnMoveNext.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnLast2ActionPerformed(evt);
+                btnMoveNextActionPerformed(evt);
             }
         });
 
-        btnLast3.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
-        btnLast3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/projectone/icons/MovePrevious.png"))); // NOI18N
-        btnLast3.setPreferredSize(new java.awt.Dimension(77, 23));
-        btnLast3.addActionListener(new java.awt.event.ActionListener() {
+        btnMovePrevious.setFont(new java.awt.Font("Segoe UI", 3, 12)); // NOI18N
+        btnMovePrevious.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/projectone/icons/MovePrevious.png"))); // NOI18N
+        btnMovePrevious.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnMovePrevious.setFocusPainted(false);
+        btnMovePrevious.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnLast3ActionPerformed(evt);
+                btnMovePreviousActionPerformed(evt);
+            }
+        });
+
+        btnMoveFirst.setFont(new java.awt.Font("Segoe UI", 3, 12)); // NOI18N
+        btnMoveFirst.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/projectone/icons/MoveFirst.png"))); // NOI18N
+        btnMoveFirst.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnMoveFirst.setFocusPainted(false);
+        btnMoveFirst.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnMoveFirstActionPerformed(evt);
             }
         });
 
@@ -320,22 +324,22 @@ public class AccountManagerJDialog extends javax.swing.JDialog {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlAccountCreationLayout.createSequentialGroup()
                         .addComponent(btnAdd, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btnUpdate, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btnDelet, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(13, 13, 13)
-                        .addComponent(btnRefresh, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(pnlAccountCreationLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(pnlAccountCreationLayout.createSequentialGroup()
+                                .addComponent(btnMoveFirst, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(btnMovePrevious, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(btnMoveNext, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(btnMoveLast, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(pnlAccountCreationLayout.createSequentialGroup()
+                                .addComponent(btnUpdate, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(btnDelet, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(13, 13, 13)
+                                .addComponent(btnRefresh, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(17, 17, 17))))
-            .addGroup(pnlAccountCreationLayout.createSequentialGroup()
-                .addGap(99, 99, 99)
-                .addComponent(btnLast, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(btnLast3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(btnLast2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(btnLast1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
         );
         pnlAccountCreationLayout.setVerticalGroup(
             pnlAccountCreationLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -372,12 +376,12 @@ public class AccountManagerJDialog extends javax.swing.JDialog {
                     .addComponent(btnRefresh, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnDelet))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(pnlAccountCreationLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnLast, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnLast2, javax.swing.GroupLayout.DEFAULT_SIZE, 61, Short.MAX_VALUE)
-                    .addComponent(btnLast3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnLast1, javax.swing.GroupLayout.DEFAULT_SIZE, 61, Short.MAX_VALUE))
-                .addGap(12, 12, 12))
+                .addGroup(pnlAccountCreationLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnMoveLast)
+                    .addComponent(btnMoveNext)
+                    .addComponent(btnMovePrevious)
+                    .addComponent(btnMoveFirst))
+                .addContainerGap(30, Short.MAX_VALUE))
         );
 
         tabs.addTab("Tạo tài khoản", pnlAccountCreation);
@@ -428,41 +432,41 @@ public class AccountManagerJDialog extends javax.swing.JDialog {
         // TODO add your handling code here:
     }//GEN-LAST:event_rdoInProgressActionPerformed
 
-    private void btnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddActionPerformed
+    private void btnActiveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnActiveActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnAddActionPerformed
+    }//GEN-LAST:event_btnActiveActionPerformed
 
-    private void btnUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateActionPerformed
+    private void btnMoveLastActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMoveLastActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnUpdateActionPerformed
+    }//GEN-LAST:event_btnMoveLastActionPerformed
+
+    private void btnMoveNextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMoveNextActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnMoveNextActionPerformed
+
+    private void btnMovePreviousActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMovePreviousActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnMovePreviousActionPerformed
+
+    private void btnMoveFirstActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMoveFirstActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnMoveFirstActionPerformed
 
     private void btnRefreshActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRefreshActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnRefreshActionPerformed
 
-    private void btnActiveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnActiveActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnActiveActionPerformed
-
-    private void btnLastActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLastActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnLastActionPerformed
-
     private void btnDeletActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeletActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnDeletActionPerformed
 
-    private void btnLast1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLast1ActionPerformed
+    private void btnUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnLast1ActionPerformed
+    }//GEN-LAST:event_btnUpdateActionPerformed
 
-    private void btnLast2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLast2ActionPerformed
+    private void btnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnLast2ActionPerformed
-
-    private void btnLast3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLast3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnLast3ActionPerformed
+    }//GEN-LAST:event_btnAddActionPerformed
 
     /**
      * @param args the command line arguments
@@ -512,10 +516,10 @@ public class AccountManagerJDialog extends javax.swing.JDialog {
     private javax.swing.JButton btnDelet;
     private javax.swing.JButton btnDelete;
     private javax.swing.JButton btnDelete1;
-    private javax.swing.JButton btnLast;
-    private javax.swing.JButton btnLast1;
-    private javax.swing.JButton btnLast2;
-    private javax.swing.JButton btnLast3;
+    private javax.swing.JButton btnMoveFirst;
+    private javax.swing.JButton btnMoveLast;
+    private javax.swing.JButton btnMoveNext;
+    private javax.swing.JButton btnMovePrevious;
     private javax.swing.JButton btnRefresh;
     private javax.swing.JButton btnUpdate;
     private javax.swing.ButtonGroup groRole;

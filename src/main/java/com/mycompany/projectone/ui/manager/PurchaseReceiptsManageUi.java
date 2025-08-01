@@ -59,13 +59,13 @@ public class PurchaseReceiptsManageUi extends javax.swing.JFrame {
         btnUpdate = new javax.swing.JButton();
         btnDelete = new javax.swing.JButton();
         btnClear = new javax.swing.JButton();
+        txtThoiDiemTao1 = new javax.swing.JTextField();
+        lblStatus2 = new javax.swing.JLabel();
+        jComboBox1 = new javax.swing.JComboBox<>();
         btnMoveFirst = new javax.swing.JButton();
         btnMovePrevious = new javax.swing.JButton();
         btnMoveNext = new javax.swing.JButton();
         btnMoveLast = new javax.swing.JButton();
-        txtThoiDiemTao1 = new javax.swing.JTextField();
-        lblStatus2 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -294,38 +294,6 @@ public class PurchaseReceiptsManageUi extends javax.swing.JFrame {
             }
         });
 
-        btnMoveFirst.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
-        btnMoveFirst.setText("|<");
-        btnMoveFirst.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnMoveFirstActionPerformed(evt);
-            }
-        });
-
-        btnMovePrevious.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
-        btnMovePrevious.setText("<<");
-        btnMovePrevious.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnMovePreviousActionPerformed(evt);
-            }
-        });
-
-        btnMoveNext.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
-        btnMoveNext.setText(">>");
-        btnMoveNext.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnMoveNextActionPerformed(evt);
-            }
-        });
-
-        btnMoveLast.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
-        btnMoveLast.setText(">|");
-        btnMoveLast.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnMoveLastActionPerformed(evt);
-            }
-        });
-
         txtThoiDiemTao1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtThoiDiemTao1ActionPerformed(evt);
@@ -337,6 +305,46 @@ public class PurchaseReceiptsManageUi extends javax.swing.JFrame {
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
+        btnMoveFirst.setFont(new java.awt.Font("Segoe UI", 3, 12)); // NOI18N
+        btnMoveFirst.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/projectone/icons/MoveFirst.png"))); // NOI18N
+        btnMoveFirst.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnMoveFirst.setFocusPainted(false);
+        btnMoveFirst.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnMoveFirstActionPerformed(evt);
+            }
+        });
+
+        btnMovePrevious.setFont(new java.awt.Font("Segoe UI", 3, 12)); // NOI18N
+        btnMovePrevious.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/projectone/icons/MovePrevious.png"))); // NOI18N
+        btnMovePrevious.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnMovePrevious.setFocusPainted(false);
+        btnMovePrevious.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnMovePreviousActionPerformed(evt);
+            }
+        });
+
+        btnMoveNext.setFont(new java.awt.Font("Segoe UI", 3, 12)); // NOI18N
+        btnMoveNext.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/projectone/icons/MoveNext.png"))); // NOI18N
+        btnMoveNext.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnMoveNext.setFocusPainted(false);
+        btnMoveNext.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnMoveNextActionPerformed(evt);
+            }
+        });
+
+        btnMoveLast.setFont(new java.awt.Font("Segoe UI", 3, 12)); // NOI18N
+        btnMoveLast.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/projectone/icons/MoveLast.png"))); // NOI18N
+        btnMoveLast.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnMoveLast.setFocusPainted(false);
+        btnMoveLast.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnMoveLastActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout pnlBieuMauLayout = new javax.swing.GroupLayout(pnlBieuMau);
         pnlBieuMau.setLayout(pnlBieuMauLayout);
         pnlBieuMauLayout.setHorizontalGroup(
@@ -344,23 +352,6 @@ public class PurchaseReceiptsManageUi extends javax.swing.JFrame {
             .addGroup(pnlBieuMauLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(pnlBieuMauLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(pnlBieuMauLayout.createSequentialGroup()
-                        .addComponent(btnCreate)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnUpdate)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnDelete)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnClear)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 76, Short.MAX_VALUE)
-                        .addComponent(btnMoveFirst, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnMovePrevious, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnMoveNext, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnMoveLast, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(24, 24, 24))
                     .addGroup(pnlBieuMauLayout.createSequentialGroup()
                         .addGroup(pnlBieuMauLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(lblStatus2, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -378,7 +369,24 @@ public class PurchaseReceiptsManageUi extends javax.swing.JFrame {
                             .addComponent(txtNguoiTao, javax.swing.GroupLayout.PREFERRED_SIZE, 315, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtTheSo, javax.swing.GroupLayout.PREFERRED_SIZE, 315, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(lblTheSo)
-                            .addComponent(lblNguoiTao)))))
+                            .addComponent(lblNguoiTao)))
+                    .addGroup(pnlBieuMauLayout.createSequentialGroup()
+                        .addComponent(btnCreate)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnUpdate)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnDelete)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnClear)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 81, Short.MAX_VALUE)
+                        .addComponent(btnMoveFirst, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(btnMovePrevious, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(btnMoveNext, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnMoveLast, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(17, 17, 17))))
         );
         pnlBieuMauLayout.setVerticalGroup(
             pnlBieuMauLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -410,19 +418,24 @@ public class PurchaseReceiptsManageUi extends javax.swing.JFrame {
                     .addComponent(txtNguoiTao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtThoiDiemTao1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(lblStatus2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 178, Short.MAX_VALUE)
-                .addGroup(pnlBieuMauLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnCreate)
-                    .addComponent(btnUpdate)
-                    .addComponent(btnDelete)
-                    .addComponent(btnClear)
-                    .addComponent(btnMoveLast)
-                    .addComponent(btnMoveNext)
-                    .addComponent(btnMovePrevious)
-                    .addComponent(btnMoveFirst))
+                .addGroup(pnlBieuMauLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnlBieuMauLayout.createSequentialGroup()
+                        .addComponent(lblStatus2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 178, Short.MAX_VALUE)
+                        .addGroup(pnlBieuMauLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(btnCreate)
+                            .addComponent(btnUpdate)
+                            .addComponent(btnDelete)
+                            .addComponent(btnClear)))
+                    .addGroup(pnlBieuMauLayout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addGroup(pnlBieuMauLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(btnMoveLast)
+                            .addComponent(btnMoveNext)
+                            .addComponent(btnMovePrevious)
+                            .addComponent(btnMoveFirst))))
                 .addContainerGap())
         );
 
@@ -442,94 +455,85 @@ public class PurchaseReceiptsManageUi extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void tblBillsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblBillsMouseClicked
+    private void txtThoiDiemTao1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtThoiDiemTao1ActionPerformed
         // TODO add your handling code here:
+    }//GEN-LAST:event_txtThoiDiemTao1ActionPerformed
 
-    }//GEN-LAST:event_tblBillsMouseClicked
-
-    private void btnCheckAllActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCheckAllActionPerformed
+    private void btnClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClearActionPerformed
         // TODO add your handling code here:
+    }//GEN-LAST:event_btnClearActionPerformed
 
-    }//GEN-LAST:event_btnCheckAllActionPerformed
-
-    private void btnUncheckAllActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUncheckAllActionPerformed
+    private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnUncheckAllActionPerformed
-
-    private void btnDeleteCheckedItemsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteCheckedItemsActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnDeleteCheckedItemsActionPerformed
-
-    private void txtBeginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtBeginActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtBeginActionPerformed
-
-    private void btnFilterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFilterActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnFilterActionPerformed
-
-    private void cboTimeRangesItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cboTimeRangesItemStateChanged
-        // TODO add your handling code here:
-
-    }//GEN-LAST:event_cboTimeRangesItemStateChanged
-
-    private void txtBegin1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtBegin1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtBegin1ActionPerformed
-
-    private void txtMaPHieuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtMaPHieuActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtMaPHieuActionPerformed
-
-    private void txtThoiDiemTaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtThoiDiemTaoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtThoiDiemTaoActionPerformed
-
-    private void txtTheSoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTheSoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtTheSoActionPerformed
-
-    private void btnCreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateActionPerformed
-        // TODO add your handling code here:
-
-    }//GEN-LAST:event_btnCreateActionPerformed
+    }//GEN-LAST:event_btnDeleteActionPerformed
 
     private void btnUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateActionPerformed
 
     }//GEN-LAST:event_btnUpdateActionPerformed
 
-    private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
+    private void btnCreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateActionPerformed
         // TODO add your handling code here:
+    }//GEN-LAST:event_btnCreateActionPerformed
 
-    }//GEN-LAST:event_btnDeleteActionPerformed
-
-    private void btnClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClearActionPerformed
+    private void txtTheSoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTheSoActionPerformed
         // TODO add your handling code here:
+    }//GEN-LAST:event_txtTheSoActionPerformed
 
-    }//GEN-LAST:event_btnClearActionPerformed
+    private void txtThoiDiemTaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtThoiDiemTaoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtThoiDiemTaoActionPerformed
+
+    private void txtMaPHieuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtMaPHieuActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtMaPHieuActionPerformed
+
+    private void txtBegin1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtBegin1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtBegin1ActionPerformed
+
+    private void cboTimeRangesItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cboTimeRangesItemStateChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cboTimeRangesItemStateChanged
+
+    private void btnFilterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFilterActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnFilterActionPerformed
+
+    private void txtBeginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtBeginActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtBeginActionPerformed
+
+    private void btnDeleteCheckedItemsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteCheckedItemsActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnDeleteCheckedItemsActionPerformed
+
+    private void btnUncheckAllActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUncheckAllActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnUncheckAllActionPerformed
+
+    private void btnCheckAllActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCheckAllActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnCheckAllActionPerformed
+
+    private void tblBillsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblBillsMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tblBillsMouseClicked
 
     private void btnMoveFirstActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMoveFirstActionPerformed
         // TODO add your handling code here:
-
     }//GEN-LAST:event_btnMoveFirstActionPerformed
 
     private void btnMovePreviousActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMovePreviousActionPerformed
         // TODO add your handling code here:
-
     }//GEN-LAST:event_btnMovePreviousActionPerformed
 
     private void btnMoveNextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMoveNextActionPerformed
         // TODO add your handling code here:
-
     }//GEN-LAST:event_btnMoveNextActionPerformed
 
     private void btnMoveLastActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMoveLastActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnMoveLastActionPerformed
-
-    private void txtThoiDiemTao1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtThoiDiemTao1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtThoiDiemTao1ActionPerformed
 
     /**
      * @param args the command line arguments

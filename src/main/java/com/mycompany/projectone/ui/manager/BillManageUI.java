@@ -48,14 +48,14 @@ public class BillManageUI extends javax.swing.JFrame {
         btnUpdate = new javax.swing.JButton();
         btnDelete = new javax.swing.JButton();
         btnClear = new javax.swing.JButton();
-        btnMoveFirst = new javax.swing.JButton();
-        btnMovePrevious = new javax.swing.JButton();
-        btnMoveNext = new javax.swing.JButton();
-        btnMoveLast = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         tblByUser = new javax.swing.JTable();
         btnFilter1 = new javax.swing.JButton();
         btnFilter2 = new javax.swing.JButton();
+        btnMoveFirst = new javax.swing.JButton();
+        btnMovePrevious = new javax.swing.JButton();
+        btnMoveNext = new javax.swing.JButton();
+        btnMoveLast = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -235,38 +235,6 @@ public class BillManageUI extends javax.swing.JFrame {
             }
         });
 
-        btnMoveFirst.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
-        btnMoveFirst.setText("|<");
-        btnMoveFirst.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnMoveFirstActionPerformed(evt);
-            }
-        });
-
-        btnMovePrevious.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
-        btnMovePrevious.setText("<<");
-        btnMovePrevious.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnMovePreviousActionPerformed(evt);
-            }
-        });
-
-        btnMoveNext.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
-        btnMoveNext.setText(">>");
-        btnMoveNext.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnMoveNextActionPerformed(evt);
-            }
-        });
-
-        btnMoveLast.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
-        btnMoveLast.setText(">|");
-        btnMoveLast.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnMoveLastActionPerformed(evt);
-            }
-        });
-
         tblByUser.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
         tblByUser.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -305,6 +273,46 @@ public class BillManageUI extends javax.swing.JFrame {
             }
         });
 
+        btnMoveFirst.setFont(new java.awt.Font("Segoe UI", 3, 12)); // NOI18N
+        btnMoveFirst.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/projectone/icons/MoveFirst.png"))); // NOI18N
+        btnMoveFirst.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnMoveFirst.setFocusPainted(false);
+        btnMoveFirst.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnMoveFirstActionPerformed(evt);
+            }
+        });
+
+        btnMovePrevious.setFont(new java.awt.Font("Segoe UI", 3, 12)); // NOI18N
+        btnMovePrevious.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/projectone/icons/MovePrevious.png"))); // NOI18N
+        btnMovePrevious.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnMovePrevious.setFocusPainted(false);
+        btnMovePrevious.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnMovePreviousActionPerformed(evt);
+            }
+        });
+
+        btnMoveNext.setFont(new java.awt.Font("Segoe UI", 3, 12)); // NOI18N
+        btnMoveNext.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/projectone/icons/MoveNext.png"))); // NOI18N
+        btnMoveNext.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnMoveNext.setFocusPainted(false);
+        btnMoveNext.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnMoveNextActionPerformed(evt);
+            }
+        });
+
+        btnMoveLast.setFont(new java.awt.Font("Segoe UI", 3, 12)); // NOI18N
+        btnMoveLast.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/projectone/icons/MoveLast.png"))); // NOI18N
+        btnMoveLast.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnMoveLast.setFocusPainted(false);
+        btnMoveLast.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnMoveLastActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout pnlBieuMauLayout = new javax.swing.GroupLayout(pnlBieuMau);
         pnlBieuMau.setLayout(pnlBieuMauLayout);
         pnlBieuMauLayout.setHorizontalGroup(
@@ -331,14 +339,15 @@ public class BillManageUI extends javax.swing.JFrame {
                 .addComponent(btnDelete)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnClear)
-                .addGap(35, 35, 35)
-                .addComponent(btnMoveFirst, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnMovePrevious, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(btnMoveNext, javax.swing.GroupLayout.PREFERRED_SIZE, 1, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnMoveLast, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(btnMoveFirst, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btnMovePrevious, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btnMoveNext, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(btnMoveLast, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(pnlBieuMauLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jScrollPane2)
@@ -346,26 +355,30 @@ public class BillManageUI extends javax.swing.JFrame {
         );
         pnlBieuMauLayout.setVerticalGroup(
             pnlBieuMauLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnlBieuMauLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(lblMaPhieu, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(pnlBieuMauLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtMaPHieu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnFilter1)
-                    .addComponent(btnFilter2))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 364, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(pnlBieuMauLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnCreate)
-                    .addComponent(btnUpdate)
-                    .addComponent(btnDelete)
-                    .addComponent(btnClear)
-                    .addComponent(btnMoveLast)
-                    .addComponent(btnMoveNext)
-                    .addComponent(btnMovePrevious)
-                    .addComponent(btnMoveFirst))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlBieuMauLayout.createSequentialGroup()
+                .addGroup(pnlBieuMauLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(pnlBieuMauLayout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addGroup(pnlBieuMauLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(btnMoveLast)
+                            .addComponent(btnMoveNext)
+                            .addComponent(btnMovePrevious)
+                            .addComponent(btnMoveFirst)))
+                    .addGroup(pnlBieuMauLayout.createSequentialGroup()
+                        .addComponent(lblMaPhieu, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(pnlBieuMauLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(txtMaPHieu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnFilter1)
+                            .addComponent(btnFilter2))
+                        .addGap(3, 3, 3)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 372, Short.MAX_VALUE)
+                        .addGap(18, 18, 18)
+                        .addGroup(pnlBieuMauLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(btnCreate)
+                            .addComponent(btnUpdate)
+                            .addComponent(btnDelete)
+                            .addComponent(btnClear))))
                 .addContainerGap())
         );
 
@@ -413,22 +426,6 @@ public class BillManageUI extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_tblBillsMouseClicked
 
-    private void btnMoveLastActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMoveLastActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnMoveLastActionPerformed
-
-    private void btnMoveNextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMoveNextActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnMoveNextActionPerformed
-
-    private void btnMovePreviousActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMovePreviousActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnMovePreviousActionPerformed
-
-    private void btnMoveFirstActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMoveFirstActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnMoveFirstActionPerformed
-
     private void btnClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClearActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnClearActionPerformed
@@ -456,6 +453,22 @@ public class BillManageUI extends javax.swing.JFrame {
     private void btnFilter2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFilter2ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnFilter2ActionPerformed
+
+    private void btnMoveFirstActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMoveFirstActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnMoveFirstActionPerformed
+
+    private void btnMovePreviousActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMovePreviousActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnMovePreviousActionPerformed
+
+    private void btnMoveNextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMoveNextActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnMoveNextActionPerformed
+
+    private void btnMoveLastActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMoveLastActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnMoveLastActionPerformed
 
     /**
      * @param args the command line arguments
