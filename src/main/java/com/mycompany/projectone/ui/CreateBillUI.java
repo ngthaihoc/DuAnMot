@@ -90,6 +90,7 @@ public class CreateBillUI extends javax.swing.JFrame {
         lblStatus.setText("Chương trình giảm giá ( Nếu có )");
 
         btnCreate.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
+        btnCreate.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/projectone/icons/add.png"))); // NOI18N
         btnCreate.setText("Tạo mới");
         btnCreate.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnCreate.setFocusPainted(false);
@@ -100,6 +101,7 @@ public class CreateBillUI extends javax.swing.JFrame {
         });
 
         btnUpdate.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
+        btnUpdate.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/projectone/icons/up.png"))); // NOI18N
         btnUpdate.setText("Cập Nhập");
         btnUpdate.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnUpdate.setFocusPainted(false);
@@ -110,6 +112,7 @@ public class CreateBillUI extends javax.swing.JFrame {
         });
 
         btnDelete.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
+        btnDelete.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/projectone/icons/delete.png"))); // NOI18N
         btnDelete.setText("Xoá");
         btnDelete.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnDelete.setFocusPainted(false);
@@ -120,6 +123,7 @@ public class CreateBillUI extends javax.swing.JFrame {
         });
 
         btnClear.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
+        btnClear.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/projectone/icons/save.png"))); // NOI18N
         btnClear.setText("Nhập mới");
         btnClear.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnClear.setFocusPainted(false);
@@ -197,7 +201,7 @@ public class CreateBillUI extends javax.swing.JFrame {
                                 .addComponent(lblMaPhieu, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(lblStatus, javax.swing.GroupLayout.PREFERRED_SIZE, 238, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jComboBox2, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 76, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(lblStatus2)
@@ -214,7 +218,7 @@ public class CreateBillUI extends javax.swing.JFrame {
                         .addComponent(btnDelete)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btnClear)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 7, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(btnMoveFirst, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(btnMovePrevious, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)

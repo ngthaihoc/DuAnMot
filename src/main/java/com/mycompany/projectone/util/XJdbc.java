@@ -27,8 +27,8 @@ public class XJdbc {
    public static Connection openConnectionWithSQLSeverAuthentication() {
     var driver = "com.microsoft.sqlserver.jdbc.SQLServerDriver";
     var dburl = "jdbc:sqlserver://LAPTOPCUAHOC\\SQLEXPRESS;database=PolyCafe;encrypt=true;trustServerCertificate=true;";
-    var user = "Hoc"; 
-    var password = "123456789";
+    var user = "Hoc"; // tên khi dùng SQLSeverAuthentication
+    var password = "123456789"; // pass khi dùng SQLSeverAuthentication
     try {       
         if (!XJdbc.isReady()) {
             System.out.println("Da ket noi den CSDL");
@@ -44,6 +44,9 @@ public class XJdbc {
    public static Connection openConnectionWithWindowAuthentication() {
     var driver = "com.microsoft.sqlserver.jdbc.SQLServerDriver";
     var dburl = "jdbc:sqlserver://LAPTOPCUAWELLY\\WellyOwO;database=ProjectOneJava;encrypt=true;trustServerCertificate=true;integratedSecurity=true;";
+    // ở dòng dburl thì chỉnh lại phần "LAPTOPCUAWELLY" và "WellyOwO"
+    // 1 cái là Severname ở tab connect to sever ở SQL Sever : LAPTOPCUAWELLY
+    // 1 cái ở dòng User name đó là LAPTOPCUAWELLY\\WellyOwO
     try {       
         if (!XJdbc.isReady()) {
             System.out.println("Da ket noi den CSDL");
