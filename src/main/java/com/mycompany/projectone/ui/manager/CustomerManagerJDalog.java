@@ -72,6 +72,7 @@ public class CustomerManagerJDalog extends javax.swing.JDialog {
             javax.swing.border.TitledBorder.LEFT,   // Giữa (trái-phải)
             javax.swing.border.TitledBorder.TOP));
 
+    tblCustomers.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
     tblCustomers.setModel(new javax.swing.table.DefaultTableModel(
         new Object [][] {
             {null, null, null, null, null, null},
@@ -115,14 +116,19 @@ public class CustomerManagerJDalog extends javax.swing.JDialog {
     jLabel6.setText("Quản lí khách hàng");
     jLabel6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 102, 0)));
 
+    jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
     jLabel2.setText("Mã KH:");
 
+    jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
     jLabel3.setText("Họ tên");
 
+    jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
     jLabel7.setText("Email");
 
+    jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
     jLabel5.setText("Địa chỉ");
 
+    jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
     jLabel4.setText("SDT");
 
     txtEmail.addActionListener(new java.awt.event.ActionListener() {
@@ -131,6 +137,7 @@ public class CustomerManagerJDalog extends javax.swing.JDialog {
         }
     });
 
+    btnThem.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
     btnThem.setText("Thêm");
     btnThem.addActionListener(new java.awt.event.ActionListener() {
         public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -138,6 +145,7 @@ public class CustomerManagerJDalog extends javax.swing.JDialog {
         }
     });
 
+    btnXoa.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
     btnXoa.setText("Xóa");
     btnXoa.addActionListener(new java.awt.event.ActionListener() {
         public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -145,6 +153,7 @@ public class CustomerManagerJDalog extends javax.swing.JDialog {
         }
     });
 
+    btnNew.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
     btnNew.setText("Làm mới");
     btnNew.addActionListener(new java.awt.event.ActionListener() {
         public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -152,6 +161,7 @@ public class CustomerManagerJDalog extends javax.swing.JDialog {
         }
     });
 
+    btnUpdate.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
     btnUpdate.setText("Cập nhật");
     btnUpdate.addActionListener(new java.awt.event.ActionListener() {
         public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -228,9 +238,10 @@ public class CustomerManagerJDalog extends javax.swing.JDialog {
                 .addComponent(btnXoa)
                 .addComponent(btnNew)
                 .addComponent(btnUpdate))
-            .addContainerGap(12, Short.MAX_VALUE))
+            .addContainerGap(38, Short.MAX_VALUE))
     );
 
+    btnSearch.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
     btnSearch.setText("Search");
 
     javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
@@ -265,12 +276,12 @@ public class CustomerManagerJDalog extends javax.swing.JDialog {
                     .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGroup(layout.createSequentialGroup()
                     .addGap(12, 12, 12)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 377, javax.swing.GroupLayout.PREFERRED_SIZE)))
-            .addGap(81, 81, 81)
-            .addComponent(filler1, javax.swing.GroupLayout.DEFAULT_SIZE, 214, Short.MAX_VALUE)
-            .addContainerGap(129, Short.MAX_VALUE))
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 436, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(filler1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
     );
     layout.setVerticalGroup(
         layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -282,12 +293,12 @@ public class CustomerManagerJDalog extends javax.swing.JDialog {
                         .addGroup(layout.createSequentialGroup()
                             .addGap(15, 15, 15)
                             .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGap(18, 18, 18)
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                     .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGroup(layout.createSequentialGroup()
                     .addContainerGap()
                     .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-            .addContainerGap(24, Short.MAX_VALUE))
+            .addContainerGap(27, Short.MAX_VALUE))
     );
 
     pack();

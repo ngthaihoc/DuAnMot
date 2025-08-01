@@ -115,6 +115,7 @@ public class BillManageUI extends javax.swing.JFrame {
             }
         });
 
+        lblBegin.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
         lblBegin.setText("Từ ngày");
 
         txtBegin.addActionListener(new java.awt.event.ActionListener() {
@@ -123,8 +124,10 @@ public class BillManageUI extends javax.swing.JFrame {
             }
         });
 
+        lblEnd.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
         lblEnd.setText("Đến ngày:");
 
+        btnFilter.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
         btnFilter.setText("Lọc");
         btnFilter.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -132,6 +135,7 @@ public class BillManageUI extends javax.swing.JFrame {
             }
         });
 
+        cboTimeRanges.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
         cboTimeRanges.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Hôm Nay", "Tuần Này", "Tháng Này", "Quý Này", "Năm Nay", " " }));
         cboTimeRanges.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
@@ -144,19 +148,13 @@ public class BillManageUI extends javax.swing.JFrame {
         pblDanhSachLayout.setHorizontalGroup(
             pblDanhSachLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pblDanhSachLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(pblDanhSachLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(pblDanhSachLayout.createSequentialGroup()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 762, Short.MAX_VALUE)
-                        .addContainerGap())
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pblDanhSachLayout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(btnCheckAll)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btnUncheckAll)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btnDeleteCheckedItems)
-                        .addGap(49, 49, 49))))
+                .addContainerGap(220, Short.MAX_VALUE)
+                .addComponent(btnCheckAll)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btnUncheckAll)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btnDeleteCheckedItems)
+                .addGap(49, 49, 49))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pblDanhSachLayout.createSequentialGroup()
                 .addGap(42, 42, 42)
                 .addComponent(lblBegin)
@@ -166,11 +164,12 @@ public class BillManageUI extends javax.swing.JFrame {
                 .addComponent(lblEnd)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtEnd, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(71, 71, 71)
+                .addGap(65, 65, 65)
                 .addComponent(btnFilter)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(cboTimeRanges, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(27, 27, 27))
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 774, Short.MAX_VALUE)
         );
         pblDanhSachLayout.setVerticalGroup(
             pblDanhSachLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -183,7 +182,7 @@ public class BillManageUI extends javax.swing.JFrame {
                     .addComponent(txtEnd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnFilter)
                     .addComponent(cboTimeRanges, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 362, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(pblDanhSachLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -195,6 +194,7 @@ public class BillManageUI extends javax.swing.JFrame {
 
         tabsBills.addTab("Tra cứu lịch sử hoá đơn", pblDanhSach);
 
+        lblMaPhieu.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
         lblMaPhieu.setText("Mã hoá đơn");
 
         txtMaPHieu.addActionListener(new java.awt.event.ActionListener() {
@@ -267,6 +267,7 @@ public class BillManageUI extends javax.swing.JFrame {
             }
         });
 
+        tblByUser.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
         tblByUser.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -288,6 +289,7 @@ public class BillManageUI extends javax.swing.JFrame {
         });
         jScrollPane2.setViewportView(tblByUser);
 
+        btnFilter1.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
         btnFilter1.setText("Lọc");
         btnFilter1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -295,6 +297,7 @@ public class BillManageUI extends javax.swing.JFrame {
             }
         });
 
+        btnFilter2.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
         btnFilter2.setText("Làm mới");
         btnFilter2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -352,7 +355,7 @@ public class BillManageUI extends javax.swing.JFrame {
                     .addComponent(btnFilter1)
                     .addComponent(btnFilter2))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 358, Short.MAX_VALUE)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 364, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(pnlBieuMauLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnCreate)

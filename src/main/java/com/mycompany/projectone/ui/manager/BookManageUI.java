@@ -48,6 +48,7 @@ public class BookManageUI extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        lblMaPhieu.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
         lblMaPhieu.setText("Tên sách");
 
         txtMaPHieu.addActionListener(new java.awt.event.ActionListener() {
@@ -62,10 +63,13 @@ public class BookManageUI extends javax.swing.JFrame {
             }
         });
 
+        lblThoiDiemTao.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
         lblThoiDiemTao.setText("Thời điểm xuất bản");
 
+        lblNguoiTao.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
         lblNguoiTao.setText("Nhà xuất bản");
 
+        lblThoiDiemThanhToan.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
         lblThoiDiemThanhToan.setText("Thể loại");
 
         txtTheSo.addActionListener(new java.awt.event.ActionListener() {
@@ -74,8 +78,10 @@ public class BookManageUI extends javax.swing.JFrame {
             }
         });
 
+        lblTheSo.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
         lblTheSo.setText("Tác giả");
 
+        btnCreate.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
         btnCreate.setText("Tạo mới");
         btnCreate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -83,6 +89,7 @@ public class BookManageUI extends javax.swing.JFrame {
             }
         });
 
+        btnUpdate.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
         btnUpdate.setText("Cập Nhập");
         btnUpdate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -90,6 +97,7 @@ public class BookManageUI extends javax.swing.JFrame {
             }
         });
 
+        btnDelete.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
         btnDelete.setText("Xoá");
         btnDelete.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -97,6 +105,7 @@ public class BookManageUI extends javax.swing.JFrame {
             }
         });
 
+        btnClear.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
         btnClear.setText("Nhập mới");
         btnClear.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -104,6 +113,7 @@ public class BookManageUI extends javax.swing.JFrame {
             }
         });
 
+        jComboBox1.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         txtThoiDiemTao1.addActionListener(new java.awt.event.ActionListener() {
@@ -112,6 +122,7 @@ public class BookManageUI extends javax.swing.JFrame {
             }
         });
 
+        lblThoiDiemTao1.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
         lblThoiDiemTao1.setText("Giá Bán");
 
         javax.swing.GroupLayout pnlBieuMauLayout = new javax.swing.GroupLayout(pnlBieuMau);
@@ -124,19 +135,19 @@ public class BookManageUI extends javax.swing.JFrame {
                     .addComponent(txtThoiDiemTao, javax.swing.GroupLayout.PREFERRED_SIZE, 315, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblMaPhieu, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtMaPHieu, javax.swing.GroupLayout.PREFERRED_SIZE, 315, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblThoiDiemTao, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtThoiDiemTao1, javax.swing.GroupLayout.PREFERRED_SIZE, 315, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblThoiDiemTao1, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lblThoiDiemTao1, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblThoiDiemTao, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 51, Short.MAX_VALUE)
                 .addGroup(pnlBieuMauLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(lblThoiDiemThanhToan)
-                    .addComponent(lblNguoiTao, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtNguoiTao, javax.swing.GroupLayout.PREFERRED_SIZE, 315, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtTheSo, javax.swing.GroupLayout.PREFERRED_SIZE, 315, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblTheSo, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(pnlBieuMauLayout.createSequentialGroup()
                         .addComponent(jComboBox1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addContainerGap())))
+                        .addContainerGap())
+                    .addComponent(lblNguoiTao, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)))
             .addGroup(pnlBieuMauLayout.createSequentialGroup()
                 .addGap(27, 27, 27)
                 .addComponent(btnCreate)
@@ -205,9 +216,9 @@ public class BookManageUI extends javax.swing.JFrame {
             .addGap(0, 288, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 22, Short.MAX_VALUE)
+                    .addGap(0, 10, Short.MAX_VALUE)
                     .addComponent(pnlBieuMau, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 23, Short.MAX_VALUE)))
+                    .addGap(0, 10, Short.MAX_VALUE)))
         );
 
         pack();

@@ -41,7 +41,8 @@ public class MainUI extends javax.swing.JFrame {
         jButton10 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setBackground(new java.awt.Color(174, 217, 224));
+        setBackground(new java.awt.Color(227, 0, 0));
+        setForeground(new java.awt.Color(13, 71, 161));
         setMaximumSize(new java.awt.Dimension(1200, 1400));
         setPreferredSize(new java.awt.Dimension(1200, 1400));
 

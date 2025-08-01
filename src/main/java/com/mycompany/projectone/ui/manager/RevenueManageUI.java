@@ -77,6 +77,7 @@ public class RevenueManageUI extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(tblByCategory);
 
+        cboTimeRanges.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
         cboTimeRanges.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Hôm Nay", "Tuần Này", "Tháng Này", "Năm Nay", " " }));
         cboTimeRanges.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
@@ -89,6 +90,7 @@ public class RevenueManageUI extends javax.swing.JFrame {
             }
         });
 
+        btnFilter.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
         btnFilter.setText("Lọc");
         btnFilter.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -102,6 +104,7 @@ public class RevenueManageUI extends javax.swing.JFrame {
             }
         });
 
+        lblEnd.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         lblEnd.setText("Đến ngày:");
 
         txtBegin.addActionListener(new java.awt.event.ActionListener() {
@@ -110,6 +113,7 @@ public class RevenueManageUI extends javax.swing.JFrame {
             }
         });
 
+        lblBegin.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         lblBegin.setText("Từ ngày");
 
         javax.swing.GroupLayout pnlDoanhThuLoaiLayout = new javax.swing.GroupLayout(pnlDoanhThuLoai);
@@ -132,7 +136,7 @@ public class RevenueManageUI extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(pnlDoanhThuLoaiLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 595, Short.MAX_VALUE)
+                .addComponent(jScrollPane1)
                 .addContainerGap())
         );
         pnlDoanhThuLoaiLayout.setVerticalGroup(
@@ -147,7 +151,7 @@ public class RevenueManageUI extends javax.swing.JFrame {
                     .addComponent(btnFilter)
                     .addComponent(cboTimeRanges, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 574, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 583, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -180,10 +184,13 @@ public class RevenueManageUI extends javax.swing.JFrame {
             }
         });
 
+        lblBegin1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         lblBegin1.setText("Mã sách");
 
+        lblEnd1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         lblEnd1.setText("Thể Loại Sách");
 
+        btnFilter1.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
         btnFilter1.setText("Lọc");
         btnFilter1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -193,6 +200,7 @@ public class RevenueManageUI extends javax.swing.JFrame {
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
+        btnFilter2.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
         btnFilter2.setText("Làm mới");
         btnFilter2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -220,7 +228,7 @@ public class RevenueManageUI extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlDoanhThuNhanVienLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 595, Short.MAX_VALUE)
+                .addComponent(jScrollPane2)
                 .addContainerGap())
         );
         pnlDoanhThuNhanVienLayout.setVerticalGroup(
@@ -235,7 +243,7 @@ public class RevenueManageUI extends javax.swing.JFrame {
                     .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnFilter2))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 566, Short.MAX_VALUE)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 575, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
