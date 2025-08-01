@@ -24,7 +24,7 @@ public class XJdbc {
      *
      * @return Kết nối đã sẵn sàng
      */
-   public static Connection openConnection() {
+   public static Connection openConnectionWithSQLSeverAuthentication() {
     var driver = "com.microsoft.sqlserver.jdbc.SQLServerDriver";
     var dburl = "jdbc:sqlserver://LAPTOPCUAHOC\\SQLEXPRESS;database=PolyCafe;encrypt=true;trustServerCertificate=true;";
     var user = "Hoc"; 
@@ -34,6 +34,21 @@ public class XJdbc {
             System.out.println("Da ket noi den CSDL");
             Class.forName(driver);
             connection = DriverManager.getConnection(dburl, user, password); 
+        }
+    } catch (ClassNotFoundException | SQLException e) {
+        throw new RuntimeException(e);
+    }
+    return connection;
+}
+   
+   public static Connection openConnectionWithWindowAuthentication() {
+    var driver = "com.microsoft.sqlserver.jdbc.SQLServerDriver";
+    var dburl = "jdbc:sqlserver://LAPTOPCUAWELLY\\WellyOwO;database=ProjectOneJava;encrypt=true;trustServerCertificate=true;integratedSecurity=true;";
+    try {       
+        if (!XJdbc.isReady()) {
+            System.out.println("Da ket noi den CSDL");
+            Class.forName(driver);
+            connection = DriverManager.getConnection(dburl); // Không cần user và password
         }
     } catch (ClassNotFoundException | SQLException e) {
         throw new RuntimeException(e);
@@ -164,7 +179,8 @@ public static <T> T getValue(String sql, Class<T> type, Object... values) {
 
 
     private static PreparedStatement getStmt(String sql, Object... values) throws SQLException {
-        var conn = XJdbc.openConnection();
+//        var conn = XJdbc.openConnectionWithSQLSeverAuthentication();
+        var conn = XJdbc.openConnectionWithSQLSeverAuthentication();
         var stmt = sql.trim().startsWith("{") ? conn.prepareCall(sql) : conn.prepareStatement(sql);
         for (int i = 0; i < values.length; i++) {
             stmt.setObject(i + 1, values[i]);
@@ -175,7 +191,7 @@ public static <T> T getValue(String sql, Class<T> type, Object... values) {
 
     public static void main(String[] args) throws SQLException {
        try {
-        openConnection();
+        openConnectionWithSQLSeverAuthentication();
         if (XJdbc.isReady()) {
             System.out.println("Ket noi den database thanh cong");
         } else {
