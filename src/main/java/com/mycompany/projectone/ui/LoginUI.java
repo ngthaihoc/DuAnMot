@@ -46,7 +46,7 @@ public class LoginUI extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
-        jLabel1.setText("Log in");
+        jLabel1.setText("Log In");
         jLabel1.setAlignmentY(0.4F);
         jLabel1.setAutoscrolls(true);
         jLabel1.setIconTextGap(3);

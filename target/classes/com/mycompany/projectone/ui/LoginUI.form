@@ -87,7 +87,7 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Segoe UI" size="48" style="1"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Log in"/>
+        <Property name="text" type="java.lang.String" value="Log In"/>
         <Property name="alignmentY" type="float" value="0.4"/>
         <Property name="autoscrolls" type="boolean" value="true"/>
         <Property name="iconTextGap" type="int" value="3"/>
