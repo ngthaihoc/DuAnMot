@@ -16,7 +16,7 @@ public class XIcon {
      */
 public static ImageIcon getIcon(String path) {
     if (!path.contains("/") && !path.contains("\\")) { // resource name
-        return XIcon.getIcon("/com/mycompany/cafe/icons/" + path);
+        return XIcon.getIcon("/com/mycompany/projectone/icons/" + path);
     }
     if (path.startsWith("/")) { // resource path
         java.net.URL url = XIcon.class.getResource(path);
