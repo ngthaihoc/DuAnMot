@@ -13,13 +13,13 @@ import java.util.List;
  * @author WellyOwO 
  */
 public class BookDAOImpl implements BookDAO{
-    String createSQL = "INSERT INTO Books (BookID, Title, Author, PublisherYear, Photo, Price, CategoryID, SupplierID, QuantityInStock) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?);";
+    String createSQL = "INSERT INTO Books(BookID, Title, Author, PublisherYear, Price, CategoryID, SupplierID, QuantityInStock)VALUES(?, N'?', N'?', ?, ?, ?, ?, ?);";
     String deleteSQL = "DELETE Books WHERE BookID = ? ";
-    String updateSQL = "Update Books SET BookID = ?, Title = ?, Author = ? , PublisherYear = ? , Price = ? ,CategoryID = ?, SupplierID = ?, QuantityInStock = ? ";
+    String updateSQL = "Update Books SET BookID = ?, Title = N'?', Author = N'?' , PublisherYear = ? , Price = ? ,CategoryID = ?, SupplierID = ?, QuantityInStock = ? ";
     String findAllSQL = "SELECT b.BookID,Title, Author, PublisherYear, Price, cate.CategoryName, sp.SupplierName, s.Quantity   from Books b, Categories cate, Supplier sp, Stock s where b.CategoryID = cate.CategoryID and b.SupplierID = sp.SupplierID and b.BookID = s.BookID";
-    String fingByAuthorSQL = "SELECT b.BookID,Title, b.Author, PublisherYear, Price, cate.CategoryName, sp.SupplierName, s.Quantity   from Books b, Categories cate, Supplier sp, Stock s where b.CategoryID = cate.CategoryID and b.SupplierID = sp.SupplierID and b.BookID = s.BookID and b.Author = '?'";
-    String findBySupplierSQL = "SELECT b.BookID,Title, b.Author, PublisherYear, Price, cate.CategoryName, sp.SupplierName, s.Quantity   from Books b, Categories cate, Supplier sp, Stock s where b.CategoryID = cate.CategoryID and b.SupplierID = sp.SupplierID and b.BookID = s.BookID and sp.SupplierName = ?";
-    String findByCategorySQL = "SELECT b.BookID,Title, b.Author, PublisherYear, Price, cate.CategoryName, sp.SupplierName, s.Quantity   from Books b, Categories cate, Supplier sp, Stock s where b.CategoryID = cate.CategoryID and b.SupplierID = sp.SupplierID and b.BookID = s.BookID and cate.CategoryName = ?";
+    String fingByAuthorSQL = "SELECT b.BookID,Title, b.Author, PublisherYear, Price, cate.CategoryName, sp.SupplierName, s.Quantity   from Books b, Categories cate, Supplier sp, Stock s where b.CategoryID = cate.CategoryID and b.SupplierID = sp.SupplierID and b.BookID = s.BookID and b.Author = N'?' ";
+    String findBySupplierSQL = "SELECT b.BookID,Title, b.Author, PublisherYear, Price, cate.CategoryName, sp.SupplierName, s.Quantity   from Books b, Categories cate, Supplier sp, Stock s where b.CategoryID = cate.CategoryID and b.SupplierID = sp.SupplierID and b.BookID = s.BookID and sp.SupplierName = N'?' ";
+    String findByCategorySQL = "SELECT b.BookID,Title, b.Author, PublisherYear, Price, cate.CategoryName, sp.SupplierName, s.Quantity   from Books b, Categories cate, Supplier sp, Stock s where b.CategoryID = cate.CategoryID and b.SupplierID = sp.SupplierID and b.BookID = s.BookID and cate.CategoryName = N'?' ";
     
 
     @Override

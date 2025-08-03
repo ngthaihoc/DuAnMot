@@ -71,7 +71,7 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
                               <Component id="jScrollPane1" min="-2" pref="780" max="-2" attributes="0"/>
-                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <Component id="lblSearchAuth" min="-2" max="-2" attributes="0"/>
@@ -85,13 +85,11 @@
                               <Component id="lblSearchCategory" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="txtSreachCategory" min="-2" pref="113" max="-2" attributes="0"/>
-                              <EmptySpace max="32767" attributes="0"/>
+                              <EmptySpace pref="12" max="32767" attributes="0"/>
                               <Component id="btnFilter" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Component id="cboTimeRanges" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="134" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -105,7 +103,6 @@
                           <Component id="lblNPH" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="txtSearchNPH" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="btnFilter" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="cboTimeRanges" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="lblSearchCategory" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="txtSreachCategory" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
@@ -226,29 +223,6 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnFilterActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JComboBox" name="cboTimeRanges">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Segoe UI" size="14" style="1"/>
-                </Property>
-                <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                  <StringArray count="6">
-                    <StringItem index="0" value="H&#xf4;m Nay"/>
-                    <StringItem index="1" value="Tu&#x1ea7;n N&#xe0;y"/>
-                    <StringItem index="2" value="Th&#xe1;ng N&#xe0;y"/>
-                    <StringItem index="3" value="Qu&#xfd; N&#xe0;y"/>
-                    <StringItem index="4" value="N&#x103;m Nay"/>
-                    <StringItem index="5" value=" "/>
-                  </StringArray>
-                </Property>
-              </Properties>
-              <Events>
-                <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="cboTimeRangesItemStateChanged"/>
-              </Events>
-              <AuxValues>
-                <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
-              </AuxValues>
-            </Component>
             <Component class="javax.swing.JLabel" name="lblSearchCategory">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Th&#x1ec3; Lo&#x1ea1;i"/>
@@ -323,21 +297,12 @@
                   <Group type="102" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="lblBookID" alignment="0" min="-2" pref="62" max="-2" attributes="0"/>
-                                  <Component id="txtBookID" alignment="0" min="-2" pref="315" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace min="253" pref="489" max="32767" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="1" attributes="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="txtThoiDiemTao" alignment="0" min="-2" pref="315" max="-2" attributes="0"/>
-                                  <Component id="lblThoiDiemTao" alignment="0" min="-2" pref="155" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace min="207" max="32767" attributes="0"/>
-                          </Group>
+                          <Component id="lblBookID" alignment="0" min="-2" pref="62" max="-2" attributes="0"/>
+                          <Component id="txtBookID" alignment="0" min="-2" pref="315" max="-2" attributes="0"/>
+                          <Component id="txtThoiDiemTao" alignment="0" min="-2" pref="315" max="-2" attributes="0"/>
+                          <Component id="lblThoiDiemTao" alignment="0" min="-2" pref="155" max="-2" attributes="0"/>
                       </Group>
+                      <EmptySpace max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>

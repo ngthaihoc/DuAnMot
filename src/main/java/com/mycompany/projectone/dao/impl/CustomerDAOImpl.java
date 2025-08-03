@@ -4,30 +4,28 @@
  */
 package com.mycompany.projectone.dao.impl;
 
-import com.mycompany.projectone.dao.AccountDAO;
-import com.mycompany.projectone.entity.Account;
+import com.mycompany.projectone.dao.CustomerDAO;
+import com.mycompany.projectone.entity.Customer;
 import java.util.List;
 
 /**
  *
  * @author WellyOwO
  */
-public class AccountDAOImpl implements AccountDAO {
-    
-    String createSQL = "INSERT INTO Accounts(AccountID, Username, Password, status, EmployeeID)VALUES(?, '?', '?', ?, ?);";
-    String updateSQL = "Update Accounts SET AccountID = ?, Username = '?', Password = '?' , status = ? , EmployeeID = ?";
-    String deleteSQL = "DELETE Accounts WHERE AccountID = ? ";
-    String findAllSQL = "select * from Accounts";
-    String findByIDAccount = "SELECT * from Accounts where AccountID = ? ";
-    String findByEmpID = "SELECT * from Accounts where EmployeeID = ? ";
+public class CustomerDAOImpl implements CustomerDAO  {
+    String createSQL = "INSERT INTO Customers(CustomerID, FirstName, Age, EmailNum, Phone, Address)VALUES(?, N'?', ?, '?', '?', N'?');";
+    String updateSQL = "UPDATE Customers  SET CustomerID = ? , FirstName = N'?' , Age = ? , EmailNum = '?' , Phone = ? , Address = N'?';";
+    String deleteSQL = "DELETE Customers WHERE CustomerID = ? ;";
+    String findAllSQL = "select * from Customers";
+    String findByIDSQL = "SELECT * from Customers WHERE CustomerID = ? ;";        
 
     @Override
-    public Account create(Account entity) {
+    public Customer create(Customer entity) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     @Override
-    public void update(Account entity) {
+    public void update(Customer entity) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
@@ -37,12 +35,12 @@ public class AccountDAOImpl implements AccountDAO {
     }
 
     @Override
-    public List<Account> findAll() {
+    public List<Customer> findAll() {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     @Override
-    public Account findById(Integer id) {
+    public Customer findById(Integer id) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
     

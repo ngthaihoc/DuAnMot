@@ -4,30 +4,29 @@
  */
 package com.mycompany.projectone.dao.impl;
 
-import com.mycompany.projectone.dao.AccountDAO;
-import com.mycompany.projectone.entity.Account;
+import com.mycompany.projectone.dao.CategoriesDAO;
+import com.mycompany.projectone.entity.Categories;
 import java.util.List;
 
 /**
  *
  * @author WellyOwO
  */
-public class AccountDAOImpl implements AccountDAO {
+public class CategoriesDAOImpl implements CategoriesDAO{
     
-    String createSQL = "INSERT INTO Accounts(AccountID, Username, Password, status, EmployeeID)VALUES(?, '?', '?', ?, ?);";
-    String updateSQL = "Update Accounts SET AccountID = ?, Username = '?', Password = '?' , status = ? , EmployeeID = ?";
-    String deleteSQL = "DELETE Accounts WHERE AccountID = ? ";
-    String findAllSQL = "select * from Accounts";
-    String findByIDAccount = "SELECT * from Accounts where AccountID = ? ";
-    String findByEmpID = "SELECT * from Accounts where EmployeeID = ? ";
+    String createSQL = "INSERT INTO Categories(CategoryID, CategoryName)VALUES(?, N'?');";
+    String updateSQL = "UPDATE Categories SET CategoryID = ? , CategoryName = N'?' WHERE CategoryID = ? ";
+    String deleteSQL = "DELETE Categories WHERE CategoryID = ? ";
+    String findAllSQL = "select * from Categories";
+    String findByIDSQL = "select * from Categories WHERE CategoryID = ?";
 
     @Override
-    public Account create(Account entity) {
+    public Categories create(Categories entity) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     @Override
-    public void update(Account entity) {
+    public void update(Categories entity) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
@@ -37,12 +36,12 @@ public class AccountDAOImpl implements AccountDAO {
     }
 
     @Override
-    public List<Account> findAll() {
+    public List<Categories> findAll() {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     @Override
-    public Account findById(Integer id) {
+    public Categories findById(Integer id) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
     
