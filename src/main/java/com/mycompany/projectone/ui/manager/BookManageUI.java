@@ -38,7 +38,7 @@ public class BookManageUI extends javax.swing.JFrame {
         lblSearchAuth = new javax.swing.JLabel();
         txtSearchAuth = new javax.swing.JTextField();
         lblNPH = new javax.swing.JLabel();
-        txtEnd = new javax.swing.JTextField();
+        txtSearchNPH = new javax.swing.JTextField();
         btnFilter = new javax.swing.JButton();
         cboTimeRanges = new javax.swing.JComboBox<>();
         lblSearchCategory = new javax.swing.JLabel();
@@ -139,9 +139,9 @@ public class BookManageUI extends javax.swing.JFrame {
         lblNPH.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         lblNPH.setText("Nhà phát hành");
 
-        txtEnd.addActionListener(new java.awt.event.ActionListener() {
+        txtSearchNPH.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtEndActionPerformed(evt);
+                txtSearchNPHActionPerformed(evt);
             }
         });
 
@@ -188,7 +188,7 @@ public class BookManageUI extends javax.swing.JFrame {
                         .addGap(36, 36, 36)
                         .addComponent(lblNPH)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtEnd, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtSearchNPH, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(31, 31, 31)
                         .addComponent(lblSearchCategory)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -207,7 +207,7 @@ public class BookManageUI extends javax.swing.JFrame {
                     .addComponent(lblSearchAuth)
                     .addComponent(txtSearchAuth, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblNPH)
-                    .addComponent(txtEnd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtSearchNPH, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnFilter)
                     .addComponent(cboTimeRanges, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblSearchCategory)
@@ -403,7 +403,9 @@ public class BookManageUI extends javax.swing.JFrame {
                                 .addComponent(lblCategory)
                                 .addComponent(cmbCategory, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                             .addComponent(lblPrice, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtPrice, javax.swing.GroupLayout.PREFERRED_SIZE, 315, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(txtPrice, javax.swing.GroupLayout.PREFERRED_SIZE, 315, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtAuth, javax.swing.GroupLayout.PREFERRED_SIZE, 315, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblAuth, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(pnlBieuMauLayout.createSequentialGroup()
                 .addContainerGap()
@@ -412,10 +414,7 @@ public class BookManageUI extends javax.swing.JFrame {
                         .addGroup(pnlBieuMauLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lblBookID, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtBookID, javax.swing.GroupLayout.PREFERRED_SIZE, 315, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(pnlBieuMauLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtAuth, javax.swing.GroupLayout.PREFERRED_SIZE, 315, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lblAuth, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(253, 489, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlBieuMauLayout.createSequentialGroup()
                         .addGroup(pnlBieuMauLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(txtThoiDiemTao, javax.swing.GroupLayout.PREFERRED_SIZE, 315, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -591,9 +590,9 @@ public class BookManageUI extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtPriceActionPerformed
 
-    private void txtEndActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEndActionPerformed
+    private void txtSearchNPHActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSearchNPHActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtEndActionPerformed
+    }//GEN-LAST:event_txtSearchNPHActionPerformed
 
     /**
      * @param args the command line arguments
@@ -653,11 +652,11 @@ public class BookManageUI extends javax.swing.JFrame {
     private javax.swing.JTable tblBills;
     private javax.swing.JTextField txtAuth;
     private javax.swing.JTextField txtBookID;
-    private javax.swing.JTextField txtEnd;
     private javax.swing.JTextField txtNameBook;
     private javax.swing.JTextField txtPrice;
     private javax.swing.JTextField txtPrice1;
     private javax.swing.JTextField txtSearchAuth;
+    private javax.swing.JTextField txtSearchNPH;
     private javax.swing.JTextField txtSreachCategory;
     private javax.swing.JTextField txtSupplier;
     private javax.swing.JTextField txtThoiDiemTao;

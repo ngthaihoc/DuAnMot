@@ -80,7 +80,7 @@
                               <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
                               <Component id="lblNPH" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="txtEnd" min="-2" pref="95" max="-2" attributes="0"/>
+                              <Component id="txtSearchNPH" min="-2" pref="95" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
                               <Component id="lblSearchCategory" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
@@ -103,7 +103,7 @@
                           <Component id="lblSearchAuth" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="txtSearchAuth" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="lblNPH" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="txtEnd" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtSearchNPH" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="btnFilter" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="cboTimeRanges" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="lblSearchCategory" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -210,9 +210,9 @@
                 <Property name="text" type="java.lang.String" value="Nh&#xe0; ph&#xe1;t h&#xe0;nh"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="txtEnd">
+            <Component class="javax.swing.JTextField" name="txtSearchNPH">
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtEndActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtSearchNPHActionPerformed"/>
               </Events>
             </Component>
             <Component class="javax.swing.JButton" name="btnFilter">
@@ -313,6 +313,8 @@
                                   </Group>
                                   <Component id="lblPrice" alignment="0" min="-2" pref="114" max="-2" attributes="0"/>
                                   <Component id="txtPrice" alignment="0" min="-2" pref="315" max="-2" attributes="0"/>
+                                  <Component id="txtAuth" alignment="0" min="-2" pref="315" max="-2" attributes="0"/>
+                                  <Component id="lblAuth" alignment="0" min="-2" pref="62" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
@@ -326,11 +328,7 @@
                                   <Component id="lblBookID" alignment="0" min="-2" pref="62" max="-2" attributes="0"/>
                                   <Component id="txtBookID" alignment="0" min="-2" pref="315" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace max="32767" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="txtAuth" alignment="0" min="-2" pref="315" max="-2" attributes="0"/>
-                                  <Component id="lblAuth" alignment="0" min="-2" pref="62" max="-2" attributes="0"/>
-                              </Group>
+                              <EmptySpace min="253" pref="489" max="32767" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="1" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
