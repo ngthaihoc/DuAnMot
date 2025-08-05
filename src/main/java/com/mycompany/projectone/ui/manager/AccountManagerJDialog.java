@@ -4,11 +4,18 @@
  */
 package com.mycompany.projectone.ui.manager;
 
+import com.mycompany.projectone.controller.AccountController;
+import com.mycompany.projectone.dao.AccountDAO;
+import com.mycompany.projectone.dao.impl.AccountDAOImpl;
+import com.mycompany.projectone.entity.Account;
+import java.util.List;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author Gaudomun
  */
-public class AccountManagerJDialog extends javax.swing.JDialog {
+public class AccountManagerJDialog extends javax.swing.JDialog implements AccountController{
 
     /**
      * Creates new form AccountManagerJDialog
@@ -16,6 +23,7 @@ public class AccountManagerJDialog extends javax.swing.JDialog {
     public AccountManagerJDialog(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
+        fillToTable();
     }
 
     /**
@@ -60,24 +68,31 @@ public class AccountManagerJDialog extends javax.swing.JDialog {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
-        tblAccounts.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
+        tblAccounts.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         tblAccounts.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
             },
             new String [] {
-                "Tên tài khoản", "Password", "Trạng thái", "Vai trò"
+                "Mã tài khoản", "Tên tài khoản", "Password", "Trạng thái", "Vai trò"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Object.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
                 return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
             }
         });
         jScrollPane1.setViewportView(tblAccounts);
@@ -542,4 +557,109 @@ public class AccountManagerJDialog extends javax.swing.JDialog {
     private javax.swing.JTextField txtAccountName;
     private javax.swing.JTextField txtPass;
     // End of variables declaration//GEN-END:variables
+
+    AccountDAO dao = new AccountDAOImpl();
+    List <Account> items = List.of();
+    
+
+    public void open() {
+        this.setLocationRelativeTo(null);
+        this.clear();
+    }
+
+    @Override
+    public void setForm(Account entity) {
+        txtAccountID.setText(String.valueOf(entity.getAccountID()));
+        txtAccountName.setText(entity.getUsername());
+        txtPass.setText(entity.getPassword());
+        String status = String.valueOf(entity.getStatus());
+        rdoUnActive.setSelected(status.equals("0"));
+        rdoActive.setSelected(status.equals("1"));
+        rdoInProgress.setSelected(status.equals("2"));
+         String role = String.valueOf(entity.getEmployeeID());
+         rdoManager.setSelected(role.equals("1"));
+         rdoEmployee.setSelected(role.equals("0"));
+        
+    }
+
+    @Override
+    public Account getForm() {
+        return null;
+    }
+
+    @Override
+    public void fillToTable() {
+       
+        DefaultTableModel model = (DefaultTableModel) tblAccounts.getModel();
+        model.setRowCount(0);
+        items = dao.findAll();
+        System.out.println("Test fillToTable");
+        items.forEach(item ->{
+            Object[] data = {
+                item.getAccountID(),
+                item.getUsername(),
+                item.getPassword(),
+                item.getStatus()== 1 ? "Hoạt động" : (item.getStatus()== 2 ? "Huỷ" : "Đang kích hoạt"),
+                item.getEmployeeID()== 1 ? "Quản Lý" : "Nhân viên"
+            };
+            model.addRow(data);
+        });
+     
+    }
+
+    @Override
+    public void edit() {
+    }
+
+    @Override
+    public void create() {
+    }
+
+    @Override
+    public void update() {
+    }
+
+    @Override
+    public void delete() {
+    }
+
+    @Override
+    public void clear() {
+    }
+
+    @Override
+    public void setEditable(boolean editable) {
+    }
+
+    @Override
+    public void checkAll() {
+    }
+
+    @Override
+    public void uncheckAll() {
+    }
+
+    @Override
+    public void deleteCheckedItems() {
+    }
+
+    @Override
+    public void moveFirst() {
+    }
+
+    @Override
+    public void movePrevious() {
+    }
+
+    @Override
+    public void moveNext() {
+    }
+
+    @Override
+    public void moveLast() {
+    }
+
+    @Override
+    public void moveTo(int rowIndex) {
+    }
 }

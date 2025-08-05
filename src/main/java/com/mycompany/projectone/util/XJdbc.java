@@ -24,16 +24,19 @@ public class XJdbc {
      *
      * @return Kết nối đã sẵn sàng
      */
-   public static Connection openConnectionWithSQLSeverAuthentication() {
+   public static Connection openConnectionWithWindowAuthentication() {
     var driver = "com.microsoft.sqlserver.jdbc.SQLServerDriver";
-    var dburl = "jdbc:sqlserver://LAPTOPCUAHOC\\SQLEXPRESS;database=PolyCafe;encrypt=true;trustServerCertificate=true;";
-    var user = "Hoc"; // tên khi dùng SQLSeverAuthentication
-    var password = "123456789"; // pass khi dùng SQLSeverAuthentication
+//    var dburl1 = "jdbc:sqlserver://LAPTOPCUAWELLY\\WellyOwO;database=ProjectOneJava;encrypt=true;trustServerCertificate=true;integratedSecurity=true;";
+String dburl = "jdbc:sqlserver://LAPTOPCUAWELLY:1433;"
+             + "databaseName=ProjectOneJava;"
+             + "integratedSecurity=true;"
+             + "encrypt=true;"
+             + "trustServerCertificate=true;";
     try {       
         if (!XJdbc.isReady()) {
-            System.out.println("Da ket noi den CSDL");
+            System.out.println("Da ket noi den CSDL dùng window");
             Class.forName(driver);
-            connection = DriverManager.getConnection(dburl, user, password); 
+            connection = DriverManager.getConnection(dburl);
         }
     } catch (ClassNotFoundException | SQLException e) {
         throw new RuntimeException(e);
@@ -41,23 +44,22 @@ public class XJdbc {
     return connection;
 }
    
-   public static Connection openConnectionWithWindowAuthentication() {
-    var driver = "com.microsoft.sqlserver.jdbc.SQLServerDriver";
-    var dburl = "jdbc:sqlserver://LAPTOPCUAWELLY\\WellyOwO;database=ProjectOneJava;encrypt=true;trustServerCertificate=true;integratedSecurity=true;";
-    // ở dòng dburl thì chỉnh lại phần "LAPTOPCUAWELLY" và "WellyOwO"
-    // 1 cái là Severname ở tab connect to sever ở SQL Sever : LAPTOPCUAWELLY
-    // 1 cái ở dòng User name đó là LAPTOPCUAWELLY\\WellyOwO
-    try {       
-        if (!XJdbc.isReady()) {
-            System.out.println("Da ket noi den CSDL");
-            Class.forName(driver);
-            connection = DriverManager.getConnection(dburl); // Không cần user và password
-        }
-    } catch (ClassNotFoundException | SQLException e) {
-        throw new RuntimeException(e);
-    }
-    return connection;
-}
+//      public static Connection openConnectionWithSQLSeverAuthentication() {
+//    var driver = "com.microsoft.sqlserver.jdbc.SQLServerDriver";
+//    var dburl = "jdbc:sqlserver://LAPTOPCUAHOC\\SQLEXPRESS;database=PolyCafe;encrypt=true;trustServerCertificate=true;";
+//    var user = "Hoc"; // tên khi dùng SQLSeverAuthentication
+//    var password = "123456789"; // pass khi dùng SQLSeverAuthentication
+//    try {       
+//        if (!XJdbc.isReady()) {
+//            System.out.println("Da ket noi den CSDL dùng SQL ");
+//            Class.forName(driver);
+//            connection = DriverManager.getConnection(dburl, user, password); 
+//        }
+//    } catch (ClassNotFoundException | SQLException e) {
+//        throw new RuntimeException(e);
+//    }
+//    return connection;
+//}
 
     /**
      * Đóng kết nối
@@ -182,8 +184,8 @@ public static <T> T getValue(String sql, Class<T> type, Object... values) {
 
 
     private static PreparedStatement getStmt(String sql, Object... values) throws SQLException {
+        var conn = XJdbc.openConnectionWithWindowAuthentication();
 //        var conn = XJdbc.openConnectionWithSQLSeverAuthentication();
-        var conn = XJdbc.openConnectionWithSQLSeverAuthentication();
         var stmt = sql.trim().startsWith("{") ? conn.prepareCall(sql) : conn.prepareStatement(sql);
         for (int i = 0; i < values.length; i++) {
             stmt.setObject(i + 1, values[i]);
@@ -194,7 +196,7 @@ public static <T> T getValue(String sql, Class<T> type, Object... values) {
 
     public static void main(String[] args) throws SQLException {
        try {
-        openConnectionWithSQLSeverAuthentication();
+        openConnectionWithWindowAuthentication();
         if (XJdbc.isReady()) {
             System.out.println("Ket noi den database thanh cong");
         } else {

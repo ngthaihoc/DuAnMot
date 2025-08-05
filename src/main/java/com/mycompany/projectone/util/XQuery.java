@@ -1,5 +1,6 @@
 package com.mycompany.projectone.util;
 
+import com.mycompany.projectone.entity.Account;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.sql.ResultSet;
@@ -52,7 +53,7 @@ public class XQuery {
                 list.add(XQuery.readBean(resultSet, beanClass));
             }
         } catch (Exception ex) {
-            throw new RuntimeException(ex);
+            System.out.println("Đã xảy ra lỗi  "  + ex);
         }
         return list;
     }
@@ -84,15 +85,17 @@ public class XQuery {
     }
     
     public static void main(String[] args) {
-//        demo1();
+        demo1();
 //        demo2();
         System.out.println("Test ");
     }
+    
+    
 
-//    private static void demo1() {
-//        String sql = "SELECT * FROM Users WHERE Username=? AND Password=?";
-//        User user = XQuery.getSingleBean(User.class, sql, "NghiemN", "123456");
-//    }
+    private static void demo1() {
+        String sql = "SELECT * FROM account WHERE Username=? AND Password=?";
+       XQuery.getBeanList(Account.class, sql);
+    }
 
 //    private static void demo2() {
 //        String sql = "SELECT * FROM Users WHERE Fullname LIKE ?";
