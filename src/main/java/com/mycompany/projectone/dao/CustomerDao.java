@@ -4,12 +4,13 @@
  */
 package com.mycompany.projectone.dao;
 
-import com.mycompany.projectone.entity.Payment;
+import com.mycompany.projectone.entity.Customer;
+import java.util.List;
 
 /**
  *
  * @author Acer
  */
-public interface PaymentDAO extends CrudDAO<Payment,Integer> {
-    
+public interface CustomerDao extends CrudDAO<Customer, String>{
+    List<Customer> findByKeyword(String keyword);
 }
