@@ -6,6 +6,8 @@ package com.mycompany.projectone.dao.impl;
 
 import com.mycompany.projectone.dao.OrderDAO;
 import com.mycompany.projectone.entity.Order;
+import com.mycompany.projectone.util.XJdbc;
+import com.mycompany.projectone.util.XQuery;
 import java.util.List;
 
 /**
@@ -14,35 +16,50 @@ import java.util.List;
  */
 public class OrderDAOImpl implements OrderDAO{
     
-    private String createSQL = "";
-    private String updateSQL = "";
-    private String deleteSQL = "";
-    private String findAllSQL = "";
-    private String findByuIDSQL = "";
+     private String createSQL = "INSERT INTO Orders(OrderID, CustomerID, EmployeeID, OrderDate, PromotionID) VALUES(?, ?, ?, ?, ?)";
+    private String updateSQL = "UPDATE Orders SET CustomerID = ?, EmployeeID = ?, OrderDate = ?, PromotionID = ? WHERE OrderID = ?";
+    private String deleteSQL = "DELETE FROM Orders WHERE OrderID = ?";
+    private String findAllSQL = "SELECT * FROM Orders";
+    private String findByIDSQL = "SELECT * FROM Orders WHERE OrderID = ?";
 
     @Override
     public Order create(Order entity) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        Object[] values = {
+                       entity.getOrderID(),
+            entity.getCustomer(),
+            entity.getEmployee(),
+            entity.getOrderDate(),
+            entity.getPromotion()
+                          };
+        XJdbc.executeUpdate(createSQL, values);
+        return entity;
     }
 
     @Override
     public void update(Order entity) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+          Object[] values = {
+                       entity.getOrderID(),
+            entity.getCustomer(),
+            entity.getEmployee(),
+            entity.getOrderDate(),
+            entity.getPromotion()
+                          };
+        XJdbc.executeUpdate(updateSQL, values);
     }
 
     @Override
     public void deleteById(Integer id) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        XJdbc.executeUpdate(deleteSQL, id);
     }
 
     @Override
     public List<Order> findAll() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        return XQuery.getBeanList(Order.class, findAllSQL);
     }
 
     @Override
     public Order findById(Integer id) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        return XQuery.getSingleBean(Order.class, findByIDSQL, id);
     }
     
 }
