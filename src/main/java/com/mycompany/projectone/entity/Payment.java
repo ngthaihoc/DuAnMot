@@ -13,13 +13,8 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Builder
 @Data
-/**
- *
- * @author Administrator
- */
 public class Payment {
     private int paymentsID;
     private String name;
-    private Order order;
-    
+    private int orderID;
 }

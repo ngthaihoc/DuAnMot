@@ -10,6 +10,7 @@ import com.mycompany.projectone.dao.PaymentDAO;
 import com.mycompany.projectone.dao.impl.PaymentDAOImpl;
 
 import com.mycompany.projectone.entity.Payment;
+import com.mycompany.projectone.controller.PaymentController;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JOptionPane;
@@ -308,9 +309,9 @@ public class PaymentManagerJDialog extends javax.swing.JDialog implements Paymen
     private javax.swing.JTextField txtOderID;
     private javax.swing.JTextField txtPaymentID;
     // End of variables declaration//GEN-END:variables
-private final PaymentDAO dao = new PaymentDAOImpl();
+    PaymentDAO dao = new PaymentDAOImpl();
 
-    private List<Payment> list = new ArrayList<>();
+     List<Payment> list = List.of();
 @Override
     public void open() {
         fillToTable();
@@ -335,11 +336,7 @@ private final PaymentDAO dao = new PaymentDAOImpl();
             p.setPaymentsID(0);
         }
         p.setName(txtName.getText());
-
-        // Ở đây mình chưa biết rõ Order bạn dùng kiểu gì,
-        // Nếu bạn có thể lấy Order object thì set ở đây, hoặc để null tạm
-        p.setOrder(null); // hoặc bạn viết logic lấy Order từ txtOderID
-
+        p.setName(null); 
         return p;
     }
 
@@ -347,11 +344,7 @@ private final PaymentDAO dao = new PaymentDAOImpl();
     public void setForm(Payment p) {
         txtPaymentID.setText(String.valueOf(p.getPaymentsID()));
         txtName.setText(p.getName());
-        if (p.getOrder() != null) {
-            txtOderID.setText(String.valueOf(p.getOrder().getOrderId()));
-        } else {
-            txtOderID.setText("");
-        }
+            txtOderID.setText(String.valueOf(p.getOrderID()));
         txtPaymentID.setEnabled(false);
     }
 
@@ -364,7 +357,7 @@ private final PaymentDAO dao = new PaymentDAOImpl();
             model.addRow(new Object[]{
                 p.getPaymentsID(),
                 p.getName(),
-                p.getOrder() != null ? p.getOrder().getOrderId() : ""
+                p.getOrderID(),
             });
         }
     }
@@ -424,6 +417,31 @@ private final PaymentDAO dao = new PaymentDAOImpl();
 
     @Override
     public void uncheckAll() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    @Override
+    public void moveFirst() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    @Override
+    public void movePrevious() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    @Override
+    public void moveNext() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    @Override
+    public void moveLast() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    @Override
+    public void moveTo(int rowIndex) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 

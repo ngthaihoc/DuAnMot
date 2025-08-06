@@ -11,6 +11,6 @@ import java.util.List;
  *
  * @author Acer
  */
-public interface CustomerDao extends CrudDAO<Customer, String>{
+public interface CustomerDao extends CurdDAO<Customer, String>{
     List<Customer> findByKeyword(String keyword);
 }

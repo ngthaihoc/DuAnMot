@@ -5,7 +5,7 @@
 package com.mycompany.projectone.entity;
 
 
-import java.util.Locale.Category;
+import java.util.Locale.Category; 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;

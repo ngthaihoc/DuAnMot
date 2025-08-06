@@ -10,6 +10,6 @@ import com.mycompany.projectone.entity.Payment;
  *
  * @author Acer
  */
-public interface PaymentDAO extends CrudDAO<Payment,Integer> {
+public interface PaymentDAO extends CurdDAO<Payment, Integer> {
     
 }
