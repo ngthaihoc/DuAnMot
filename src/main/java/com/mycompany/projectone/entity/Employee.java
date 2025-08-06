@@ -10,14 +10,12 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+
+
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
 @Data
-/**
- *
- * @author Administrator
- */
 public class Employee {
     private int employeeID;
     private String name;
@@ -26,5 +24,5 @@ public class Employee {
     private String email;
     private String phoneNum;
     private String address;
-    private boolean role;
+    private int role;
 }

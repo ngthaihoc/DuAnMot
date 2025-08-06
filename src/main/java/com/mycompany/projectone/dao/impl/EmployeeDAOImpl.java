@@ -6,6 +6,8 @@ package com.mycompany.projectone.dao.impl;
 
 import com.mycompany.projectone.dao.EmployeeDAO;
 import com.mycompany.projectone.entity.Employee;
+import com.mycompany.projectone.util.XJdbc;
+import com.mycompany.projectone.util.XQuery;
 import java.util.List;
 
 /**
@@ -22,27 +24,46 @@ public class EmployeeDAOImpl implements EmployeeDAO {
 
     @Override
     public Employee create(Employee entity) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+                    Object[] values = {
+                        entity.getEmployeeID(),
+                        entity.getName(),
+                        entity.getFirstName(),
+                        entity.getAge(),
+                        entity.getEmail(),
+                        entity.getAddress(),
+                        entity.getRole(),
+                          };
+        XJdbc.executeUpdate(createSQL, values);
+        return entity;
     }
 
     @Override
     public void update(Employee entity) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        Object[] values = {
+                        entity.getEmployeeID(),
+                        entity.getName(),
+                        entity.getFirstName(),
+                        entity.getAge(),
+                        entity.getEmail(),
+                        entity.getAddress(),
+                        entity.getRole(),
+                          };
+        XJdbc.executeUpdate(updateSQL, values);
     }
 
     @Override
     public void deleteById(Integer id) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        XJdbc.executeUpdate(deleteSQL, id);
     }
 
     @Override
     public List<Employee> findAll() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        return XQuery.getBeanList(Employee.class, findAllSQL);
     }
 
     @Override
     public Employee findById(Integer id) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        return XQuery.getSingleBean(Employee.class, findByIDSQL, id);
     }
     
 }

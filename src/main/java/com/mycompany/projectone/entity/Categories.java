@@ -13,11 +13,6 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Builder
 @Data
-
-/**
- *
- * @author Administrator
- */
 public class Categories {
     private int categoryID;
     private String categoryName;

@@ -6,6 +6,8 @@ package com.mycompany.projectone.dao.impl;
 
 import com.mycompany.projectone.dao.CategoriesDAO;
 import com.mycompany.projectone.entity.Categories;
+import com.mycompany.projectone.util.XJdbc;
+import com.mycompany.projectone.util.XQuery;
 import java.util.List;
 
 /**
@@ -22,27 +24,37 @@ public class CategoriesDAOImpl implements CategoriesDAO{
 
     @Override
     public Categories create(Categories entity) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        Object[] value = {
+        entity.getCategoryID(),
+            entity.getCategoryName()
+        };
+        XJdbc.executeUpdate(createSQL, value);
+        return entity;
     }
 
     @Override
     public void update(Categories entity) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        Object[] value = {
+        entity.getCategoryID(),
+            entity.getCategoryName()
+        };
+        XJdbc.executeUpdate(createSQL, value);
     }
 
     @Override
     public void deleteById(Integer id) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        XJdbc.executeUpdate(deleteSQL, id);
     }
+    
 
     @Override
     public List<Categories> findAll() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        return XQuery.getBeanList(Categories.class, findAllSQL);
     }
 
     @Override
     public Categories findById(Integer id) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        return XQuery.getSingleBean(Categories.class, findByIDSQL, id);
     }
     
 }

@@ -24,6 +24,6 @@ public class CustomerReview {
     private int rating;
     private String comment;
     private Book book;
-    private Customer customer;
+    private int customerID;
     
 }
