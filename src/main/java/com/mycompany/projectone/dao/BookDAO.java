@@ -11,5 +11,6 @@ import com.mycompany.projectone.entity.Book;
  * @author WellyOwO
  */
 public interface BookDAO extends CurdDAO<Book, Integer> {
-    
+    Book fingByAuthor(String id);
+     Book findBySupplie(String id);
 }

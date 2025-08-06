@@ -6,6 +6,8 @@ package com.mycompany.projectone.dao.impl;
 
 import com.mycompany.projectone.dao.BookDAO;
 import com.mycompany.projectone.entity.Book;
+import com.mycompany.projectone.util.XJdbc;
+import com.mycompany.projectone.util.XQuery;
 import java.util.List;
 
 /**
@@ -24,27 +26,60 @@ public class BookDAOImpl implements BookDAO{
 
     @Override
     public Book create(Book entity) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        Object[] value = {
+            entity.getBookID(),
+            entity.getTitle(),
+            entity.getAuthor(),
+            entity.getPublisherYear(),
+            entity.getPrice(),
+            entity.getCategory(),
+            entity.getSupplier(),
+            entity.getQuantityInStock()
+        };
+        XJdbc.executeUpdate(createSQL, value);
+        return entity;
     }
 
     @Override
     public void update(Book entity) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        Object[] value = {
+            entity.getBookID(),
+            entity.getTitle(),
+            entity.getAuthor(),
+            entity.getPublisherYear(),
+            entity.getPrice(),
+            entity.getCategory(),
+            entity.getSupplier(),
+            entity.getQuantityInStock()
+        };
+        XJdbc.executeUpdate(updateSQL, value);
     }
 
     @Override
     public void deleteById(Integer id) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        XJdbc.executeUpdate(deleteSQL, id);
     }
 
     @Override
     public List<Book> findAll() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+       return XQuery.getBeanList(Book.class, findAllSQL);
     }
 
     @Override
     public Book findById(Integer id) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+          return XQuery.getSingleBean(Book.class, findByCategorySQL, id);
     }
+
+    @Override
+    public Book fingByAuthor(String id) {
+        return XQuery.getSingleBean(Book.class, fingByAuthorSQL, id);
+    }
+
+    @Override
+    public Book findBySupplie(String id) {
+        return XQuery.getSingleBean(Book.class, findBySupplierSQL, id);
+    }
+    
+    
     
 }
