@@ -11,14 +11,15 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@NoArgsConstructor
-@AllArgsConstructor
-@Builder
-@Data
+
 /**
  *
  * @author Administrator
  */
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
+@Data
 public class ReceiptSummary {
     private int receiptSummaryID;
     private double totalAmount;
