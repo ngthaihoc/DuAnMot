@@ -10,6 +10,6 @@ import com.mycompany.projectone.entity.Customer;
  *
  * @author Acer
  */
-public interface CustomerDAO extends CurdDAO<Customer, Integer> {
-    
+public interface CustomerDao extends CurdDAO<Customer, String>{
+    List<Customer> findByKeyword(String keyword);
 }

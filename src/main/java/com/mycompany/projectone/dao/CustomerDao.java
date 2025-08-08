@@ -5,12 +5,11 @@
 package com.mycompany.projectone.dao;
 
 import com.mycompany.projectone.entity.Customer;
-import java.util.List;
 
 /**
  *
  * @author Acer
  */
 public interface CustomerDao extends CurdDAO<Customer, String>{
-    List<Customer> findByKeyword(String keyword);
+
 }
