@@ -41,6 +41,7 @@ public class CustomerManagerJDalog extends javax.swing.JDialog implements Custom
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
+        btgSex = new javax.swing.ButtonGroup();
         jPanel1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblCustomers = new javax.swing.JTable();
@@ -53,13 +54,18 @@ public class CustomerManagerJDalog extends javax.swing.JDialog implements Custom
         jLabel4 = new javax.swing.JLabel();
         txtMaKH = new javax.swing.JTextField();
         txtHoten = new javax.swing.JTextField();
-        txtEmail = new javax.swing.JTextField();
+        txtAge = new javax.swing.JTextField();
         txtDiachi = new javax.swing.JTextField();
         txtSDT = new javax.swing.JTextField();
         btnThem = new javax.swing.JButton();
         btnXoa = new javax.swing.JButton();
         btnNew = new javax.swing.JButton();
         btnUpdate = new javax.swing.JButton();
+        txtEmail = new javax.swing.JTextField();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        rdoNam = new javax.swing.JRadioButton();
+        rdoNu = new javax.swing.JRadioButton();
         jPanel3 = new javax.swing.JPanel();
         btnSearch = new javax.swing.JButton();
         txtSearch = new javax.swing.JTextField();
@@ -82,23 +88,15 @@ public class CustomerManagerJDalog extends javax.swing.JDialog implements Custom
 
     tblCustomers.setModel(new javax.swing.table.DefaultTableModel(
         new Object [][] {
-            {null, null, null, null, null, null},
-            {null, null, null, null, null, null},
-            {null, null, null, null, null, null},
-            {null, null, null, null, null, null}
+            {null, null, null, null, null, null, null},
+            {null, null, null, null, null, null, null},
+            {null, null, null, null, null, null, null},
+            {null, null, null, null, null, null, null}
         },
         new String [] {
-            "Mã KH", "Họ tên", "Tuổi", "Email", "Số điện thoại", "Địa chỉ"
+            "Mã KH", "Họ tên", "Tuổi", "Giới Tính", "Email", "Số điện thoại", "Địa chỉ"
         }
-    ) {
-        Class[] types = new Class [] {
-            java.lang.Integer.class, java.lang.String.class, java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
-        };
-
-        public Class getColumnClass(int columnIndex) {
-            return types [columnIndex];
-        }
-    });
+    ));
     tblCustomers.addMouseListener(new java.awt.event.MouseAdapter() {
         public void mouseClicked(java.awt.event.MouseEvent evt) {
             tblCustomersMouseClicked(evt);
@@ -132,18 +130,26 @@ public class CustomerManagerJDalog extends javax.swing.JDialog implements Custom
 
     jLabel3.setText("Họ tên");
 
-    jLabel7.setText("Email");
+    jLabel7.setText("Tuổi");
 
     jLabel5.setText("Địa chỉ");
 
     jLabel4.setText("SDT");
 
-    txtEmail.addActionListener(new java.awt.event.ActionListener() {
+    txtHoten.addActionListener(new java.awt.event.ActionListener() {
         public void actionPerformed(java.awt.event.ActionEvent evt) {
-            txtEmailActionPerformed(evt);
+            txtHotenActionPerformed(evt);
         }
     });
 
+    txtAge.addActionListener(new java.awt.event.ActionListener() {
+        public void actionPerformed(java.awt.event.ActionEvent evt) {
+            txtAgeActionPerformed(evt);
+        }
+    });
+
+    btnThem.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+    btnThem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/projectone/icons/add.png"))); // NOI18N
     btnThem.setText("Thêm");
     btnThem.addActionListener(new java.awt.event.ActionListener() {
         public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -151,6 +157,8 @@ public class CustomerManagerJDalog extends javax.swing.JDialog implements Custom
         }
     });
 
+    btnXoa.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+    btnXoa.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/projectone/icons/delete.png"))); // NOI18N
     btnXoa.setText("Xóa");
     btnXoa.addActionListener(new java.awt.event.ActionListener() {
         public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -158,6 +166,8 @@ public class CustomerManagerJDalog extends javax.swing.JDialog implements Custom
         }
     });
 
+    btnNew.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+    btnNew.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/projectone/icons/refresh.png"))); // NOI18N
     btnNew.setText("Làm mới");
     btnNew.addActionListener(new java.awt.event.ActionListener() {
         public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -165,6 +175,8 @@ public class CustomerManagerJDalog extends javax.swing.JDialog implements Custom
         }
     });
 
+    btnUpdate.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+    btnUpdate.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/projectone/icons/up.png"))); // NOI18N
     btnUpdate.setText("Cập nhật");
     btnUpdate.addActionListener(new java.awt.event.ActionListener() {
         public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -172,43 +184,72 @@ public class CustomerManagerJDalog extends javax.swing.JDialog implements Custom
         }
     });
 
+    txtEmail.addActionListener(new java.awt.event.ActionListener() {
+        public void actionPerformed(java.awt.event.ActionEvent evt) {
+            txtEmailActionPerformed(evt);
+        }
+    });
+
+    jLabel8.setText("Email");
+
+    jLabel9.setText("Giới Tính");
+
+    btgSex.add(rdoNam);
+    rdoNam.setText("Nam");
+
+    btgSex.add(rdoNu);
+    rdoNu.setText("Nữ");
+
     javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
     jPanel2.setLayout(jPanel2Layout);
     jPanel2Layout.setHorizontalGroup(
         jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
         .addGroup(jPanel2Layout.createSequentialGroup()
-            .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 276, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addGap(0, 0, Short.MAX_VALUE))
-        .addGroup(jPanel2Layout.createSequentialGroup()
-            .addContainerGap()
             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtHoten)
-                            .addComponent(txtEmail)
-                            .addComponent(txtDiachi)
-                            .addComponent(txtSDT)))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(txtMaKH, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 276, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(jPanel2Layout.createSequentialGroup()
-                    .addComponent(btnThem)
-                    .addGap(18, 18, 18)
-                    .addComponent(btnXoa)
-                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                    .addComponent(btnNew)))
-            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(btnUpdate)
-            .addGap(65, 65, 65))
+                    .addContainerGap()
+                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(txtHoten))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(18, 18, 18)
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(txtDiachi)
+                                    .addComponent(txtSDT)))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(txtMaKH, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(txtEmail))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(txtAge)))
+                        .addGroup(jPanel2Layout.createSequentialGroup()
+                            .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(18, 18, 18)
+                            .addComponent(rdoNam)
+                            .addGap(1, 1, 1)
+                            .addComponent(rdoNu, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGroup(jPanel2Layout.createSequentialGroup()
+                    .addComponent(btnUpdate)
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addComponent(btnXoa, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel2Layout.createSequentialGroup()
+                    .addComponent(btnNew)
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addComponent(btnThem, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)))
+            .addContainerGap(80, Short.MAX_VALUE))
     );
     jPanel2Layout.setVerticalGroup(
         jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -225,25 +266,38 @@ public class CustomerManagerJDalog extends javax.swing.JDialog implements Custom
                 .addComponent(jLabel3))
             .addGap(18, 18, 18)
             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtAge, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addComponent(jLabel7))
             .addGap(18, 18, 18)
             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addComponent(jLabel9)
+                .addComponent(rdoNam)
+                .addComponent(rdoNu))
+            .addGap(18, 18, 18)
+            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jLabel8))
+            .addGap(8, 8, 8)
+            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                 .addComponent(txtDiachi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addComponent(jLabel5))
-            .addGap(18, 18, 18)
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                 .addComponent(txtSDT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addComponent(jLabel4))
-            .addGap(18, 18, 18)
+            .addGap(15, 15, 15)
             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                .addComponent(btnThem)
-                .addComponent(btnXoa)
+                .addComponent(btnUpdate)
+                .addComponent(btnXoa))
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                 .addComponent(btnNew)
-                .addComponent(btnUpdate))
-            .addContainerGap(12, Short.MAX_VALUE))
+                .addComponent(btnThem))
+            .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
     );
 
+    btnSearch.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+    btnSearch.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/projectone/icons/edit.png"))); // NOI18N
     btnSearch.setText("Search");
     btnSearch.addActionListener(new java.awt.event.ActionListener() {
         public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -256,20 +310,19 @@ public class CustomerManagerJDalog extends javax.swing.JDialog implements Custom
     jPanel3Layout.setHorizontalGroup(
         jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-            .addGap(63, 63, 63)
-            .addComponent(txtSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
+            .addComponent(txtSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 238, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGap(45, 45, 45)
             .addComponent(btnSearch)
-            .addGap(28, 28, 28))
+            .addContainerGap(49, Short.MAX_VALUE))
     );
     jPanel3Layout.setVerticalGroup(
         jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
         .addGroup(jPanel3Layout.createSequentialGroup()
-            .addGap(17, 17, 17)
+            .addContainerGap()
             .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                .addComponent(btnSearch)
-                .addComponent(txtSearch, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addContainerGap(16, Short.MAX_VALUE))
+                .addComponent(txtSearch, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnSearch))
+            .addContainerGap(50, Short.MAX_VALUE))
     );
 
     javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -285,7 +338,7 @@ public class CustomerManagerJDalog extends javax.swing.JDialog implements Custom
                     .addGap(12, 12, 12)
                     .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 8, Short.MAX_VALUE)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 377, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
             .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
     );
     layout.setVerticalGroup(
@@ -306,9 +359,9 @@ public class CustomerManagerJDalog extends javax.swing.JDialog implements Custom
     pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txtEmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEmailActionPerformed
+    private void txtAgeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtAgeActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtEmailActionPerformed
+    }//GEN-LAST:event_txtAgeActionPerformed
 
     private void btnThemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThemActionPerformed
         // TODO add your handling code here:
@@ -353,6 +406,7 @@ public class CustomerManagerJDalog extends javax.swing.JDialog implements Custom
             customer.getCustomerID(),
             customer.getFirstName(),
             customer.getAge(),
+            customer.getSex(),
             customer.getEmailNum(),
             customer.getPhone(),
             customer.getAddress()
@@ -365,6 +419,14 @@ public class CustomerManagerJDalog extends javax.swing.JDialog implements Custom
         // TODO add your handling code here:
         this.edit();
     }//GEN-LAST:event_tblCustomersMouseClicked
+
+    private void txtEmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEmailActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtEmailActionPerformed
+
+    private void txtHotenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtHotenActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtHotenActionPerformed
 
     /**
      * @param args the command line arguments
@@ -412,6 +474,7 @@ public class CustomerManagerJDalog extends javax.swing.JDialog implements Custom
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.ButtonGroup btgSex;
     private javax.swing.JButton btnNew;
     private javax.swing.JButton btnSearch;
     private javax.swing.JButton btnThem;
@@ -424,11 +487,16 @@ public class CustomerManagerJDalog extends javax.swing.JDialog implements Custom
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JRadioButton rdoNam;
+    private javax.swing.JRadioButton rdoNu;
     private javax.swing.JTable tblCustomers;
+    private javax.swing.JTextField txtAge;
     private javax.swing.JTextField txtDiachi;
     private javax.swing.JTextField txtEmail;
     private javax.swing.JTextField txtHoten;
@@ -450,7 +518,7 @@ private final CustomerDao dao = new CustomerDaoImpl();
     public void clear() {
         txtMaKH.setText("");
         txtHoten.setText("");
-        txtEmail.setText("");
+        txtAge.setText("");
         txtDiachi.setText("");
         txtSDT.setText("");
     }
@@ -460,6 +528,8 @@ private final CustomerDao dao = new CustomerDaoImpl();
         Customer c = new Customer();
         c.setCustomerID(Integer.parseInt(txtMaKH.getText()));
         c.setFirstName(txtHoten.getText());
+        c.setAge(Integer.parseInt(txtAge.getText()));
+        
         c.setEmailNum(txtEmail.getText());
         c.setAddress(txtDiachi.getText());
         c.setPhone(txtSDT.getText());
@@ -470,6 +540,9 @@ private final CustomerDao dao = new CustomerDaoImpl();
     public void setForm(Customer c) {
         txtMaKH.setText(String.valueOf(c.getCustomerID()));
         txtHoten.setText(c.getFirstName());
+        txtAge.setText(String.valueOf(c.getAge()));
+        rdoNam.setSelected(c.getSex() == 1 ? true : false);
+        rdoNu.setSelected(c.getSex() == 0 ? true : false);
         txtEmail.setText(c.getEmailNum());
         txtDiachi.setText(c.getAddress());
         txtSDT.setText(c.getPhone());
@@ -481,7 +554,14 @@ private final CustomerDao dao = new CustomerDaoImpl();
         DefaultTableModel model = (DefaultTableModel) tblCustomers.getModel();
         model.setRowCount(0);
         for (Customer c : list) {
-            model.addRow(new Object[]{c.getCustomerID(), c.getFirstName(), c.getAge(), c.getEmailNum(), c.getPhone(), c.getAddress()});
+            model.addRow(new Object[]{
+                c.getCustomerID(), 
+                c.getFirstName(), 
+                c.getAge(),
+                c.getSex() == 0 ? "Nữ" : "Nam", 
+                c.getEmailNum(), 
+                c.getPhone(), 
+                c.getAddress()});
         }
     }
 

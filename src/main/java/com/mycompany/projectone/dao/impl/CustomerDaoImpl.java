@@ -9,8 +9,8 @@ import com.mycompany.projectone.util.XQuery;
 import java.util.List;
 
 public class CustomerDaoImpl implements CustomerDao {
-    private String createSql = "INSERT INTO Customers(CustomerId, FirstName, Age, EmailNum, Phone, Address) VALUES(?, ?, ?, ?, ?, ?)";
-    private  String updateSql = "UPDATE Customers SET FirstName=?, Age=?, EmailNum=?, Phone=?, Address=? WHERE CustomerId=?";
+    private String createSql = "INSERT INTO Customers(CustomerId, FirstName, Age,sex, EmailNum, Phone, Address) VALUES(?,?, ?, ?, ?, ?, ?)";
+    private  String updateSql = "UPDATE Customers SET FirstName=?, Age=?, Sex = ?, EmailNum=?, Phone=?, Address=? WHERE CustomerId=?";
     private  String deleteByIdSql = "DELETE FROM Customers WHERE CustomerId=?";
     private  String findAllSql = "SELECT * FROM Customers";
     private  String findByIdSql = findAllSql + " WHERE CustomerId=?";
@@ -21,6 +21,7 @@ public class CustomerDaoImpl implements CustomerDao {
             entity.getCustomerID(),
             entity.getFirstName(),
             entity.getAge(),
+            entity.getSex(),
             entity.getEmailNum(),
             entity.getPhone(),
             entity.getAddress()
@@ -34,6 +35,7 @@ public class CustomerDaoImpl implements CustomerDao {
         Object[] values = {
             entity.getFirstName(),
             entity.getAge(),
+            entity.getSex(),
             entity.getEmailNum(),
             entity.getPhone(),
             entity.getAddress(),
@@ -48,7 +50,7 @@ public class CustomerDaoImpl implements CustomerDao {
     }
 
     @Override
-    public List<Customer> findAll() {
+    public List<Customer> findAll() {   
         return XQuery.getBeanList(Customer.class, findAllSql);
     }
 

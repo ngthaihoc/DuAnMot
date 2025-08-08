@@ -19,6 +19,7 @@ public class Customer {
     private int customerID;
     private String firstName;
     private int age;
+    private int sex;
     private String emailNum;
     private String phone;
     private String address;
