@@ -7,6 +7,7 @@ package com.mycompany.projectone.dao.impl;
 import com.mycompany.projectone.dao.OrderSummaryDAO;
 import com.mycompany.projectone.entity.OrderSummary;
 import com.mycompany.projectone.util.XJdbc;
+import com.mycompany.projectone.util.XQuery;
 import java.util.List;
 
 /**
@@ -26,35 +27,39 @@ public class OrderSummaryDAOImpl implements OrderSummaryDAO {
     @Override
     public OrderSummary create(OrderSummary entity) {
               Object[] values = {
-                       entity.getOrderID(),
-            entity.getCustomer(),
-            entity.getEmployee(),
-            entity.getOrderDate(),
+             entity.getOrderSummaryID(),
+            entity.getTotalAmount(),
+            entity.getOrderID(),
             entity.getPromotion()
                           };
         XJdbc.executeUpdate(createSQL, values);
         return entity;
-        
     }
 
     @Override
     public void update(OrderSummary entity) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+                      Object[] values = {
+             entity.getOrderSummaryID(),
+            entity.getTotalAmount(),
+            entity.getOrderID(),
+            entity.getPromotion()
+                          };
+        XJdbc.executeUpdate(updateSQL, values);
     }
 
     @Override
     public void deleteById(Integer id) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        XJdbc.executeUpdate(deleteSQL, id);
     }
 
     @Override
     public List<OrderSummary> findAll() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        return XQuery.getBeanList(OrderSummary.class, findAllSQL);
     }
 
     @Override
     public OrderSummary findById(Integer id) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        return XQuery.getSingleBean(OrderSummary.class, findByIDSQL, id);
     }
     
     

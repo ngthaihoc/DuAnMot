@@ -10,15 +10,16 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@NoArgsConstructor
-@AllArgsConstructor
-@Builder
-@Data
+
 
 /**
  *
  * @author Administrator
  */
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
+@Data
 public class Promotion {
         private int promotionID;
     private String promoTitle;

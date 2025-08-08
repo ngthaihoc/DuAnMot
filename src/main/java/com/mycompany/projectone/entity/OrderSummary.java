@@ -9,18 +9,19 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@NoArgsConstructor
-@AllArgsConstructor
-@Builder
-@Data
+
 /**
  *
  * @author Administrator
  */
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
+@Data
 public class OrderSummary {
     private int orderSummaryID;
     private double totalAmount;
-    private Order order;
+    private int  orderID;
     private Promotion promotion;
     
 }
