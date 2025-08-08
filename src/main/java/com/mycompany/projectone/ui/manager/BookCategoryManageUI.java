@@ -401,7 +401,8 @@ public class BookCategoryManageUI extends javax.swing.JFrame {
     }//GEN-LAST:event_btnCreate1ActionPerformed
 
     private void txtCategoryNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCategoryNameActionPerformed
-        // TODO add your handling code here:
+     
+              
     }//GEN-LAST:event_txtCategoryNameActionPerformed
 
     /**
