@@ -8,7 +8,7 @@ import com.mycompany.projectone.entity.Customer;
 
 /**
  *
- * @author WellyOwO
+ * @author Acer
  */
 public interface CustomerDAO extends CurdDAO<Customer, Integer> {
     
