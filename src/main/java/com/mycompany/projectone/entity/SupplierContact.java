@@ -9,14 +9,11 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
 @Data
-/**
- *
- * @author Administrator
- */
 public class SupplierContact {
     private int contactID;
     private String email;
