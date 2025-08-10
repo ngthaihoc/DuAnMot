@@ -4,20 +4,94 @@
  */
 package com.mycompany.projectone.ui.manager;
 
+import com.mycompany.projectone.dao.EmployeeDAO;
+import com.mycompany.projectone.dao.impl.EmployeeManagerDAOImpl;
+import com.mycompany.projectone.entity.Employee;
+import java.util.List;
+import javax.swing.JOptionPane;
+import java.util.logging.Logger;
+import javax.swing.table.DefaultTableModel;
 /**
  *
  * @author WellyOwO
  */
 public class EmployeeMangeUI extends javax.swing.JFrame {
     
+    
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(EmployeeMangeUI.class.getName());
-
+    private final EmployeeDAO dao = new EmployeeManagerDAOImpl();
     /**
      * Creates new form EmployeeMangeUI
      */
     public EmployeeMangeUI() {
         initComponents();
+        setLocationRelativeTo(null);
+        fillToTable();
     }
+    private void fillToTable() {
+    DefaultTableModel model = (DefaultTableModel) tblEmployee.getModel();
+    model.setRowCount(0); // Xóa dữ liệu cũ trong bảng
+    try {
+        List<Employee> employees = dao.findAll();
+        for (Employee emp : employees) {
+            model.addRow(new Object[]{
+                emp.getEmployeeID(),
+                emp.getName(),
+                emp.getFirstName(),
+                emp.getAge(),
+                emp.isSex() ? "Nam" : "Nữ", // Chuyển Boolean thành chuỗi
+                emp.getEmail(),
+                emp.getPhoneNum(),
+                emp.getAddress(),
+                emp.getRole() == 1 ? "Admin" : "Employee"
+            });
+        }
+    } catch (Exception e) {
+        JOptionPane.showMessageDialog(this, "Lỗi tải danh sách nhân viên: " + e.getMessage());
+    }
+    }
+    
+    
+    private Employee getModelFromForm() {
+    try {
+        int id = Integer.parseInt(txtEmpID.getText().trim());
+        String firstName = txtEmpName.getText().trim();
+        String email = txtEmail.getText().trim();
+        String phone = txtPhone.getText().trim();
+        int role = txtRole.getText().trim().equalsIgnoreCase("admin") ? 1 : 0;
+        boolean sex = rdoNam.isSelected();
+        String address = txaNote.getText().trim();
+        int age = 0; // Tạm đặt mặc định, cần thêm trường nhập tuổi trong giao diện
+
+        if (firstName.isEmpty() || email.isEmpty() || phone.isEmpty()) {
+            throw new IllegalArgumentException("Vui lòng điền đầy đủ thông tin bắt buộc.");
+        }
+
+        return Employee.builder()
+                .employeeID(id)
+                .firstName(firstName)
+                .name(firstName)
+                .age(age)
+                .sex(sex)
+                .email(email)
+                .phoneNum(phone)
+                .address(address)
+                .role(role)
+                .build();
+    } catch (NumberFormatException e) {
+        JOptionPane.showMessageDialog(this, "Mã nhân viên phải là số!");
+        return null;
+    } catch (IllegalArgumentException e) {
+        JOptionPane.showMessageDialog(this, e.getMessage());
+        return null;
+    } catch (Exception e) {
+        JOptionPane.showMessageDialog(this, "Lỗi nhập liệu: " + e.getMessage());
+        return null;
+    }
+}                                       
+
+    
+
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -29,6 +103,13 @@ public class EmployeeMangeUI extends javax.swing.JFrame {
     private void initComponents() {
 
         buttonGroup1 = new javax.swing.ButtonGroup();
+        tabs = new javax.swing.JTabbedPane();
+        pnlAccountList = new javax.swing.JPanel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        tblEmployee = new javax.swing.JTable();
+        btnDelete1 = new javax.swing.JButton();
+        btnClear1 = new javax.swing.JButton();
+        pnlAccountCreation = new javax.swing.JPanel();
         lblEmpID = new javax.swing.JLabel();
         txtEmpID = new javax.swing.JTextField();
         lblEmpName = new javax.swing.JLabel();
@@ -52,6 +133,63 @@ public class EmployeeMangeUI extends javax.swing.JFrame {
         rdoNu = new javax.swing.JRadioButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        tblEmployee.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
+        tblEmployee.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null}
+            },
+            new String [] {
+                "Mã NV", "Họ Nhân Viên", "Tên Nhân Viên", "Tuổi", "Giới Tính", "Email", "SĐT", "Địa Chỉ", "Chức Vụ"
+            }
+        ));
+        jScrollPane2.setViewportView(tblEmployee);
+
+        btnDelete1.setFont(new java.awt.Font("Segoe UI", 3, 12)); // NOI18N
+        btnDelete1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/projectone/icons/delete.png"))); // NOI18N
+        btnDelete1.setText("Xóa");
+        btnDelete1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDelete1ActionPerformed(evt);
+            }
+        });
+
+        btnClear1.setFont(new java.awt.Font("Segoe UI", 3, 12)); // NOI18N
+        btnClear1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/projectone/icons/refresh.png"))); // NOI18N
+        btnClear1.setText("Làm mới");
+        btnClear1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnClear1ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout pnlAccountListLayout = new javax.swing.GroupLayout(pnlAccountList);
+        pnlAccountList.setLayout(pnlAccountListLayout);
+        pnlAccountListLayout.setHorizontalGroup(
+            pnlAccountListLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlAccountListLayout.createSequentialGroup()
+                .addContainerGap(443, Short.MAX_VALUE)
+                .addComponent(btnDelete1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnClear1)
+                .addContainerGap())
+            .addComponent(jScrollPane2)
+        );
+        pnlAccountListLayout.setVerticalGroup(
+            pnlAccountListLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlAccountListLayout.createSequentialGroup()
+                .addGap(41, 41, 41)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 243, Short.MAX_VALUE)
+                .addGap(32, 32, 32)
+                .addGroup(pnlAccountListLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnDelete1)
+                    .addComponent(btnClear1)))
+        );
+
+        tabs.addTab("Danh sách nhân viên", pnlAccountList);
 
         lblEmpID.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         lblEmpID.setText("Mã nhân viên");
@@ -101,6 +239,11 @@ public class EmployeeMangeUI extends javax.swing.JFrame {
         btnDelete.setFont(new java.awt.Font("Segoe UI", 3, 12)); // NOI18N
         btnDelete.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/projectone/icons/delete.png"))); // NOI18N
         btnDelete.setText("Xoá");
+        btnDelete.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDeleteActionPerformed(evt);
+            }
+        });
 
         btnSearch.setFont(new java.awt.Font("Segoe UI", 3, 12)); // NOI18N
         btnSearch.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/projectone/icons/edit.png"))); // NOI18N
@@ -114,14 +257,29 @@ public class EmployeeMangeUI extends javax.swing.JFrame {
         btnUpdate.setFont(new java.awt.Font("Segoe UI", 3, 12)); // NOI18N
         btnUpdate.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/projectone/icons/up.png"))); // NOI18N
         btnUpdate.setText("Sửa");
+        btnUpdate.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnUpdateActionPerformed(evt);
+            }
+        });
 
         btnCreate.setFont(new java.awt.Font("Segoe UI", 3, 12)); // NOI18N
         btnCreate.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/projectone/icons/add.png"))); // NOI18N
         btnCreate.setText("Thêm");
+        btnCreate.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCreateActionPerformed(evt);
+            }
+        });
 
         btnClear.setFont(new java.awt.Font("Segoe UI", 3, 12)); // NOI18N
         btnClear.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/projectone/icons/refresh.png"))); // NOI18N
         btnClear.setText("Làm mới");
+        btnClear.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnClearActionPerformed(evt);
+            }
+        });
 
         txaNote.setColumns(20);
         txaNote.setRows(5);
@@ -135,100 +293,117 @@ public class EmployeeMangeUI extends javax.swing.JFrame {
         rdoNu.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         rdoNu.setText("Nữ");
 
+        javax.swing.GroupLayout pnlAccountCreationLayout = new javax.swing.GroupLayout(pnlAccountCreation);
+        pnlAccountCreation.setLayout(pnlAccountCreationLayout);
+        pnlAccountCreationLayout.setHorizontalGroup(
+            pnlAccountCreationLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 691, Short.MAX_VALUE)
+            .addGroup(pnlAccountCreationLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(pnlAccountCreationLayout.createSequentialGroup()
+                    .addContainerGap()
+                    .addGroup(pnlAccountCreationLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(pnlAccountCreationLayout.createSequentialGroup()
+                            .addComponent(lblPhone, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(18, 18, 18)
+                            .addComponent(txtPhone, javax.swing.GroupLayout.PREFERRED_SIZE, 308, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(pnlAccountCreationLayout.createSequentialGroup()
+                            .addComponent(lblEmpID, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(18, 18, 18)
+                            .addComponent(txtEmpID, javax.swing.GroupLayout.PREFERRED_SIZE, 308, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(pnlAccountCreationLayout.createSequentialGroup()
+                            .addComponent(lblEmpName, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(18, 18, 18)
+                            .addComponent(txtEmpName, javax.swing.GroupLayout.PREFERRED_SIZE, 308, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(pnlAccountCreationLayout.createSequentialGroup()
+                            .addComponent(lblEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(18, 18, 18)
+                            .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 308, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(pnlAccountCreationLayout.createSequentialGroup()
+                            .addComponent(lblRole, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(18, 18, 18)
+                            .addComponent(txtRole, javax.swing.GroupLayout.PREFERRED_SIZE, 308, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(pnlAccountCreationLayout.createSequentialGroup()
+                            .addComponent(lblNote, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(18, 18, 18)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 308, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(pnlAccountCreationLayout.createSequentialGroup()
+                            .addComponent(lblSex, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(18, 18, 18)
+                            .addComponent(rdoNam, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(18, 18, 18)
+                            .addComponent(rdoNu, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGap(27, 27, 27)
+                    .addGroup(pnlAccountCreationLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(btnCreate, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnUpdate, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnDelete, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnSearch, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnClear, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+        );
+        pnlAccountCreationLayout.setVerticalGroup(
+            pnlAccountCreationLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 371, Short.MAX_VALUE)
+            .addGroup(pnlAccountCreationLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(pnlAccountCreationLayout.createSequentialGroup()
+                    .addContainerGap()
+                    .addGroup(pnlAccountCreationLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(lblEmpID)
+                        .addComponent(txtEmpID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                    .addGroup(pnlAccountCreationLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(pnlAccountCreationLayout.createSequentialGroup()
+                            .addGroup(pnlAccountCreationLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(lblEmpName)
+                                .addComponent(txtEmpName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGap(18, 18, 18)
+                            .addGroup(pnlAccountCreationLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(lblSex)
+                                .addComponent(rdoNam)
+                                .addComponent(rdoNu))
+                            .addGap(18, 18, 18)
+                            .addGroup(pnlAccountCreationLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(lblPhone)
+                                .addComponent(txtPhone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGap(18, 18, 18)
+                            .addGroup(pnlAccountCreationLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(lblEmail)
+                                .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGap(18, 18, 18)
+                            .addGroup(pnlAccountCreationLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(lblRole)
+                                .addComponent(txtRole, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGap(18, 18, 18)
+                            .addGroup(pnlAccountCreationLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(pnlAccountCreationLayout.createSequentialGroup()
+                                    .addComponent(lblNote)
+                                    .addGap(0, 0, Short.MAX_VALUE))
+                                .addComponent(jScrollPane1)))
+                        .addGroup(pnlAccountCreationLayout.createSequentialGroup()
+                            .addComponent(btnSearch)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(btnDelete)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(btnUpdate)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(btnCreate)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(btnClear)
+                            .addGap(0, 0, Short.MAX_VALUE)))
+                    .addContainerGap()))
+        );
+
+        tabs.addTab("Thêm Nhân Viên", pnlAccountCreation);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(lblPhone, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(txtPhone, javax.swing.GroupLayout.PREFERRED_SIZE, 308, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(lblEmpID, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(txtEmpID, javax.swing.GroupLayout.PREFERRED_SIZE, 308, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(lblEmpName, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(txtEmpName, javax.swing.GroupLayout.PREFERRED_SIZE, 308, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(lblEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 308, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(lblRole, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(txtRole, javax.swing.GroupLayout.PREFERRED_SIZE, 308, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(lblNote, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jScrollPane1))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(lblSex, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(rdoNam, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(rdoNu, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(27, 27, 27)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(btnCreate, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnUpdate, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnDelete, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnSearch, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnClear, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(58, Short.MAX_VALUE))
+            .addComponent(tabs)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblEmpID)
-                    .addComponent(txtEmpID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lblEmpName)
-                            .addComponent(txtEmpName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lblSex)
-                            .addComponent(rdoNam)
-                            .addComponent(rdoNu))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lblPhone)
-                            .addComponent(txtPhone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lblEmail)
-                            .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lblRole)
-                            .addComponent(txtRole, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(lblNote)
-                                .addGap(0, 0, Short.MAX_VALUE))
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 145, Short.MAX_VALUE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(btnSearch)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnDelete)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnUpdate)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnCreate)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnClear)
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
+            .addComponent(tabs, javax.swing.GroupLayout.Alignment.TRAILING)
         );
 
         pack();
@@ -252,7 +427,105 @@ public class EmployeeMangeUI extends javax.swing.JFrame {
 
     private void btnSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchActionPerformed
         // TODO add your handling code here:
+        try {
+            int id = Integer.parseInt(txtEmpID.getText().trim());
+            Employee emp = dao.findById(id);
+            if (emp != null) {
+                txtEmpName.setText(emp.getFirstName());
+                txtEmail.setText(emp.getEmail());
+                txtPhone.setText(emp.getPhoneNum());
+                txtRole.setText(emp.getRole() == 1 ? "Admin" : "Employee");
+                txaNote.setText(emp.getAddress());
+                rdoNam.setSelected(emp.isSex());
+                rdoNu.setSelected(!emp.isSex());
+                JOptionPane.showMessageDialog(this, "Tìm thấy nhân viên với ID: " + id);
+            } else {
+                JOptionPane.showMessageDialog(this, "Không tìm thấy nhân viên với ID: " + id);
+                clearForm();
+            }
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(this, "Mã nhân viên phải là số!");
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Lỗi khi tìm kiếm: " + e.getMessage());
+        }
+       
     }//GEN-LAST:event_btnSearchActionPerformed
+
+    private void btnCreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateActionPerformed
+            // TODO add your handling code here:
+            Employee emp = getModelFromForm();
+        if (emp != null) {
+            try {
+                dao.create(emp);
+                JOptionPane.showMessageDialog(this, "Thêm nhân viên thành công.");
+                clearForm();
+                fillToTable();
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(this, "Lỗi thêm nhân viên: " + e.getMessage());
+            }
+        }
+    }//GEN-LAST:event_btnCreateActionPerformed
+
+    private void btnUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateActionPerformed
+        // TODO add your handling code here:
+        Employee emp = getModelFromForm();
+        if (emp != null) {
+            try {
+                dao.update(emp);
+                JOptionPane.showMessageDialog(this, "Cập nhật nhân viên thành công!");
+                clearForm();
+                fillToTable();
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(this, "Lỗi cập nhật nhân viên: " + e.getMessage());
+            }
+        }
+    }//GEN-LAST:event_btnUpdateActionPerformed
+
+    private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
+        // TODO add your handling code here:
+        try {
+        int id = Integer.parseInt(txtEmpID.getText().trim());
+        dao.deleteById(id);
+        JOptionPane.showMessageDialog(this, "Xóa thành công!");
+        clearForm();
+        fillToTable();
+    } catch (Exception e) {
+        JOptionPane.showMessageDialog(this, "Lỗi khi xóa: " + e.getMessage());
+    }
+    }//GEN-LAST:event_btnDeleteActionPerformed
+
+    private void btnClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClearActionPerformed
+            // TODO add your handling code here:
+            clearForm();
+            fillToTable();
+    }//GEN-LAST:event_btnClearActionPerformed
+
+    private void btnDelete1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDelete1ActionPerformed
+        // TODO add your handling code here:
+        int selectedRow = tblEmployee.getSelectedRow();
+        if (selectedRow == -1) {
+            JOptionPane.showMessageDialog(this, "Vui lòng chọn một nhân viên trong bảng để xóa!");
+            return;
+        }
+
+        int confirm = JOptionPane.showConfirmDialog(this, "Bạn có chắc chắn muốn xóa nhân viên này?", "Xác nhận xóa", JOptionPane.YES_NO_OPTION);
+        if (confirm == JOptionPane.YES_OPTION) {
+            try {
+                int id = (Integer) tblEmployee.getValueAt(selectedRow, 0); // Giả sử cột 0 là EmployeeID
+                dao.deleteById(id);
+                JOptionPane.showMessageDialog(this, "Xóa thành công!");
+                fillToTable(); // Cập nhật lại bảng
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(this, "Lỗi khi xóa: " + e.getMessage());
+            }
+        }
+        
+    }//GEN-LAST:event_btnDelete1ActionPerformed
+
+    private void btnClear1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClear1ActionPerformed
+        // TODO add your handling code here:
+        fillToTable();
+    }//GEN-LAST:event_btnClear1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -281,12 +554,15 @@ public class EmployeeMangeUI extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnClear;
+    private javax.swing.JButton btnClear1;
     private javax.swing.JButton btnCreate;
     private javax.swing.JButton btnDelete;
+    private javax.swing.JButton btnDelete1;
     private javax.swing.JButton btnSearch;
     private javax.swing.JButton btnUpdate;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JLabel lblEmail;
     private javax.swing.JLabel lblEmpID;
     private javax.swing.JLabel lblEmpName;
@@ -294,8 +570,12 @@ public class EmployeeMangeUI extends javax.swing.JFrame {
     private javax.swing.JLabel lblPhone;
     private javax.swing.JLabel lblRole;
     private javax.swing.JLabel lblSex;
+    private javax.swing.JPanel pnlAccountCreation;
+    private javax.swing.JPanel pnlAccountList;
     private javax.swing.JRadioButton rdoNam;
     private javax.swing.JRadioButton rdoNu;
+    private javax.swing.JTabbedPane tabs;
+    private javax.swing.JTable tblEmployee;
     private javax.swing.JTextArea txaNote;
     private javax.swing.JTextField txtEmail;
     private javax.swing.JTextField txtEmpID;
@@ -303,4 +583,16 @@ public class EmployeeMangeUI extends javax.swing.JFrame {
     private javax.swing.JTextField txtPhone;
     private javax.swing.JTextField txtRole;
     // End of variables declaration//GEN-END:variables
+private void clearForm() {
+        txtEmpID.setText("");
+        txtEmpName.setText("");
+        rdoNam.setSelected(false);
+        rdoNu.setSelected(false);
+        txtPhone.setText("");
+        txtEmail.setText("");
+        txtRole.setText("");
+        txaNote.setText("");
+    }
+
 }
+
