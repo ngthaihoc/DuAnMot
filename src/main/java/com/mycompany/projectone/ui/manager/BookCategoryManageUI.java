@@ -4,11 +4,18 @@
  */
 package com.mycompany.projectone.ui.manager;
 
+import com.mycompany.projectone.controller.BookCategoriesController;
+import com.mycompany.projectone.dao.CategoriesDAO;
+import com.mycompany.projectone.dao.impl.CategoriesDAOImpl;
+import com.mycompany.projectone.entity.Categories;
+import java.util.List;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author WellyOwO
  */
-public class BookCategoryManageUI extends javax.swing.JFrame {
+public class BookCategoryManageUI extends javax.swing.JFrame implements BookCategoriesController {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(BookCategoryManageUI.class.getName());
 
@@ -288,13 +295,13 @@ public class BookCategoryManageUI extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtCategoryName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(pnlBieuMau1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnClear1)
-                    .addComponent(btnUpdate1))
+                .addGroup(pnlBieuMau1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnUpdate1, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(btnClear1))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 39, Short.MAX_VALUE)
-                .addGroup(pnlBieuMau1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnCreate1)
-                    .addComponent(btnDelete1))
+                .addGroup(pnlBieuMau1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnDelete1)
+                    .addComponent(btnCreate1))
                 .addGap(29, 29, 29)
                 .addGroup(pnlBieuMau1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnMoveLast)
@@ -427,4 +434,92 @@ public class BookCategoryManageUI extends javax.swing.JFrame {
     private javax.swing.JTextField txtCategoryID;
     private javax.swing.JTextField txtCategoryName;
     // End of variables declaration//GEN-END:variables
+
+    
+    CategoriesDAO dao =new CategoriesDAOImpl();
+    List<Categories> items = List.of();
+    
+    @Override
+    public void open() {
+    }
+
+    @Override
+    public void setForm(Categories entity) {
+
+    }
+
+    @Override
+    public Categories getForm() {
+        return null;
+    }
+
+    @Override
+    public void fillToTable() {
+        DefaultTableModel model = (DefaultTableModel) tblCategory.getModel();
+        model.setRowCount(0);
+        items = dao.findAll();
+        items.forEach(item ->{
+        Object[] data= {
+            item.getCategoryID(),
+            item.getCategoryName()
+        };
+        model.addRow(data);
+                });
+    }
+
+    @Override
+    public void edit() {
+    }
+
+    @Override
+    public void create() {
+    }
+
+    @Override
+    public void update() {
+    }
+
+    @Override
+    public void delete() {
+    }
+
+    @Override
+    public void clear() {
+    }
+
+    @Override
+    public void setEditable(boolean editable) {
+    }
+
+    @Override
+    public void checkAll() {
+    }
+
+    @Override
+    public void uncheckAll() {
+    }
+
+    @Override
+    public void deleteCheckedItems() {
+    }
+
+    @Override
+    public void moveFirst() {
+    }
+
+    @Override
+    public void movePrevious() {
+    }
+
+    @Override
+    public void moveNext() {
+    }
+
+    @Override
+    public void moveLast() {
+    }
+
+    @Override
+    public void moveTo(int rowIndex) {
+    }
 }

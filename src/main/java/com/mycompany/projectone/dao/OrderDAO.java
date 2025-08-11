@@ -5,11 +5,13 @@
 package com.mycompany.projectone.dao;
 
 import com.mycompany.projectone.entity.Order;
+import java.util.Date;
+import java.util.List;
 
 /**
  *
  * @author WellyOwO
  */
 public interface OrderDAO extends CurdDAO<Order, Integer> {
-    
+     List<Order> findByTimeRange(Date begin, Date end);
 }

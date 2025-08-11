@@ -20,9 +20,9 @@ import lombok.NoArgsConstructor;
  * @author Administrator
  */
 public class OrderDetail {
-        private int detailedOrderID;
-    private Book book;
-    private Order order;
+     private int OrderID;
+    private String nameBook;
+    private String category;
     private int quantity;
-    
+    private double totalAmount;
 }

@@ -50,12 +50,8 @@ public class AccountManagerJDialog extends javax.swing.JDialog implements Accoun
         txtAccountName = new javax.swing.JTextField();
         lblPass = new javax.swing.JLabel();
         txtPass = new javax.swing.JTextField();
-        lblRole = new javax.swing.JLabel();
-        rdoManager = new javax.swing.JRadioButton();
-        rdoEmployee = new javax.swing.JRadioButton();
         lblStatus = new javax.swing.JLabel();
         rdoUnActive = new javax.swing.JRadioButton();
-        rdoInProgress = new javax.swing.JRadioButton();
         rdoActive = new javax.swing.JRadioButton();
         btnAdd = new javax.swing.JButton();
         btnUpdate = new javax.swing.JButton();
@@ -65,6 +61,8 @@ public class AccountManagerJDialog extends javax.swing.JDialog implements Accoun
         btnMoveNext = new javax.swing.JButton();
         btnMovePrevious = new javax.swing.JButton();
         btnMoveFirst = new javax.swing.JButton();
+        txtPass1 = new javax.swing.JTextField();
+        lblPass1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -77,7 +75,7 @@ public class AccountManagerJDialog extends javax.swing.JDialog implements Accoun
                 {null, null, null, null, null}
             },
             new String [] {
-                "Mã tài khoản", "Tên tài khoản", "Password", "Trạng thái", "Vai trò"
+                "Mã tài khoản", "Tên tài khoản", "Password", "Trạng thái", "ID nhân viên"
             }
         ) {
             Class[] types = new Class [] {
@@ -172,27 +170,6 @@ public class AccountManagerJDialog extends javax.swing.JDialog implements Accoun
             }
         });
 
-        lblRole.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
-        lblRole.setText("Vai trò");
-
-        groRole.add(rdoManager);
-        rdoManager.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
-        rdoManager.setText("Quản lý");
-        rdoManager.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                rdoManagerActionPerformed(evt);
-            }
-        });
-
-        groRole.add(rdoEmployee);
-        rdoEmployee.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
-        rdoEmployee.setText("Nhân viên");
-        rdoEmployee.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                rdoEmployeeActionPerformed(evt);
-            }
-        });
-
         lblStatus.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
         lblStatus.setText("Trạng thái");
 
@@ -202,15 +179,6 @@ public class AccountManagerJDialog extends javax.swing.JDialog implements Accoun
         rdoUnActive.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 rdoUnActiveActionPerformed(evt);
-            }
-        });
-
-        groStatus.add(rdoInProgress);
-        rdoInProgress.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
-        rdoInProgress.setText("Đang kích hoạt");
-        rdoInProgress.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                rdoInProgressActionPerformed(evt);
             }
         });
 
@@ -301,6 +269,15 @@ public class AccountManagerJDialog extends javax.swing.JDialog implements Accoun
             }
         });
 
+        txtPass1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtPass1ActionPerformed(evt);
+            }
+        });
+
+        lblPass1.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
+        lblPass1.setText("ID Nhân VIên");
+
         javax.swing.GroupLayout pnlAccountCreationLayout = new javax.swing.GroupLayout(pnlAccountCreation);
         pnlAccountCreation.setLayout(pnlAccountCreationLayout);
         pnlAccountCreationLayout.setHorizontalGroup(
@@ -310,34 +287,18 @@ public class AccountManagerJDialog extends javax.swing.JDialog implements Accoun
                 .addGroup(pnlAccountCreationLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(pnlAccountCreationLayout.createSequentialGroup()
                         .addGroup(pnlAccountCreationLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblRole, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(pnlAccountCreationLayout.createSequentialGroup()
-                                .addComponent(rdoManager)
-                                .addGap(18, 18, 18)
-                                .addComponent(rdoEmployee)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 94, Short.MAX_VALUE)
+                            .addComponent(lblPass1, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtPass1, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(pnlAccountCreationLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(pnlAccountCreationLayout.createSequentialGroup()
-                                .addComponent(lblStatus, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(113, 113, 113))
+                            .addComponent(lblStatus, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(pnlAccountCreationLayout.createSequentialGroup()
                                 .addComponent(rdoUnActive)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(rdoActive)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(rdoInProgress)))
-                        .addContainerGap())
-                    .addGroup(pnlAccountCreationLayout.createSequentialGroup()
-                        .addGroup(pnlAccountCreationLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtAccountName, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lblAccountName, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(pnlAccountCreationLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblPass, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtPass, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(113, 113, 113))
+                                .addComponent(rdoActive)))
+                        .addGap(142, 142, 142))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlAccountCreationLayout.createSequentialGroup()
-                        .addComponent(btnAdd, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnAdd, javax.swing.GroupLayout.DEFAULT_SIZE, 136, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(pnlAccountCreationLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(pnlAccountCreationLayout.createSequentialGroup()
@@ -355,6 +316,15 @@ public class AccountManagerJDialog extends javax.swing.JDialog implements Accoun
                                 .addGap(13, 13, 13)
                                 .addComponent(btnRefresh, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(17, 17, 17))))
+            .addGroup(pnlAccountCreationLayout.createSequentialGroup()
+                .addGroup(pnlAccountCreationLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblAccountName, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtAccountName, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(pnlAccountCreationLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblPass, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtPass, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(113, 113, 113))
         );
         pnlAccountCreationLayout.setVerticalGroup(
             pnlAccountCreationLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -369,21 +339,18 @@ public class AccountManagerJDialog extends javax.swing.JDialog implements Accoun
                         .addComponent(lblPass)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(txtPass, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(54, 54, 54)
+                .addGap(53, 53, 53)
                 .addGroup(pnlAccountCreationLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(pnlAccountCreationLayout.createSequentialGroup()
-                        .addComponent(lblRole)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(pnlAccountCreationLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(rdoManager)
-                            .addComponent(rdoEmployee)))
                     .addGroup(pnlAccountCreationLayout.createSequentialGroup()
                         .addComponent(lblStatus)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(pnlAccountCreationLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(rdoUnActive)
-                            .addComponent(rdoInProgress)
-                            .addComponent(rdoActive))))
+                            .addComponent(rdoActive)))
+                    .addGroup(pnlAccountCreationLayout.createSequentialGroup()
+                        .addComponent(lblPass1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtPass1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
                 .addGroup(pnlAccountCreationLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -431,21 +398,9 @@ public class AccountManagerJDialog extends javax.swing.JDialog implements Accoun
         // TODO add your handling code here:
     }//GEN-LAST:event_txtPassActionPerformed
 
-    private void rdoManagerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rdoManagerActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_rdoManagerActionPerformed
-
-    private void rdoEmployeeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rdoEmployeeActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_rdoEmployeeActionPerformed
-
     private void rdoUnActiveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rdoUnActiveActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_rdoUnActiveActionPerformed
-
-    private void rdoInProgressActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rdoInProgressActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_rdoInProgressActionPerformed
 
     private void rdoActiveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rdoActiveActionPerformed
         // TODO add your handling code here:
@@ -482,6 +437,10 @@ public class AccountManagerJDialog extends javax.swing.JDialog implements Accoun
     private void btnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnAddActionPerformed
+
+    private void txtPass1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPass1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtPass1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -542,20 +501,18 @@ public class AccountManagerJDialog extends javax.swing.JDialog implements Accoun
     private javax.swing.JLabel lblAccountID;
     private javax.swing.JLabel lblAccountName;
     private javax.swing.JLabel lblPass;
-    private javax.swing.JLabel lblRole;
+    private javax.swing.JLabel lblPass1;
     private javax.swing.JLabel lblStatus;
     private javax.swing.JPanel pnlAccountCreation;
     private javax.swing.JPanel pnlAccountList;
     private javax.swing.JRadioButton rdoActive;
-    private javax.swing.JRadioButton rdoEmployee;
-    private javax.swing.JRadioButton rdoInProgress;
-    private javax.swing.JRadioButton rdoManager;
     private javax.swing.JRadioButton rdoUnActive;
     private javax.swing.JTabbedPane tabs;
     private javax.swing.JTable tblAccounts;
     private javax.swing.JTextField txtAccountID;
     private javax.swing.JTextField txtAccountName;
     private javax.swing.JTextField txtPass;
+    private javax.swing.JTextField txtPass1;
     // End of variables declaration//GEN-END:variables
 
     AccountDAO dao = new AccountDAOImpl();
@@ -575,36 +532,35 @@ public class AccountManagerJDialog extends javax.swing.JDialog implements Accoun
         String status = String.valueOf(entity.getStatus());
         rdoUnActive.setSelected(status.equals("0"));
         rdoActive.setSelected(status.equals("1"));
-        rdoInProgress.setSelected(status.equals("2"));
-         String role = String.valueOf(entity.getEmployeeID());
-         rdoManager.setSelected(role.equals("1"));
-         rdoEmployee.setSelected(role.equals("0"));
+
         
     }
 
     @Override
     public Account getForm() {
+        Account acc = new Account();
+        acc.setAccountID(Integer.parseInt(txtAccountID.getText()));
+        acc.setUsername((txtAccountName.getText()));
+        acc.setPassword((txtPass.getText()));
         return null;
     }
 
     @Override
     public void fillToTable() {
-       
         DefaultTableModel model = (DefaultTableModel) tblAccounts.getModel();
         model.setRowCount(0);
         items = dao.findAll();
-        System.out.println("Test fillToTable");
         items.forEach(item ->{
             Object[] data = {
                 item.getAccountID(),
                 item.getUsername(),
                 item.getPassword(),
-                item.getStatus()== 1 ? "Hoạt động" : (item.getStatus()== 2 ? "Huỷ" : "Đang kích hoạt"),
-                item.getEmployeeID()== 1 ? "Quản Lý" : "Nhân viên"
+                item.getStatus()== 1 ? "Hoạt động" : "Huỷ",
+                item.getEmployeeID()
             };
             model.addRow(data);
         });
-     
+ 
     }
 
     @Override

@@ -4,19 +4,38 @@
  */
 package com.mycompany.projectone.ui.manager;
 
+import com.mycompany.projectone.controller.OrderController;
+import com.mycompany.projectone.dao.OrderDAO;
+import com.mycompany.projectone.dao.OrderDetailDAO;
+import com.mycompany.projectone.dao.impl.OrderDAOImpl;
+import com.mycompany.projectone.dao.impl.OrderDetailDAOImpl;
+import com.mycompany.projectone.entity.Order;
+import com.mycompany.projectone.entity.OrderDetail;
+import com.mycompany.projectone.util.TimeRange;
+import com.mycompany.projectone.util.XDate;
+import java.awt.event.ItemEvent;
+import java.time.ZoneId;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author WellyOwO
  */
-public class BillManageUI extends javax.swing.JFrame {
+public class OrderManagerUI extends javax.swing.JFrame implements OrderController {
     
-    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(BillManageUI.class.getName());
+    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(OrderManagerUI.class.getName());
 
     /**
      * Creates new form BillManageUI
      */
-    public BillManageUI() {
+    public OrderManagerUI() {
         initComponents();
+        fillOrderDetails();
+
     }
 
     /**
@@ -50,8 +69,7 @@ public class BillManageUI extends javax.swing.JFrame {
         btnClear = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         tblDetails = new javax.swing.JTable();
-        btnFilter1 = new javax.swing.JButton();
-        btnFilter2 = new javax.swing.JButton();
+        btnFilterByOrderID = new javax.swing.JButton();
         btnMoveFirst = new javax.swing.JButton();
         btnMovePrevious = new javax.swing.JButton();
         btnMoveNext = new javax.swing.JButton();
@@ -142,13 +160,18 @@ public class BillManageUI extends javax.swing.JFrame {
                 cboTimeRangesItemStateChanged(evt);
             }
         });
+        cboTimeRanges.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cboTimeRangesActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout pblDanhSachLayout = new javax.swing.GroupLayout(pblDanhSach);
         pblDanhSach.setLayout(pblDanhSachLayout);
         pblDanhSachLayout.setHorizontalGroup(
             pblDanhSachLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pblDanhSachLayout.createSequentialGroup()
-                .addContainerGap(388, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btnCheckAll)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnUncheckAll)
@@ -160,16 +183,16 @@ public class BillManageUI extends javax.swing.JFrame {
                 .addComponent(lblBegin)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtBegin, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(49, 49, 49)
                 .addComponent(lblEnd)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtEnd, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(65, 65, 65)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 283, Short.MAX_VALUE)
                 .addComponent(btnFilter)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(cboTimeRanges, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(27, 27, 27))
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 942, Short.MAX_VALUE)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING)
         );
         pblDanhSachLayout.setVerticalGroup(
             pblDanhSachLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -261,19 +284,11 @@ public class BillManageUI extends javax.swing.JFrame {
         });
         jScrollPane2.setViewportView(tblDetails);
 
-        btnFilter1.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
-        btnFilter1.setText("Lọc");
-        btnFilter1.addActionListener(new java.awt.event.ActionListener() {
+        btnFilterByOrderID.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
+        btnFilterByOrderID.setText("Lọc");
+        btnFilterByOrderID.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnFilter1ActionPerformed(evt);
-            }
-        });
-
-        btnFilter2.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
-        btnFilter2.setText("Làm mới");
-        btnFilter2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnFilter2ActionPerformed(evt);
+                btnFilterByOrderIDActionPerformed(evt);
             }
         });
 
@@ -330,13 +345,11 @@ public class BillManageUI extends javax.swing.JFrame {
                     .addGroup(pnlBieuMauLayout.createSequentialGroup()
                         .addComponent(txtMaHoaDon, javax.swing.GroupLayout.PREFERRED_SIZE, 315, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnFilter1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btnFilter2)
-                        .addGap(64, 64, 64))))
+                        .addComponent(btnFilterByOrderID)
+                        .addGap(169, 169, 169))))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlBieuMauLayout.createSequentialGroup()
                 .addGap(27, 27, 27)
-                .addComponent(btnCreate)
+                .addComponent(btnCreate, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnUpdate)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -351,7 +364,7 @@ public class BillManageUI extends javax.swing.JFrame {
                 .addComponent(btnMoveNext, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(btnMoveLast, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addGap(0, 98, Short.MAX_VALUE))
             .addGroup(pnlBieuMauLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jScrollPane2)
@@ -373,8 +386,7 @@ public class BillManageUI extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(pnlBieuMauLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(txtMaHoaDon, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnFilter1)
-                            .addComponent(btnFilter2))
+                            .addComponent(btnFilterByOrderID))
                         .addGap(3, 3, 3)
                         .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 372, Short.MAX_VALUE)
                         .addGap(18, 18, 18)
@@ -404,14 +416,32 @@ public class BillManageUI extends javax.swing.JFrame {
 
     private void btnCheckAllActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCheckAllActionPerformed
         // TODO add your handling code here:
+        DefaultTableModel model = (DefaultTableModel) tblDate.getModel();
+    for (int i = 0; i < model.getRowCount(); i++) {
+        model.setValueAt(true, i, 7);
+    }
     }//GEN-LAST:event_btnCheckAllActionPerformed
 
     private void btnUncheckAllActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUncheckAllActionPerformed
         // TODO add your handling code here:
+         DefaultTableModel model = (DefaultTableModel) tblDate.getModel();
+    for (int i = 0; i < model.getRowCount(); i++) {
+        model.setValueAt(false, i, 7);
+    }
     }//GEN-LAST:event_btnUncheckAllActionPerformed
 
     private void btnDeleteCheckedItemsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteCheckedItemsActionPerformed
         // TODO add your handling code here:
+        DefaultTableModel model = (DefaultTableModel) tblDate.getModel();
+    for (int i = model.getRowCount() - 1; i >= 0; i--) {
+        Boolean isChecked = (Boolean) model.getValueAt(i, 7);
+        if (isChecked != null && isChecked) {
+            Integer orderId = (Integer) model.getValueAt(i, 0);
+            dao.deleteById(orderId);
+            model.removeRow(i);
+        }
+    }
+    JOptionPane.showMessageDialog(this, "Đã xóa các hóa đơn được chọn", "Thông báo", JOptionPane.INFORMATION_MESSAGE);
     }//GEN-LAST:event_btnDeleteCheckedItemsActionPerformed
 
     private void txtBeginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtBeginActionPerformed
@@ -420,15 +450,74 @@ public class BillManageUI extends javax.swing.JFrame {
 
     private void btnFilterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFilterActionPerformed
         // TODO add your handling code here:
+                this.fillToTable();
     }//GEN-LAST:event_btnFilterActionPerformed
 
     private void cboTimeRangesItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cboTimeRangesItemStateChanged
         // TODO add your handling code here:
+          if (evt.getStateChange() == ItemEvent.SELECTED) {
+            selectTimeRange();
+        }
     }//GEN-LAST:event_cboTimeRangesItemStateChanged
 
     private void tblDateMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblDateMouseClicked
         // TODO add your handling code here:
+   if (evt.getClickCount() == 2) {
+        int selectedRow = tblDate.getSelectedRow();
+        if (selectedRow >= 0) {
+            Integer orderId = (Integer) tblDate.getValueAt(selectedRow, 0);
+            currentOrderIndex = orderIds.indexOf(orderId);
+            tabsBills.setSelectedIndex(1);
+            showOrderById(orderId);
+        }
+    }
     }//GEN-LAST:event_tblDateMouseClicked
+
+    private void cboTimeRangesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cboTimeRangesActionPerformed
+        // TODO add your handling code here:
+
+    }//GEN-LAST:event_cboTimeRangesActionPerformed
+
+    private void btnMoveLastActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMoveLastActionPerformed
+        // TODO add your handling code here:
+     this.moveLast();
+    }//GEN-LAST:event_btnMoveLastActionPerformed
+
+    private void btnMoveNextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMoveNextActionPerformed
+        // TODO add your handling code here:
+         this.moveNext();
+    }//GEN-LAST:event_btnMoveNextActionPerformed
+
+    private void btnMovePreviousActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMovePreviousActionPerformed
+        // TODO add your handling code here:
+      this.movePrevious();
+    }//GEN-LAST:event_btnMovePreviousActionPerformed
+
+    private void btnMoveFirstActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMoveFirstActionPerformed
+        // TODO add your handling code here:
+         this.moveFirst();
+    }//GEN-LAST:event_btnMoveFirstActionPerformed
+
+    private void btnFilterByOrderIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFilterByOrderIDActionPerformed
+
+            try {
+
+        String orderIdText = txtMaHoaDon.getText().trim();
+
+        if (orderIdText.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Vui lòng nhập mã hóa đơn", "Thông báo", JOptionPane.WARNING_MESSAGE);
+            return;
+        }    
+
+        fillOrderDetails();
+        
+    } catch (NumberFormatException e) {
+        JOptionPane.showMessageDialog(this, "Mã hóa đơn phải là số nguyên", "Lỗi", JOptionPane.ERROR_MESSAGE);
+        txtMaHoaDon.requestFocus();
+    } catch (Exception e) {
+        JOptionPane.showMessageDialog(this, "Lỗi khi tìm kiếm hóa đơn: " + e.getMessage(), "Lỗi", JOptionPane.ERROR_MESSAGE);
+    }
+    }//GEN-LAST:event_btnFilterByOrderIDActionPerformed
 
     private void btnClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClearActionPerformed
         // TODO add your handling code here:
@@ -449,30 +538,6 @@ public class BillManageUI extends javax.swing.JFrame {
     private void txtMaHoaDonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtMaHoaDonActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtMaHoaDonActionPerformed
-
-    private void btnFilter1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFilter1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnFilter1ActionPerformed
-
-    private void btnFilter2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFilter2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnFilter2ActionPerformed
-
-    private void btnMoveFirstActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMoveFirstActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnMoveFirstActionPerformed
-
-    private void btnMovePreviousActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMovePreviousActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnMovePreviousActionPerformed
-
-    private void btnMoveNextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMoveNextActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnMoveNextActionPerformed
-
-    private void btnMoveLastActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMoveLastActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnMoveLastActionPerformed
 
     /**
      * @param args the command line arguments
@@ -496,7 +561,7 @@ public class BillManageUI extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(() -> new BillManageUI().setVisible(true));
+        java.awt.EventQueue.invokeLater(() -> new OrderManagerUI().setVisible(true));
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -506,8 +571,7 @@ public class BillManageUI extends javax.swing.JFrame {
     private javax.swing.JButton btnDelete;
     private javax.swing.JButton btnDeleteCheckedItems;
     private javax.swing.JButton btnFilter;
-    private javax.swing.JButton btnFilter1;
-    private javax.swing.JButton btnFilter2;
+    private javax.swing.JButton btnFilterByOrderID;
     private javax.swing.JButton btnMoveFirst;
     private javax.swing.JButton btnMoveLast;
     private javax.swing.JButton btnMoveNext;
@@ -529,4 +593,205 @@ public class BillManageUI extends javax.swing.JFrame {
     private javax.swing.JTextField txtEnd;
     private javax.swing.JTextField txtMaHoaDon;
     // End of variables declaration//GEN-END:variables
+     
+      OrderDAO dao = new OrderDAOImpl();
+      OrderDetailDAO daoDetail = new OrderDetailDAOImpl();
+      List <Order> items = List.of();
+      List <OrderDetail> itemsDetail = List.of();
+      private List<Integer> orderIds = new ArrayList<>(); 
+private int currentOrderIndex = -1; 
+      
+private void showOrderById(int orderId) {
+    txtMaHoaDon.setText(String.valueOf(orderId));
+    fillOrderDetails();
+}
+              
+              
+    @Override
+    public void open() {
+    }
+
+    @Override
+    public void setForm(Order entity) {
+        
+    }
+
+    @Override
+    public Order getForm() {
+        return null;
+    }
+
+@Override
+public void fillToTable() {
+    DefaultTableModel model = (DefaultTableModel) tblDate.getModel();
+    model.setRowCount(0);
+    Date begin = XDate.parse(txtBegin.getText(), "dd/MM/yyyy");
+    Date end = XDate.parse(txtEnd.getText(), "dd/MM/yyyy");
+    items = dao.findByTimeRange(begin, end);
+   
+    orderIds.clear();
+    items.forEach(item -> {
+        orderIds.add(item.getOrderID());
+        Object[] data = {
+            item.getOrderID(),
+            item.getEmployeeName(),
+            item.getCustomerName(),
+            item.getOrderDate(),
+            item.getPaymentMethod(),
+            item.getPromoTitle(),
+            item.getTotalAmount()
+        };
+        model.addRow(data);
+    });
+    
+    if (!orderIds.isEmpty()) {
+        currentOrderIndex = 0;
+    }
+}
+
+    @Override
+    public void edit() {
+    }
+
+    @Override
+    public void create() {
+    }
+
+    @Override
+    public void update() {
+    }
+
+  @Override
+public void delete() {
+    int selectedRow = tblDate.getSelectedRow();
+    if (selectedRow < 0) {
+        JOptionPane.showMessageDialog(this, "Vui lòng chọn một hóa đơn để xóa", "Thông báo", JOptionPane.WARNING_MESSAGE);
+        return;
+    }
+    
+    int confirm = JOptionPane.showConfirmDialog(this, "Bạn có chắc chắn muốn xóa hóa đơn này?", "Xác nhận xóa", JOptionPane.YES_NO_OPTION);
+    if (confirm == JOptionPane.YES_OPTION) {
+        Integer orderId = (Integer) tblDate.getValueAt(selectedRow, 0);
+        dao.deleteById(orderId);
+        fillToTable();
+        JOptionPane.showMessageDialog(this, "Xóa hóa đơn thành công", "Thông báo", JOptionPane.INFORMATION_MESSAGE);
+    }
+}
+
+   @Override
+public void clear() {
+    txtMaHoaDon.setText("");
+    DefaultTableModel model = (DefaultTableModel) tblDetails.getModel();
+    model.setRowCount(0);
+}
+
+    @Override
+    public void setEditable(boolean editable) {
+    }
+
+    @Override
+    public void checkAll() {
+    }
+
+    @Override
+    public void uncheckAll() {
+    }
+
+    @Override
+    public void deleteCheckedItems() {
+    }
+
+   @Override
+public void moveFirst() {
+     if (!orderIds.isEmpty()) {
+        currentOrderIndex = 0;
+        showOrderById(orderIds.get(currentOrderIndex));
+    }
+}
+
+  @Override
+public void movePrevious() {
+   if (!orderIds.isEmpty() && currentOrderIndex > 0) {
+        currentOrderIndex--;
+        showOrderById(orderIds.get(currentOrderIndex));
+    }
+}
+   @Override
+public void moveNext() {
+     if (!orderIds.isEmpty() && currentOrderIndex < orderIds.size() - 1) {
+        currentOrderIndex++;
+        showOrderById(orderIds.get(currentOrderIndex));
+    }
+}
+
+@Override
+public void moveLast() {
+     if (!orderIds.isEmpty()) {
+        currentOrderIndex = orderIds.size() - 1;
+        showOrderById(orderIds.get(currentOrderIndex));
+    }
+}
+
+  @Override
+public void moveTo(int rowIndex) {
+    if (rowIndex >= 0 && rowIndex < tblDetails.getRowCount()) {
+        tblDetails.setRowSelectionInterval(rowIndex, rowIndex);
+        tblDetails.scrollRectToVisible(tblDetails.getCellRect(rowIndex, 0, true));
+    }
+}
+
+@Override
+public void fillOrderDetails() {
+    DefaultTableModel model = (DefaultTableModel) tblDetails.getModel();
+    model.setRowCount(0);
+    String orderIdText = txtMaHoaDon.getText().trim();
+    if (orderIdText.isEmpty()) {
+        return; 
+    }
+    
+    try {
+        itemsDetail = daoDetail.findByOrderId(Integer.parseInt(orderIdText));
+        itemsDetail.forEach(item -> {
+            Object[] row = {
+                item.getNameBook(),
+                item.getCategory(),
+                item.getQuantity(),
+                item.getTotalAmount()
+            };
+            model.addRow(row);
+        });
+    } catch (NumberFormatException e) {
+        JOptionPane.showMessageDialog(this, "Mã hóa đơn phải là số nguyên", "Lỗi", JOptionPane.ERROR_MESSAGE);
+    }
+}
+
+    @Override
+    public void selectTimeRange() {
+         TimeRange range = TimeRange.today();
+        switch (cboTimeRanges.getSelectedIndex()) {
+            case 0 ->
+                range = TimeRange.today();
+            case 1 ->
+                range = TimeRange.thisWeek();
+            case 2 ->
+                range = TimeRange.thisMonth();
+            case 3 ->
+                range = TimeRange.thisQuarter();
+            case 4 ->
+                range = TimeRange.thisYear();
+        }
+        try {
+            Date beginDate = Date.from(range.getBegin().atStartOfDay(ZoneId.systemDefault()).toInstant());
+            Date endDate = Date.from(range.getEnd().atStartOfDay(ZoneId.systemDefault()).toInstant());
+            txtBegin.setText(XDate.format(beginDate, "dd/MM/yyyy"));
+            txtEnd.setText(XDate.format(endDate, "dd/MM/yyyy"));
+        } catch (Exception e) {
+             JOptionPane.showMessageDialog(this, "Lỗi định dạng ngày: " + e.getMessage(), "Lỗi", JOptionPane.ERROR_MESSAGE);
+            txtBegin.setText("");
+            txtEnd.setText("");
+        }
+        this.fillToTable();
+        
+        
+    }
 }

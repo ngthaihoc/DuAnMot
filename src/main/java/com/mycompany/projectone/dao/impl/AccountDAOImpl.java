@@ -19,7 +19,7 @@ public class AccountDAOImpl implements AccountDAO {
    String createSQL = "INSERT INTO Accounts(AccountID, Username, Password, status, EmployeeID) VALUES (?, ?, ?, ?, ?)";
     String updateSQL = "UPDATE Accounts SET Username = ?, Password = ?, status = ?, EmployeeID = ? WHERE AccountID = ?";
     String deleteSQL = "DELETE FROM Accounts WHERE AccountID = ?";
-    String findAllSQL = "SELECT AccountID, Username, Password, status, EmployeeID FROM Accounts";
+    String findAllSQL = "SELECT a.AccountID, Username, Password, status, e.Role, e.EmployeeID FROM Accounts a, Employees e WHERE a.EmployeeID =e.EmployeeID";
     String findByIDAccount = "SELECT AccountID, Username, Password, status, EmployeeID FROM Accounts WHERE AccountID = ?";
 
     @Override

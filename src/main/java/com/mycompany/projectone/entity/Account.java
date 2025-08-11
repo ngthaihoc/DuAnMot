@@ -17,6 +17,6 @@ public class Account {
     private int accountID;
     private String username;
     private String password;
-    private int status; 
+    private int status;
     private int employeeID;
 }

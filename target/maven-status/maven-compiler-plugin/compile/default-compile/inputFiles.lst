@@ -1,5 +1,4 @@
 D:\Java 2\Git\ProjectOne\src\main\java\com\mycompany\projectone\dao\impl\PurchaseReceiptDAOImpl.java
-D:\Java 2\Git\ProjectOne\src\main\java\com\mycompany\projectone\ui\manager\BillManageUI.java
 D:\Java 2\Git\ProjectOne\src\main\java\com\mycompany\projectone\util\XVali.java
 D:\Java 2\Git\ProjectOne\src\main\java\com\mycompany\projectone\entity\Payment.java
 D:\Java 2\Git\ProjectOne\src\main\java\com\mycompany\projectone\dao\ReceiptSummaryDAO.java
@@ -12,6 +11,7 @@ D:\Java 2\Git\ProjectOne\src\main\java\com\mycompany\projectone\entity\PurchaseR
 D:\Java 2\Git\ProjectOne\src\main\java\com\mycompany\projectone\entity\Revenue.java
 D:\Java 2\Git\ProjectOne\src\main\java\com\mycompany\projectone\dao\impl\OrderDAOImpl.java
 D:\Java 2\Git\ProjectOne\src\main\java\com\mycompany\projectone\dao\impl\BookDAOImpl.java
+D:\Java 2\Git\ProjectOne\src\main\java\com\mycompany\projectone\controller\OrderController.java
 D:\Java 2\Git\ProjectOne\src\main\java\com\mycompany\projectone\dao\SupplierDAO.java
 D:\Java 2\Git\ProjectOne\src\main\java\com\mycompany\projectone\entity\Categories.java
 D:\Java 2\Git\ProjectOne\src\main\java\com\mycompany\projectone\controller\PaymentController.java
@@ -30,6 +30,7 @@ D:\Java 2\Git\ProjectOne\src\main\java\com\mycompany\projectone\ui\manager\Promo
 D:\Java 2\Git\ProjectOne\src\main\java\com\mycompany\projectone\controller\RevenueManagerController.java
 D:\Java 2\Git\ProjectOne\src\main\java\com\mycompany\projectone\util\XQuery.java
 D:\Java 2\Git\ProjectOne\src\main\java\com\mycompany\projectone\controller\PromotionController.java
+D:\Java 2\Git\ProjectOne\src\main\java\com\mycompany\projectone\dao\impl\EmployeeManagerDAOImpl.java
 D:\Java 2\Git\ProjectOne\src\main\java\com\mycompany\projectone\ui\manager\PaymentManagerJDialog.java
 D:\Java 2\Git\ProjectOne\src\main\java\com\mycompany\projectone\ui\manager\RevenueManageUI.java
 D:\Java 2\Git\ProjectOne\src\main\java\com\mycompany\projectone\controller\CustomerController.java
@@ -48,6 +49,7 @@ D:\Java 2\Git\ProjectOne\src\main\java\com\mycompany\projectone\dao\CategoriesDA
 D:\Java 2\Git\ProjectOne\src\main\java\com\mycompany\projectone\dao\AccountDAO.java
 D:\Java 2\Git\ProjectOne\src\main\java\com\mycompany\projectone\entity\OrderDetail.java
 D:\Java 2\Git\ProjectOne\src\main\java\com\mycompany\projectone\dao\CurdDAO.java
+D:\Java 2\Git\ProjectOne\src\main\java\com\mycompany\projectone\dao\impl\OrderDetailDAOImpl.java
 D:\Java 2\Git\ProjectOne\src\main\java\com\mycompany\projectone\ui\manager\BookCategoryManageUI.java
 D:\Java 2\Git\ProjectOne\src\main\java\com\mycompany\projectone\dao\impl\SupplierContactDAOImpl.java
 D:\Java 2\Git\ProjectOne\src\main\java\com\mycompany\projectone\ui\manager\EmployeeMangeUI.java
@@ -65,6 +67,7 @@ D:\Java 2\Git\ProjectOne\src\main\java\com\mycompany\projectone\entity\Employee.
 D:\Java 2\Git\ProjectOne\src\main\java\com\mycompany\projectone\entity\Promotion.java
 D:\Java 2\Git\ProjectOne\src\main\java\com\mycompany\projectone\util\XJdbc.java
 D:\Java 2\Git\ProjectOne\src\main\java\com\mycompany\projectone\controller\AccountController.java
+D:\Java 2\Git\ProjectOne\src\main\java\com\mycompany\projectone\ui\manager\OrderManagerUI.java
 D:\Java 2\Git\ProjectOne\src\main\java\com\mycompany\projectone\dao\impl\EmployeeDAOImpl.java
 D:\Java 2\Git\ProjectOne\src\main\java\com\mycompany\projectone\entity\ReceiptSummary.java
 D:\Java 2\Git\ProjectOne\src\main\java\com\mycompany\projectone\dao\impl\CustomerDaoImpl.java

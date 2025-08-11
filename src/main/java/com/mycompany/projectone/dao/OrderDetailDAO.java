@@ -5,11 +5,12 @@
 package com.mycompany.projectone.dao;
 
 import com.mycompany.projectone.entity.OrderDetail;
+import java.util.List;
 
 /**
  *
  * @author WellyOwO
  */
 public interface OrderDetailDAO extends CurdDAO<OrderDetail, Integer> {
-    
+    List<OrderDetail> findByOrderId(Integer orderId);
 }
