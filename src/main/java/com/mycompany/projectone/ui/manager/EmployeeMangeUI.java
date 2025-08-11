@@ -27,10 +27,11 @@ public class EmployeeMangeUI extends javax.swing.JFrame {
         initComponents();
         setLocationRelativeTo(null);
         fillToTable();
+        setTitle("Quản Lý Nhân Viên");
     }
     private void fillToTable() {
     DefaultTableModel model = (DefaultTableModel) tblEmployee.getModel();
-    model.setRowCount(0); // Xóa dữ liệu cũ trong bảng
+    model.setRowCount(0); 
     try {
         List<Employee> employees = dao.findAll();
         for (Employee emp : employees) {
@@ -39,7 +40,7 @@ public class EmployeeMangeUI extends javax.swing.JFrame {
                 emp.getName(),
                 emp.getFirstName(),
                 emp.getAge(),
-                emp.isSex() ? "Nam" : "Nữ", // Chuyển Boolean thành chuỗi
+                emp.isSex() ? "Nam" : "Nữ",
                 emp.getEmail(),
                 emp.getPhoneNum(),
                 emp.getAddress(),
@@ -61,7 +62,7 @@ public class EmployeeMangeUI extends javax.swing.JFrame {
         int role = txtRole.getText().trim().equalsIgnoreCase("admin") ? 1 : 0;
         boolean sex = rdoNam.isSelected();
         String address = txaNote.getText().trim();
-        int age = 0; // Tạm đặt mặc định, cần thêm trường nhập tuổi trong giao diện
+        int age = 0; 
 
         if (firstName.isEmpty() || email.isEmpty() || phone.isEmpty()) {
             throw new IllegalArgumentException("Vui lòng điền đầy đủ thông tin bắt buộc.");
@@ -511,10 +512,10 @@ public class EmployeeMangeUI extends javax.swing.JFrame {
         int confirm = JOptionPane.showConfirmDialog(this, "Bạn có chắc chắn muốn xóa nhân viên này?", "Xác nhận xóa", JOptionPane.YES_NO_OPTION);
         if (confirm == JOptionPane.YES_OPTION) {
             try {
-                int id = (Integer) tblEmployee.getValueAt(selectedRow, 0); // Giả sử cột 0 là EmployeeID
+                int id = (Integer) tblEmployee.getValueAt(selectedRow, 0);
                 dao.deleteById(id);
                 JOptionPane.showMessageDialog(this, "Xóa thành công!");
-                fillToTable(); // Cập nhật lại bảng
+                fillToTable();
             } catch (Exception e) {
                 JOptionPane.showMessageDialog(this, "Lỗi khi xóa: " + e.getMessage());
             }
