@@ -15,11 +15,11 @@ import java.util.List;
  * @author pc
  */
 public class EmployeeManagerDAOImpl implements EmployeeDAO{
-    private final String createSql = "INSERT INTO Employees (EmployeeID, Name, FirstName, Age, sex, Email, PhoneNum, Address, Role) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
-    private final String updateSql = "UPDATE Employees SET Name=?, FirstName=?, Age=?, sex=?, Email=?, PhoneNum=?, Address=?, Role=? WHERE EmployeeID=?";
-    private final String deleteByIdSql = "DELETE FROM Employees WHERE EmployeeID=?";
-    private final String findAllSql = "SELECT * FROM Employees";
-    private final String findByIdSql = findAllSql + " WHERE EmployeeID=?";
+    private String createSql = "INSERT INTO Employees (EmployeeID, Name, FirstName, Age, sex, Email, PhoneNum, Address, Role) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+    private String updateSql = "UPDATE Employees SET Name=?, FirstName=?, Age=?, sex=?, Email=?, PhoneNum=?, Address=?, Role=? WHERE EmployeeID=?";
+    private String deleteByIdSql = "DELETE FROM Employees WHERE EmployeeID=?";
+    private String findAllSql = "SELECT * FROM Employees";
+    private String findByIdSql = findAllSql + " WHERE EmployeeID=?";
 
     @Override
     public Employee create(Employee entity) {
