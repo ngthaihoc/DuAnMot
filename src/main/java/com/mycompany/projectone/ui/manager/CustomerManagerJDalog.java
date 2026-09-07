@@ -364,55 +364,58 @@ public class CustomerManagerJDalog extends javax.swing.JDialog implements Custom
     }//GEN-LAST:event_txtAgeActionPerformed
 
     private void btnThemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThemActionPerformed
-        // TODO add your handling code here:
-       Customer c = getForm();
-    dao.create(c);
-    fillToTable();
-    clear();
+        create();
     }//GEN-LAST:event_btnThemActionPerformed
 
     private void btnXoaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnXoaActionPerformed
-        // TODO add your handling code here:
- 
+        delete();
     }//GEN-LAST:event_btnXoaActionPerformed
 
     private void btnNewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNewActionPerformed
-        // TODO add your handling code here:
         clear();
     }//GEN-LAST:event_btnNewActionPerformed
 
     private void btnUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateActionPerformed
-        // TODO add your handling code here:
-         Customer c = getForm();
-    dao.update(c);
-    fillToTable();
-    clear();
+        update();
     }//GEN-LAST:event_btnUpdateActionPerformed
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
-        // TODO add your handling code here:
         open();
-        fillToTable();
     }//GEN-LAST:event_formWindowOpened
 
     private void btnSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchActionPerformed
-        // TODO add your handling code here:
-        String keyword = txtSearch.getText();
-        Customer customer = dao.findById(keyword); // cần cài trong DAO
+        String keyword = txtSearch.getText().trim();
+        if (keyword.isEmpty()) {
+            fillToTable();
+            return;
+        }
+        List<Customer> searchList = dao.findByKeyword(keyword);
+        if (searchList.isEmpty()) {
+            try {
+                Customer c = dao.findById(keyword);
+                if (c != null) {
+                    searchList.add(c);
+                }
+            } catch (Exception ignored) {
+            }
+        }
+        list = searchList;
         DefaultTableModel model = (DefaultTableModel) tblCustomers.getModel();
         model.setRowCount(0);
-
-        Object[] dataRow = {
-            customer.getCustomerID(),
-            customer.getFirstName(),
-            customer.getAge(),
-            customer.getSex(),
-            customer.getEmailNum(),
-            customer.getPhone(),
-            customer.getAddress()
-        };
-        
-        model.addRow(dataRow);
+        for (Customer c : searchList) {
+            model.addRow(new Object[]{
+                c.getCustomerID(),
+                c.getFirstName(),
+                c.getAge(),
+                c.getSex() == 0 ? "Nữ" : "Nam",
+                c.getEmailNum(),
+                c.getPhone(),
+                c.getAddress()
+            });
+        }
+        if (searchList.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Không tìm thấy khách hàng nào phù hợp!");
+        }
     }//GEN-LAST:event_btnSearchActionPerformed
 
     private void tblCustomersMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblCustomersMouseClicked
@@ -519,20 +522,45 @@ private final CustomerDao dao = new CustomerDaoImpl();
         txtMaKH.setText("");
         txtHoten.setText("");
         txtAge.setText("");
+        txtEmail.setText("");
         txtDiachi.setText("");
         txtSDT.setText("");
+        rdoNam.setSelected(true);
+        tblCustomers.clearSelection();
     }
 
     @Override
     public Customer getForm() {
+        String maKHStr = txtMaKH.getText().trim();
+        String ageStr = txtAge.getText().trim();
+        if (maKHStr.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Vui lòng nhập Mã khách hàng!");
+            return null;
+        }
+        int customerId;
+        try {
+            customerId = Integer.parseInt(maKHStr);
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(this, "Mã khách hàng phải là số nguyên!");
+            return null;
+        }
+        int age = 0;
+        if (!ageStr.isEmpty()) {
+            try {
+                age = Integer.parseInt(ageStr);
+            } catch (NumberFormatException e) {
+                JOptionPane.showMessageDialog(this, "Tuổi phải là số nguyên!");
+                return null;
+            }
+        }
         Customer c = new Customer();
-        c.setCustomerID(Integer.parseInt(txtMaKH.getText()));
-        c.setFirstName(txtHoten.getText());
-        c.setAge(Integer.parseInt(txtAge.getText()));
-        
-        c.setEmailNum(txtEmail.getText());
-        c.setAddress(txtDiachi.getText());
-        c.setPhone(txtSDT.getText());
+        c.setCustomerID(customerId);
+        c.setFirstName(txtHoten.getText().trim());
+        c.setAge(age);
+        c.setSex(rdoNam.isSelected() ? 1 : 0);
+        c.setEmailNum(txtEmail.getText().trim());
+        c.setAddress(txtDiachi.getText().trim());
+        c.setPhone(txtSDT.getText().trim());
         return c;
     }
 
@@ -541,8 +569,8 @@ private final CustomerDao dao = new CustomerDaoImpl();
         txtMaKH.setText(String.valueOf(c.getCustomerID()));
         txtHoten.setText(c.getFirstName());
         txtAge.setText(String.valueOf(c.getAge()));
-        rdoNam.setSelected(c.getSex() == 1 ? true : false);
-        rdoNu.setSelected(c.getSex() == 0 ? true : false);
+        rdoNam.setSelected(c.getSex() == 1);
+        rdoNu.setSelected(c.getSex() == 0);
         txtEmail.setText(c.getEmailNum());
         txtDiachi.setText(c.getAddress());
         txtSDT.setText(c.getPhone());
@@ -568,14 +596,14 @@ private final CustomerDao dao = new CustomerDaoImpl();
     @Override
     public void edit() {
         int row = tblCustomers.getSelectedRow();
-        if (row != -1) {
+        if (row != -1 && row < list.size()) {
             Customer c = list.get(row);
             setForm(c);
         }
     }
- @Override
+
+    @Override
     public void deleteCheckedItems() {
-        // Implement method as required by CrudController interface.
         int[] selectedRows = tblCustomers.getSelectedRows();
         if (selectedRows.length == 0) {
             JOptionPane.showMessageDialog(this, "Vui lòng chọn ít nhất một khách hàng để xoá.");
@@ -584,8 +612,10 @@ private final CustomerDao dao = new CustomerDaoImpl();
         int confirm = JOptionPane.showConfirmDialog(this, "Bạn có chắc muốn xoá các khách hàng đã chọn?", "Xoá", JOptionPane.YES_NO_OPTION);
         if (confirm == JOptionPane.YES_OPTION) {
             for (int row : selectedRows) {
-                Customer c = list.get(row);
-                dao.deleteById(String.valueOf(c.getCustomerID()));
+                if (row < list.size()) {
+                    Customer c = list.get(row);
+                    dao.deleteById(String.valueOf(c.getCustomerID()));
+                }
             }
             fillToTable();
             clear();
@@ -594,57 +624,96 @@ private final CustomerDao dao = new CustomerDaoImpl();
 
     @Override
     public void create() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        Customer c = getForm();
+        if (c != null) {
+            dao.create(c);
+            fillToTable();
+            clear();
+            JOptionPane.showMessageDialog(this, "Thêm khách hàng thành công!");
+        }
     }
 
     @Override
     public void update() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        Customer c = getForm();
+        if (c != null) {
+            dao.update(c);
+            fillToTable();
+            clear();
+            JOptionPane.showMessageDialog(this, "Cập nhật khách hàng thành công!");
+        }
     }
 
     @Override
     public void delete() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        String id = txtMaKH.getText().trim();
+        if (id.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Vui lòng chọn hoặc nhập Mã khách hàng cần xóa!");
+            return;
+        }
+        int confirm = JOptionPane.showConfirmDialog(this, "Bạn có chắc muốn xóa khách hàng " + id + "?", "Xác nhận xóa", JOptionPane.YES_NO_OPTION);
+        if (confirm == JOptionPane.YES_OPTION) {
+            dao.deleteById(id);
+            fillToTable();
+            clear();
+            JOptionPane.showMessageDialog(this, "Xóa khách hàng thành công!");
+        }
     }
 
     @Override
     public void setEditable(boolean editable) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        txtMaKH.setEditable(editable);
+        txtHoten.setEditable(editable);
+        txtAge.setEditable(editable);
+        txtEmail.setEditable(editable);
+        txtDiachi.setEditable(editable);
+        txtSDT.setEditable(editable);
     }
 
     @Override
     public void checkAll() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     @Override
     public void uncheckAll() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     @Override
     public void moveFirst() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        if (!list.isEmpty()) {
+            moveTo(0);
+        }
     }
 
     @Override
     public void movePrevious() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        int row = tblCustomers.getSelectedRow();
+        if (row > 0) {
+            moveTo(row - 1);
+        }
     }
 
     @Override
     public void moveNext() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        int row = tblCustomers.getSelectedRow();
+        if (row < list.size() - 1) {
+            moveTo(row + 1);
+        }
     }
 
     @Override
     public void moveLast() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        if (!list.isEmpty()) {
+            moveTo(list.size() - 1);
+        }
     }
 
     @Override
     public void moveTo(int rowIndex) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        if (rowIndex >= 0 && rowIndex < list.size()) {
+            tblCustomers.setRowSelectionInterval(rowIndex, rowIndex);
+            edit();
+        }
     }
     
     

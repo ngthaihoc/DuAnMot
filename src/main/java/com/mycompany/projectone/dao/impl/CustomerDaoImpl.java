@@ -59,4 +59,10 @@ public class CustomerDaoImpl implements CustomerDao {
         return XQuery.getSingleBean(Customer.class, findByIdSql, id);
     }
 
+    @Override
+    public List<Customer> findByKeyword(String keyword) {
+        String sql = "SELECT * FROM Customers WHERE FirstName LIKE ? OR Phone LIKE ? OR Address LIKE ?";
+        String pattern = "%" + keyword + "%";
+        return XQuery.getBeanList(Customer.class, sql, pattern, pattern, pattern);
+    }
 }
